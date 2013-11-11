@@ -1,0 +1,36 @@
+SESSION STARTED at:  2011-10-26 23:32:00 CEST +0200
+Program Version:     NcFTP 3.2.5/474 Feb 02 2011, 05:13 PM compiled for linux-x86_64-glibc2.13
+Compiled for:        linux-x86_64-glibc2.13
+Process ID:          18587
+Hostname:            david-nb.Speedport_W_921V_1_08_000  (rc=9)
+Terminal:            xterm
+23:32:00  Fw: firewall.Speedport_W_921V_1_08_000  Type: 0  User: shark  Pass: ********  Port: 21
+23:32:00  FwExceptions: .Speedport_W_921V_1_08_000,localhost,localdomain
+23:32:00  Resolving speedport.ip...
+23:32:00  Connecting to 192.168.2.1...
+23:32:00  LibNcFTP 3.2.5 (January 17, 2011) compiled for linux-x86_64-glibc2.13
+23:32:00  Uname: Linux|david-nb|3.0.0-13-generic|#21-Ubuntu SMP Mon Oct 17 20:18:51 UTC 2011|x86_64
+23:32:00  Contents of /etc/debian_version:
+23:32:00    wheezy/sid
+23:32:00  Contents of /etc/issue:
+23:32:00    Ubuntu 11.10 \n \l
+23:32:00  Glibc: 2.13 (stable)
+23:32:00  Logging in...
+23:32:00  220: Speedport W 921V FTP Server v1.08.000 ready
+23:32:00  Connected to 192.168.2.1.
+23:32:00  Cmd: USER usb
+23:32:04  331: User name OK, Enter PASS command
+23:32:04  Cmd: PASS xxxxxxxx
+23:32:04  Logging in...
+23:32:04  230: Logged in
+23:32:04  Cmd: PWD
+23:32:04  257: "/mnt/HitachiHDS721010CLA332/KERSTIN.EX/BENUTZERORDNER/usb" is current directory
+23:32:04  Logged in to 192.168.2.1 as usb.
+23:32:04  Cmd: FEAT
+23:32:04  211: Speedport W 921V FTP Server v1.08.000 supports extensions
+23:32:04        UTF8
+23:32:04        AUTH TLS
+23:32:04        PBSZ
+23:32:04        PROT
+23:32:04       end
+23:32:04  Cmd: HELP SITE

@@ -1,0 +1,219 @@
+SESSION STARTED at:  2013-11-10 10:28:06 EST -0500
+Program Version:     NcFTP 3.2.5/474 Feb 02 2011, 05:13 PM compiled for linux-x86_64-glibc2.15
+Compiled for:        linux-x86_64-glibc2.15
+Process ID:          5158
+Hostname:            david-nb.westell.com  (rc=10)
+Terminal:            xterm
+10:28:06  Fw: firewall.domain.com  Type: 0  User: shark  Pass: ********  Port: 21
+10:28:06  FwExceptions: .probe.net,localhost,foo.bar.com,localdomain
+10:28:06  Resolving ftp.david-peter.de...
+10:28:07  Connecting to 84.38.79.50...
+10:28:07  LibNcFTP 3.2.5 (January 17, 2011) compiled for linux-x86_64-glibc2.15
+10:28:07  Uname: Linux|david-nb|3.11.0-13-generic|#20-Ubuntu SMP Wed Oct 23 07:38:26 UTC 2013|x86_64
+10:28:07  Contents of /etc/debian_version:
+10:28:07    wheezy/sid
+10:28:07  Contents of /etc/issue:
+10:28:07    Ubuntu 13.10 \n \l
+10:28:07  Glibc: 2.17 (stable)
+10:28:07  Remote server is running ProFTPD.
+10:28:07  Logging in...
+10:28:07  220: ProFTPD 1.3.3a Server (webserver51) [::ffff:84.38.79.50]
+10:28:07  Connected to 84.38.79.50.
+10:28:07  Cmd: USER web1039
+10:28:08  331: Password required for web1039
+10:28:08  Cmd: PASS xxxxxxxx
+10:28:08  Logging in...
+10:28:08  230: User web1039 logged in
+10:28:08  Cmd: PWD
+10:28:08  257: "/www" is the current directory
+10:28:08  Logged in to 84.38.79.50 as web1039.
+10:28:08  Cmd: FEAT
+10:28:08  211: Features:
+10:28:08        LANG fr-FR;zh-CN;zh-TW;bg-BG;ko-KR;en-US*;ja-JP
+10:28:08        MDTM
+10:28:08        MFMT
+10:28:08        TVFS
+10:28:08        UTF8
+10:28:08        MFF modify;UNIX.group;UNIX.mode;
+10:28:08        MLST modify*;perm*;size*;type*;unique*;UNIX.group*;UNIX.mode*;UNIX.owner*;
+10:28:08        SITE MKDIR
+10:28:08        SITE RMDIR
+10:28:08        SITE UTIME
+10:28:08        SITE SYMLINK
+10:28:08        REST STREAM
+10:28:08        SIZE
+10:28:08       End
+10:28:08  Cmd: HELP SITE
+10:28:08  214: HELP
+10:28:08       CHGRP
+10:28:08       CHMOD
+10:28:08  Logged in to ftp.david-peter.de.
+10:28:08  Cmd: CWD /www/html
+10:28:08  250: CWD command successful
+10:28:08  Current remote directory is /www/html.
+10:28:08  Cmd: CLNT NcFTP 3.2.5 linux-x86_64-glibc2.15
+10:28:08  500: CLNT not understood
+10:28:08  > l
+
+10:28:10  > ls
+
+10:28:10  Cmd: OPTS MLST type;size;modify;UNIX.mode;perm;UNIX.owner;UNIX.group;
+10:28:10  200: OPTS MLST type;size;modify;UNIX.mode;perm;UNIX.owner;UNIX.group;
+10:28:10  Cmd: PASV
+10:28:11  227: Entering Passive Mode (84,38,79,50,190,183).
+10:28:11  Cmd: MLSD
+10:28:11  150: Opening ASCII mode data connection for MLSD
+10:28:11  226: Transfer complete
+10:28:11  Remote listing contents {
+10:28:11      modify=20060404194144;perm=adfrw;size=8453;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; ebenen.png
+10:28:11      modify=20131107212221;perm=flcdmpe;type=cdir;UNIX.group=1332;UNIX.mode=0750;UNIX.owner=1048; .
+10:28:11      modify=20050615132138;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; mallorca
+10:28:11      modify=20050104173128;perm=adfrw;size=41496;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; esearch.deutsch.html
+10:28:11      modify=20050215234306;perm=adfrw;size=3774;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; output.png
+10:28:11      modify=20110801110003;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; locpost
+10:28:11      modify=20050502211724;perm=adfrw;size=23569;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; home.html
+10:28:11      modify=20050104173106;perm=adfrw;size=10854;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmieren.c++.html
+10:28:11      modify=20131107185459;perm=adfrw;size=123903;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; dispersion_relation.pdf
+10:28:11      modify=20050502212403;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; downloads
+10:28:11      modify=20050104173109;perm=adfrw;size=10949;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmieren.php.html
+10:28:11      modify=20080903172335;perm=adfrw;size=108;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; ip_log
+10:28:11      modify=20050402235906;perm=adfrw;size=114;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; ip.php
+10:28:11      modify=20050321155841;perm=adfrw;size=1970;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; schroedinger.png
+10:28:11      modify=20050502211727;perm=adfrw;size=12701;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; musik.html
+10:28:11      modify=20041027201951;perm=adfrw;size=13961;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmiersprachen.python.html
+10:28:11      modify=20110208202052;perm=adfrw;size=483167;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; poster.pdf
+10:28:11      modify=20060108125837;perm=adfrw;size=12671;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; Bericht.tex
+10:28:11      modify=20051207202419;perm=adfrw;size=67064;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; schaubild.png
+10:28:11      modify=20071203162923;perm=adfrw;size=4252;type=file;UNIX.group=1332;UNIX.mode=0664;UNIX.owner=1048; print.pdf
+10:28:11      modify=20071105142705;perm=adfrw;size=42932;type=file;UNIX.group=1332;UNIX.mode=0664;UNIX.owner=1048; planck.gif
+10:28:11      modify=20050104173216;perm=adfrw;size=10370;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; projekte.mmstat.html
+10:28:11      modify=20041027201950;perm=adfrw;size=10869;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmiersprachen.php.html
+10:28:11      modify=20130219210337;perm=flcdmpe;type=pdir;UNIX.group=1332;UNIX.mode=0775;UNIX.owner=1048; ..
+10:28:11      modify=20051026183708;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; images
+10:28:11      modify=20120111081406;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; schach
+10:28:11      modify=20071203200917;perm=adfrw;size=32745;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; plot.gif
+10:28:11      modify=20040117115927;perm=adfrw;size=63;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; README.webserver
+10:28:11      modify=20130601093923;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; paperlocator
+10:28:11      modify=20050502211726;perm=adfrw;size=13660;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmieren.bundeswettbewerb.html
+10:28:11      modify=20081031153228;perm=adfrw;size=69333;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; bookmarks.html
+10:28:11      modify=20051105143529;perm=adfrw;size=4450;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; plot.png
+10:28:11      modify=20100905160934;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; abi06
+10:28:11      modify=20040212134003;perm=adfrw;size=154;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; pager.php
+10:28:11      modify=20050104173132;perm=adfrw;size=39308;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; esearch.html
+10:28:11      modify=20070623155157;perm=adfrw;size=24803;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; monkey.s08
+10:28:11      modify=20070322160422;perm=adfrw;size=17455;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; Gomoku.jar
+10:28:11      modify=20071204185735;perm=adfrw;size=16614;type=file;UNIX.group=1332;UNIX.mode=0664;UNIX.owner=1048; jpeg-fourier.png
+10:28:11      modify=20121127151537;perm=adfrw;size=347810;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; Magnetic moment.pdf
+10:28:11      modify=20071105144303;perm=adfrw;size=58260;type=file;UNIX.group=1332;UNIX.mode=0664;UNIX.owner=1048; Plancksches-Strahlungsgesetz.mw
+10:28:11      modify=20041204121446;perm=adfrw;size=11935;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; projekte.html
+10:28:11      modify=20050112112914;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; nutshell
+10:28:11      modify=20060317125140;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0750;UNIX.owner=1048; wkleinert
+10:28:11      modify=20060628171545;perm=adfrw;size=54260;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; rw.png
+10:28:11      modify=20051026183751;perm=adfrw;size=98063;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; musik.konzerte.html
+10:28:11      modify=20051021123020;perm=adfrw;size=39658;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; aufgabe2.png
+10:28:11      modify=20070910145252;perm=adfrw;size=11059;type=file;UNIX.group=1332;UNIX.mode=0664;UNIX.owner=1048; abi06.sql
+10:28:11      modify=20041027201947;perm=adfrw;size=10774;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmiersprachen.c++.html
+10:28:11      modify=20110125114724;perm=adfrw;size=8493;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; crossover_3D_2D.png
+10:28:11      modify=20040510160815;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; sharks-web
+10:28:11      modify=20050104173221;perm=adfrw;size=10709;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; projekte.teamnolimit.html
+10:28:11      modify=20130206092826;perm=adfrw;size=542886;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; prl-preview.pdf
+10:28:11      modify=20050104173123;perm=adfrw;size=14299;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; about.html
+10:28:11      modify=20130910161341;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; schachverein
+10:28:11      modify=20130515145935;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; pl
+10:28:11      modify=20051207194347;perm=adfrw;size=69103;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; physik-aufg4.png
+10:28:11      modify=20130213181624;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0777;UNIX.owner=1048; tmp
+10:28:11      modify=20050104173024;perm=adfrw;size=1396;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; style.css
+10:28:11      modify=20050104173156;perm=adfrw;size=11815;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; linux.gentoo.html
+10:28:11      modify=20070118184510;perm=adfrw;size=13519;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; time.h
+10:28:11      modify=20041204121445;perm=adfrw;size=11462;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; projekte.blender.html
+10:28:11      modify=20060315142132;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; egt
+10:28:11      modify=20060113172842;perm=adfrw;size=9770;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; header.php
+10:28:11      modify=20040116175740;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; david-peter-old
+10:28:11      modify=20050104173112;perm=adfrw;size=22381;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmieren.ruby.html
+10:28:11      modify=20110111140631;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; wordpress
+10:28:11      modify=20101211112417;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0777;UNIX.owner=1048; apeter
+10:28:11      modify=20080528160201;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0775;UNIX.owner=1048; formeltausch
+10:28:11      modify=20120203201701;perm=adfrw;size=25734;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; Mockup.pdf
+10:28:11      modify=20050104001449;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; blog
+10:28:11      modify=20041027201948;perm=adfrw;size=12594;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmiersprachen.html
+10:28:11      modify=20051024134650;perm=adfrw;size=6755;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; save_index
+10:28:11      modify=20040613102607;perm=adfrw;size=36770;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; test.html
+10:28:11      modify=20050104173219;perm=adfrw;size=11604;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; projekte.rush.html
+10:28:11      modify=20080621165048;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; euro
+10:28:11      modify=20051208165630;perm=adfrw;size=50695;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; phklausur.jpg
+10:28:11      modify=20041227004021;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; cgi-bin
+10:28:11      modify=20060315132645;perm=adfrw;size=20;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; info.php
+10:28:11      modify=20100503133125;perm=adfrw;size=42;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; Joni.txt
+10:28:11      modify=20041115190818;perm=adfrw;size=1320;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; davidpeter.asc
+10:28:11      modify=20120109110651;perm=adfrw;size=13007;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; Eint_scaling.png
+10:28:11      modify=20060627122400;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; unbemerkt
+10:28:11      modify=20050518164607;perm=adfrw;size=52285;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; liste.html
+10:28:11      modify=20050104173107;perm=adfrw;size=13071;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmieren.html
+10:28:11      modify=20040120211657;perm=adfrw;size=3544;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; david-peter-trans.gif
+10:28:11      modify=20120507100538;perm=adfrw;size=200052;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; rar_tickets.jpg
+10:28:11      modify=20081130133453;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0775;UNIX.owner=1048; jpeter
+10:28:11      modify=20050713102842;perm=adfrw;size=731;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; taube2.gif
+10:28:11      modify=20050104173202;perm=adfrw;size=10562;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; linux.html
+10:28:11      modify=20060108193610;perm=adfrw;size=30189;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; block.gif
+10:28:11      modify=20081124170044;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; pk
+10:28:11      modify=20050104173136;perm=adfrw;size=11980;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; esearch.manpage.html
+10:28:11      modify=20050502211725;perm=adfrw;size=9775;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; home.infos.html
+10:28:11      modify=20041127141046;perm=adfrw;size=879;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; intern.php
+10:28:11      modify=20050618183419;perm=adfrw;size=21531;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; GoBang.tar.bz2
+10:28:11      modify=20060129132427;perm=adfrw;size=16288;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; lenz.zip
+10:28:11      modify=20041027201953;perm=adfrw;size=20243;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmiersprachen.ruby.html
+10:28:11      modify=20050104173152;perm=adfrw;size=11948;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; links.html
+10:28:11      modify=20041127135003;perm=adfrw;size=20;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; phpinfo.php
+10:28:11      modify=20050104173154;perm=adfrw;size=13528;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; linux.bash.html
+10:28:11      modify=20040615133039;perm=adfrw;size=15419;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; pi.html
+10:28:11      modify=20110113222119;perm=adfrw;size=440;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; mame.php
+10:28:11      modify=20100520173218;perm=adfrw;size=53;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; google8b5ce734cff79637.html
+10:28:11      modify=20070322144522;perm=adfrw;size=5103;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; katenoide.png
+10:28:11      modify=20120524120709;perm=adfrw;size=218883;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; RandomPointsOnSphere.pdf
+10:28:11      modify=20041127141048;perm=adfrw;size=585;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; vote.php
+10:28:11      modify=20050502211745;perm=adfrw;size=23569;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; index.html
+10:28:11      modify=20060311125526;perm=adfrw;size=27;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; start.bat
+10:28:11      modify=20050104173110;perm=adfrw;size=16482;type=file;UNIX.group=1332;UNIX.mode=0644;UNIX.owner=1048; programmieren.python.html
+10:28:11      modify=20100601172655;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; funny
+10:28:11      modify=20111005072847;perm=flcdmpe;type=dir;UNIX.group=1332;UNIX.mode=0755;UNIX.owner=1048; diplomarbeit
+10:28:11  }
+10:28:11  abi06/                                            ip.php                                            programmieren.c++.html
+10:28:11  abi06.sql                                         Joni.txt                                          programmieren.html
+10:28:11  about.html                                        jpeg-fourier.png                                  programmieren.php.html
+10:28:11  apeter/                                           jpeter/                                           programmieren.python.html
+10:28:11  aufgabe2.png                                      katenoide.png                                     programmieren.ruby.html
+10:28:11  Bericht.tex                                       lenz.zip                                          programmiersprachen.c++.html
+10:28:11  block.gif                                         links.html                                        programmiersprachen.html
+10:28:11  blog/                                             linux.bash.html                                   programmiersprachen.php.html
+10:28:11  bookmarks.html                                    linux.gentoo.html                                 programmiersprachen.python.html
+10:28:11  cgi-bin/                                          linux.html                                        programmiersprachen.ruby.html
+10:28:11  crossover_3D_2D.png                               liste.html                                        projekte.blender.html
+10:28:11  davidpeter.asc                                    locpost/                                          projekte.html
+10:28:11  david-peter-old/                                  Magnetic moment.pdf                               projekte.mmstat.html
+10:28:11  david-peter-trans.gif                             mallorca/                                         projekte.rush.html
+10:28:11  diplomarbeit/                                     mame.php                                          projekte.teamnolimit.html
+10:28:11  dispersion_relation.pdf                           Mockup.pdf                                        RandomPointsOnSphere.pdf
+10:28:11  downloads/                                        monkey.s08                                        rar_tickets.jpg
+10:28:11  ebenen.png                                        musik.html                                        README.webserver
+10:28:11  egt/                                              musik.konzerte.html                               rw.png
+10:28:11  Eint_scaling.png                                  nutshell/                                         save_index
+10:28:11  esearch.deutsch.html                              output.png                                        schach/
+10:28:11  esearch.html                                      pager.php                                         schachverein/
+10:28:11  esearch.manpage.html                              paperlocator/                                     schaubild.png
+10:28:11  euro/                                             phklausur.jpg                                     schroedinger.png
+10:28:11  formeltausch/                                     phpinfo.php                                       sharks-web/
+10:28:11  funny/                                            physik-aufg4.png                                  start.bat
+10:28:11  GoBang.tar.bz2                                    pi.html                                           style.css
+10:28:11  Gomoku.jar                                        pk/                                               taube2.gif
+10:28:11  google8b5ce734cff79637.html                       pl/                                               test.html
+10:28:11  header.php                                        planck.gif                                        time.h
+10:28:11  home.html                                         Plancksches-Strahlungsgesetz.mw                   tmp/
+10:28:11  home.infos.html                                   plot.gif                                          unbemerkt/
+10:28:11  images/                                           plot.png                                          vote.php
+10:28:11  index.html                                        poster.pdf                                        wkleinert/
+10:28:11  info.php                                          print.pdf                                         wordpress/
+10:28:11  intern.php                                        prl-preview.pdf
+10:28:11  ip_log                                            programmieren.bundeswettbewerb.html
+10:28:22  Cmd: QUIT
+10:28:23  221: Goodbye.
+SESSION ENDED at:    Sun Nov 10 10:28:23 2013

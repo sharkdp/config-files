@@ -1,0 +1,63 @@
+SESSION STARTED at:  2010-01-11 23:10:52 CET +0100
+Program Version:     NcFTP 3.2.2/414 Sep 04 2008, 07:19 PM compiled for linux-x86_64-glibc2.9
+Compiled for:        linux-x86_64-glibc2.9
+Process ID:          18371
+Hostname:              (rc=-2)
+Terminal:            xterm
+23:10:52  Fw: firewall.domain.com  Type: 0  User: shark  Pass: ********  Port: 21
+23:10:52  FwExceptions: .probe.net,localhost,foo.bar.com,localdomain
+23:10:52  NOTE:  Your domain name could not be detected.
+23:10:52  Resolving ftp.david-peter.de...
+23:10:52  Connecting to 84.38.79.50...
+23:10:52  LibNcFTP 3.2.3 (September 4, 2008) compiled for linux-x86_64-glibc2.9
+23:10:52  Uname: Linux|David-NB|2.6.31-18-generic|#55-Ubuntu SMP Fri Jan 8 14:54:52 UTC 2010|x86_64
+23:10:52  Contents of /etc/debian_version:
+23:10:52    squeeze/sid
+23:10:52  Contents of /etc/issue:
+23:10:52    Ubuntu 9.10 \n \l
+23:10:52  Glibc: 2.10.1 (stable)
+23:10:52  Remote server is running ProFTPD.
+23:10:52  Logging in...
+23:10:52  220: ProFTPD 1.3.1 Server (webserver50) [84.38.79.50]
+23:10:52  Connected to 84.38.79.50.
+23:10:52  Cmd: USER web1039f1
+23:10:52  331: Password required for web1039f1
+23:10:52  Cmd: PASS xxxxxxxx
+23:10:52  Logging in...
+23:10:52  230: User web1039f1 logged in
+23:10:52  Cmd: PWD
+23:10:52  257: "/" is the current directory
+23:10:52  Logged in to 84.38.79.50 as web1039f1.
+23:10:52  Cmd: FEAT
+23:10:52  211: Features:
+23:10:52        MDTM
+23:10:52        REST STREAM
+23:10:52        SIZE
+23:10:52       End
+23:10:52  Cmd: HELP SITE
+23:10:52  214: HELP
+23:10:52       CHGRP
+23:10:52       CHMOD
+23:10:52  Logged in to ftp.david-peter.de.
+23:10:52  Cmd: CLNT NcFTP 3.2.2 linux-x86_64-glibc2.9
+23:10:52  500: CLNT not understood
+23:10:54  > put anderson.
+
+23:10:54  Cannot open local file anderson. for reading: No such file or directory.
+23:10:55  > put anderson.pdf 
+
+23:10:55  Cmd: TYPE I
+23:10:55  200: Type set to I
+23:10:55  Cmd: MLST anderson.pdf
+23:10:55  500: MLST not understood
+23:10:55  Cmd: SIZE anderson.pdf
+23:10:55  550: anderson.pdf: No such file or directory
+23:10:55  Cmd: PASV
+23:10:55  227: Entering Passive Mode (84,38,79,50,159,98).
+23:10:55  Cmd: STOR anderson.pdf
+23:10:55  150: Opening BINARY mode data connection for anderson.pdf
+23:11:42  226: Transfer complete
+23:11:42  Cmd: SITE UTIME anderson.pdf 20100111212810 20100111212809 20100111212809 UTC
+23:11:42  500: 'SITE UTIME' not understood
+23:11:42  Cmd: MDTM 20100111212809 anderson.pdf
+23:11:42  550: 20100111212809 anderson.pdf: No such file or directory

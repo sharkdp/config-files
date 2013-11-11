@@ -1,0 +1,98 @@
+ls
+ps
+ls
+rm -r *
+put -r *
+touch failed_queries
+put pl.css 
+put pl.min.js 
+put *
+put -r *
+cd ..
+mv 
+mv pl paperlocator
+mkdir pl
+cd pl
+edit index.html
+Ãlcd ..
+lcd ..
+ls
+lls
+lcd ~
+put google8b5ce734cff79637.html 
+cd ..
+cd paperlocator/
+put google8b5ce734cff79637.html 
+rm google8b5ce734cff79637.html 
+cd ..
+cd pl
+rm google8b5ce734cff79637.html 
+ls
+put index.html 
+put graphics/*
+ls
+rm *.png
+rm -r *
+put -r *
+put index.html 
+put pl.css 
+ls
+cd firefox/pl/
+lcd firefox/pl/
+put *
+edit pl.css 
+put *
+put -r *
+cd firefox/
+ls
+ls -l
+put -r *
+put index.html 
+put pl.min.js 
+put pl.js 
+edit index.html 
+put pl.min.js 
+cd jpeter/ktreffen/
+put index2.php 
+put pl.js pl.min.js 
+cd firefox/pl/
+lcd firefox/pl/
+put pl.min.js 
+put pl.js 
+cd firefox/pl/
+lcd firefox/pl/
+put pl.min.js 
+lcd /home/shark/Downloads/
+l
+put google8b5ce734cff79637.html 
+put sitemap.xml
+put index.html 
+put pl.js  pl.min.js 
+put index.html 
+put -r *
+put ChangeLog 
+put -r *
+get index.html
+get pl.png redirect.php 
+lcd graphics/
+cd graphics/
+get arrow.*
+cd ..
+rm favicon.ico 
+put pl.min.js 
+put pl.js 
+l
+ls
+cd seiten/
+ls
+cd ..
+ls
+cd werke/
+ls
+lcd /home/shark/Downloads/
+put 1001.jpg 
+cd ..
+ls
+put dispersion_relation.pdf 
+l
+ls

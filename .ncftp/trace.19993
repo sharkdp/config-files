@@ -1,0 +1,27 @@
+SESSION STARTED at:  2012-01-08 13:27:33 CET +0100
+Program Version:     NcFTP 3.2.5/474 Feb 02 2011, 05:13 PM compiled for linux-x86_64-glibc2.13
+Compiled for:        linux-x86_64-glibc2.13
+Process ID:          19993
+Hostname:            david-nb.Speedport_W_921V_1_08_000  (rc=9)
+Terminal:            xterm
+13:27:33  Fw: firewall.domain.com  Type: 0  User: shark  Pass: ********  Port: 21
+13:27:33  FwExceptions: .probe.net,localhost,foo.bar.com,localdomain
+13:27:33  Resolving ftps.svw.info...
+13:27:33  Connecting to 85.214.157.148...
+13:27:33  LibNcFTP 3.2.5 (January 17, 2011) compiled for linux-x86_64-glibc2.13
+13:27:33  Uname: Linux|david-nb|3.0.0-15-generic|#25-Ubuntu SMP Mon Jan 2 17:44:42 UTC 2012|x86_64
+13:27:33  Contents of /etc/debian_version:
+13:27:33    wheezy/sid
+13:27:33  Contents of /etc/issue:
+13:27:33    Ubuntu 11.10 \n \l
+13:27:33  Glibc: 2.13 (stable)
+13:27:33  Remote server is running ProFTPD.
+13:27:33  Logging in...
+13:27:33  220: ProFTPD 1.3.1 Server (ProFTPD Default Installation) [::ffff:85.214.157.148]
+13:27:33  Connected to 85.214.157.148.
+13:27:33  Cmd: USER C0638
+13:27:33  550: SSL/TLS required on the control channel
+13:27:33  Cmd: QUIT
+13:27:34  221: Goodbye.
+13:27:34  Sleeping 20 seconds.
+13:27:34  Sleeping 20 seconds...

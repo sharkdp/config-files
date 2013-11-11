@@ -1,0 +1,16 @@
+[user]
+	name = sharkdp
+	email = davidpeter@web.de
+[credential]
+	helper = cache --timeout=86400
+[merge]
+	tool = diffuse
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[push]
+	default = simple
+[color]
+	ui = true

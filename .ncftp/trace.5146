@@ -1,0 +1,62 @@
+SESSION STARTED at:  2011-01-25 12:47:18 CET +0100
+Program Version:     NcFTP 3.2.4/465 Apr 07 2010, 06:24 PM compiled for linux-x86_64-glibc2.11
+Compiled for:        linux-x86_64-glibc2.11
+Process ID:          5146
+Hostname:            localhost6.localdomain6  (rc=4)
+Terminal:            xterm
+12:47:18  Fw: firewall.domain.com  Type: 0  User: shark  Pass: ********  Port: 21
+12:47:18  FwExceptions: .probe.net,localhost,foo.bar.com,localdomain
+12:47:18  Resolving ftp.david-peter.de...
+12:47:18  Connecting to 84.38.79.50...
+12:47:18  LibNcFTP 3.2.4 (April 3, 2010) compiled for linux-x86_64-glibc2.11
+12:47:18  Uname: Linux|David-NB|2.6.35-24-generic|#42-Ubuntu SMP Thu Dec 2 02:41:37 UTC 2010|x86_64
+12:47:18  Contents of /etc/debian_version:
+12:47:18    squeeze/sid
+12:47:18  Contents of /etc/issue:
+12:47:18    Ubuntu 10.10 \n \l
+12:47:18  Glibc: 2.12.1 (stable)
+12:47:18  Remote server is running ProFTPD.
+12:47:18  Logging in...
+12:47:18  220: ProFTPD 1.3.1 Server (webserver50) [84.38.79.50]
+12:47:18  Connected to 84.38.79.50.
+12:47:18  Cmd: USER web1039
+12:47:18  331: Password required for web1039
+12:47:18  Cmd: PASS xxxxxxxx
+12:47:18  Logging in...
+12:47:18  230: User web1039 logged in
+12:47:18  Cmd: PWD
+12:47:18  257: "/" is the current directory
+12:47:18  Logged in to 84.38.79.50 as web1039.
+12:47:18  Cmd: FEAT
+12:47:19  211: Features:
+12:47:19        MDTM
+12:47:19        REST STREAM
+12:47:19        SIZE
+12:47:19       End
+12:47:19  Cmd: HELP SITE
+12:47:19  214: HELP
+12:47:19       CHGRP
+12:47:19       CHMOD
+12:47:19  Logged in to ftp.david-peter.de.
+12:47:19  Cmd: CWD html
+12:47:19  250: CWD command successful
+12:47:19  Current remote directory is /html.
+12:47:19  Cmd: CLNT NcFTP 3.2.4 linux-x86_64-glibc2.11
+12:47:19  500: CLNT not understood
+12:47:23  > put crossover_3D_2D.png 
+
+12:47:23  Cmd: TYPE I
+12:47:23  200: Type set to I
+12:47:23  Cmd: MLST crossover_3D_2D.png
+12:47:23  500: MLST not understood
+12:47:23  Cmd: SIZE crossover_3D_2D.png
+12:47:23  550: crossover_3D_2D.png: No such file or directory
+12:47:23  Cmd: PASV
+12:47:23  227: Entering Passive Mode (84,38,79,50,209,82).
+12:47:23  Cmd: STOR crossover_3D_2D.png
+12:47:23  150: Opening BINARY mode data connection for crossover_3D_2D.png
+12:47:23  226: Transfer complete
+12:47:23  Cmd: SITE UTIME crossover_3D_2D.png 20110125114534 20110125114507 20110125114507 UTC
+12:47:23  500: 'SITE UTIME' not understood
+12:47:23  Cmd: MDTM 20110125114507 crossover_3D_2D.png
+12:47:23  550: 20110125114507 crossover_3D_2D.png: No such file or directory

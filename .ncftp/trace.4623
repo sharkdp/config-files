@@ -1,0 +1,262 @@
+SESSION STARTED at:  2010-12-11 11:19:53 CET +0100
+Program Version:     NcFTP 3.2.4/465 Apr 07 2010, 06:24 PM compiled for linux-x86_64-glibc2.11
+Compiled for:        linux-x86_64-glibc2.11
+Process ID:          4623
+Hostname:            localhost6.localdomain6  (rc=4)
+Terminal:            xterm
+11:19:53  Fw: firewall.domain.com  Type: 0  User: shark  Pass: ********  Port: 21
+11:19:53  FwExceptions: .probe.net,localhost,foo.bar.com,localdomain
+11:19:53  Resolving ftp.david-peter.de...
+11:19:53  Connecting to 84.38.79.50...
+11:19:53  LibNcFTP 3.2.4 (April 3, 2010) compiled for linux-x86_64-glibc2.11
+11:19:53  Uname: Linux|David-NB|2.6.35-23-generic|#41-Ubuntu SMP Wed Nov 24 11:55:36 UTC 2010|x86_64
+11:19:53  Contents of /etc/debian_version:
+11:19:53    squeeze/sid
+11:19:53  Contents of /etc/issue:
+11:19:53    Ubuntu 10.10 \n \l
+11:19:53  Glibc: 2.12.1 (stable)
+11:19:53  Remote server is running ProFTPD.
+11:19:53  Logging in...
+11:19:53  220: ProFTPD 1.3.1 Server (webserver50) [84.38.79.50]
+11:19:53  Connected to 84.38.79.50.
+11:19:53  Cmd: USER web1039
+11:19:53  331: Password required for web1039
+11:19:53  Cmd: PASS xxxxxxxx
+11:19:53  Logging in...
+11:19:53  230: User web1039 logged in
+11:19:53  Cmd: PWD
+11:19:53  257: "/" is the current directory
+11:19:53  Logged in to 84.38.79.50 as web1039.
+11:19:53  Cmd: FEAT
+11:19:53  211: Features:
+11:19:53        MDTM
+11:19:53        REST STREAM
+11:19:53        SIZE
+11:19:53       End
+11:19:53  Cmd: HELP SITE
+11:19:54  214: HELP
+11:19:54       CHGRP
+11:19:54       CHMOD
+11:19:54  Logged in to ftp.david-peter.de.
+11:19:54  Cmd: CWD html
+11:19:54  250: CWD command successful
+11:19:54  Current remote directory is /html.
+11:19:54  Cmd: CLNT NcFTP 3.2.4 linux-x86_64-glibc2.11
+11:19:54  500: CLNT not understood
+11:19:55  > cd apeter
+
+11:19:55  Cmd: CWD apeter
+11:19:55  250: CWD command successful
+11:19:56  > ls
+
+11:19:56  Cmd: PASV
+11:19:56  227: Entering Passive Mode (84,38,79,50,156,62).
+11:19:56  Cmd: LIST
+11:19:56  150: Opening ASCII mode data connection for file list
+11:19:56  226: Transfer complete
+11:19:56  Remote listing contents {
+11:19:56      drwxrwxrwx   5 web1039  web1039      4096 Dec 10 16:18 .
+11:19:56      drwxr-x---  25 web1039  web1039      4096 Sep 19 18:19 ..
+11:19:56      -rw-r--r--   1 web1039f2 web1039      1478 Sep 21  2008 alt-index.html
+11:19:56      -rw-r--r--   1 web1039f2 web1039      1493 Sep 21  2008 andreapeter.gif
+11:19:56      -rw-r--r--   1 web1039f2 web1039      2515 Sep 21  2008 bg.png
+11:19:56      -rw-r--r--   1 web1039  web1039      6231 Dec 10 16:19 config.php
+11:19:56      -rw-r--r--   1 web1039f2 web1039       495 Sep 21  2008 erstelle-vorschaubilder.sh
+11:19:56      -rw-r--r--   1 web1039f2 web1039       514 Sep 21  2008 farbverlauf-hor.png
+11:19:56      -rw-r--r--   1 web1039f2 web1039       394 Sep 21  2008 farbverlauf-ver-bw.png
+11:19:56      -rw-r--r--   1 web1039f2 web1039      2907 Sep 21  2008 farbverlauf-ver.png
+11:19:56      -rw-r--r--   1 web1039f2 web1039    266956 Sep 28  2008 hintergrund.png
+11:19:56      -rw-r--r--   1 web1039  web1039      2550 Dec 10 16:19 index.php
+11:19:56      -rw-r--r--   1 web1039f2 web1039      3394 Sep 21  2008 keinbild.png
+11:19:56      -rw-r--r--   1 web1039f2 web1039    296925 Sep 21  2008 pinie.jpg
+11:19:56      -rw-r--r--   1 web1039f2 web1039     41669 Sep 21  2008 portraitandreagrau.jpg
+11:19:56      drwxrwxrwx   2 web1039f2 web1039      4096 Dec 10 16:06 seiten
+11:19:56      -rw-r--r--   1 web1039  web1039      2573 Dec 10 16:04 style.css
+11:19:56      -rw-r--r--   1 web1039f2 web1039      1792 Sep 28  2008 vita.php
+11:19:56      drwxrwxrwx   2 web1039f2 web1039      4096 Dec 11 11:08 vorschau
+11:19:56      -rw-r--r--   1 web1039f2 web1039       964 Sep 21  2008 vorschaubild.php
+11:19:56      drwxrwxrwx   2 web1039f2 web1039      4096 Dec 11 11:08 werke
+11:19:56      -rw-r--r--   1 web1039f2 web1039       985 Sep 21  2008 zeigebild.php
+11:19:56  }
+11:19:56  alt-index.html                         keinbild.png
+11:19:56  andreapeter.gif                        pinie.jpg
+11:19:56  bg.png                                 portraitandreagrau.jpg
+11:19:56  config.php                             seiten/
+11:19:56  erstelle-vorschaubilder.sh             style.css
+11:19:56  farbverlauf-hor.png                    vita.php
+11:19:56  farbverlauf-ver-bw.png                 vorschau/
+11:19:56  farbverlauf-ver.png                    vorschaubild.php
+11:19:56  hintergrund.png                        werke/
+11:19:56  index.php                              zeigebild.php
+11:19:59  > edit index.php 
+
+11:19:59  Cmd: MLST index.php
+11:19:59  500: MLST not understood
+11:19:59  Cmd: PWD
+11:19:59  257: "/html/apeter" is the current directory
+11:19:59  Cmd: CWD index.php
+11:19:59  550: index.php: No such file or directory
+11:19:59  Cmd: MDTM index.php
+11:19:59  213: 20101210151934
+11:19:59  Please wait while index.php is downloaded for editing.
+11:19:59  Cmd: TYPE I
+11:19:59  200: Type set to I
+11:19:59  Cmd: SIZE index.php
+11:19:59  213: 2550
+11:19:59  Cmd: MDTM index.php
+11:19:59  213: 20101210151934
+11:19:59  Cmd: PASV
+11:19:59  227: Entering Passive Mode (84,38,79,50,189,187).
+11:19:59  Cmd: RETR index.php
+11:19:59  150: Opening BINARY mode data connection for index.php (2550 bytes)
+11:19:59  226: Transfer complete
+11:20:35  exec /usr/bin/vim '/tmp/ncftp_editcmd.6FzHDX' (es=0)
+11:20:35  No changes made to "index.php".
+11:20:40  Cmd: TYPE A
+11:20:40  200: Type set to A
+11:20:40  Cmd: PASV
+11:20:40  227: Entering Passive Mode (84,38,79,50,139,69).
+11:20:40  Cmd: LIST /html/apeter
+11:20:40  150: Opening ASCII mode data connection for file list
+11:20:40  226: Transfer complete
+11:20:40  Remote listing contents {
+11:20:40      drwxrwxrwx   5 web1039  web1039      4096 Dec 10 16:18 .
+11:20:40      drwxr-x---  25 web1039  web1039      4096 Sep 19 18:19 ..
+11:20:40      -rw-r--r--   1 web1039f2 web1039      1478 Sep 21  2008 alt-index.html
+11:20:40      -rw-r--r--   1 web1039f2 web1039      1493 Sep 21  2008 andreapeter.gif
+11:20:40      -rw-r--r--   1 web1039f2 web1039      2515 Sep 21  2008 bg.png
+11:20:40      -rw-r--r--   1 web1039  web1039      6231 Dec 10 16:19 config.php
+11:20:40      -rw-r--r--   1 web1039f2 web1039       495 Sep 21  2008 erstelle-vorschaubilder.sh
+11:20:40      -rw-r--r--   1 web1039f2 web1039       514 Sep 21  2008 farbverlauf-hor.png
+11:20:40      -rw-r--r--   1 web1039f2 web1039       394 Sep 21  2008 farbverlauf-ver-bw.png
+11:20:40      -rw-r--r--   1 web1039f2 web1039      2907 Sep 21  2008 farbverlauf-ver.png
+11:20:40      -rw-r--r--   1 web1039f2 web1039    266956 Sep 28  2008 hintergrund.png
+11:20:40      -rw-r--r--   1 web1039  web1039      2550 Dec 10 16:19 index.php
+11:20:40      -rw-r--r--   1 web1039f2 web1039      3394 Sep 21  2008 keinbild.png
+11:20:40      -rw-r--r--   1 web1039f2 web1039    296925 Sep 21  2008 pinie.jpg
+11:20:40      -rw-r--r--   1 web1039f2 web1039     41669 Sep 21  2008 portraitandreagrau.jpg
+11:20:40      drwxrwxrwx   2 web1039f2 web1039      4096 Dec 10 16:06 seiten
+11:20:40      -rw-r--r--   1 web1039  web1039      2573 Dec 10 16:04 style.css
+11:20:40      -rw-r--r--   1 web1039f2 web1039      1792 Sep 28  2008 vita.php
+11:20:40      drwxrwxrwx   2 web1039f2 web1039      4096 Dec 11 11:08 vorschau
+11:20:40      -rw-r--r--   1 web1039f2 web1039       964 Sep 21  2008 vorschaubild.php
+11:20:40      drwxrwxrwx   2 web1039f2 web1039      4096 Dec 11 11:08 werke
+11:20:40      -rw-r--r--   1 web1039f2 web1039       985 Sep 21  2008 zeigebild.php
+11:20:40  }
+11:20:43  > cd seiten 
+
+11:20:43  Cmd: CWD seiten
+11:20:43  250: CWD command successful
+11:20:45  Cmd: PASV
+11:20:45  227: Entering Passive Mode (84,38,79,50,149,237).
+11:20:45  Cmd: LIST /html/apeter/seiten
+11:20:45  150: Opening ASCII mode data connection for file list
+11:20:45  226: Transfer complete
+11:20:45  Remote listing contents {
+11:20:45      drwxrwxrwx   2 web1039f2 web1039      4096 Dec 10 16:06 .
+11:20:45      drwxrwxrwx   5 web1039  web1039      4096 Dec 10 16:18 ..
+11:20:45      -rw-r--r--   1 web1039f2 web1039         0 Sep 28  2008 ausstellungen.php
+11:20:45      -rw-r--r--   1 web1039f2 web1039      1600 Sep 28  2008 bearbeite.php
+11:20:45      -rw-r--r--   1 web1039f2 web1039      2667 Sep 28  2008 galerie.php
+11:20:45      -rw-r--r--   1 web1039f2 web1039         0 Sep 28  2008 home.php
+11:20:45      -rw-r--r--   1 web1039f2 web1039      1908 Nov 23  2008 kontakt.php
+11:20:45      -rw-r--r--   1 web1039f2 web1039       508 Sep 28  2008 loesche.php
+11:20:45      -rw-r--r--   1 web1039f2 web1039       895 Sep 28  2008 login.php
+11:20:45      -rw-r--r--   1 web1039f2 web1039      2841 Sep 28  2008 neueswerk.php
+11:20:45      -rw-r--r--   1 web1039  web1039      2468 Dec 10 16:06 vita.php
+11:20:45      -rw-r--r--   1 web1039f2 web1039      1516 Sep 28  2008 werke.php
+11:20:45      -rw-r--r--   1 web1039f2 web1039      1490 Sep 28  2008 zuordnung.php
+11:20:45  }
+11:20:45  > edit vita.php 
+
+11:20:45  Cmd: PWD
+11:20:45  257: "/html/apeter/seiten" is the current directory
+11:20:45  Cmd: CWD vita.php
+11:20:45  550: vita.php: No such file or directory
+11:20:45  Cmd: MDTM vita.php
+11:20:45  213: 20101210150622
+11:20:45  Please wait while vita.php is downloaded for editing.
+11:20:45  Cmd: TYPE I
+11:20:45  200: Type set to I
+11:20:45  Cmd: SIZE vita.php
+11:20:45  213: 2468
+11:20:45  Cmd: MDTM vita.php
+11:20:45  213: 20101210150622
+11:20:45  Cmd: PASV
+11:20:45  227: Entering Passive Mode (84,38,79,50,181,75).
+11:20:45  Cmd: RETR vita.php
+11:20:45  150: Opening BINARY mode data connection for vita.php (2468 bytes)
+11:20:45  226: Transfer complete
+11:21:45  exec /usr/bin/vim '/tmp/ncftp_editcmd.6AJmsc' (es=0)
+11:21:47  Put edited file "vita.php" ? (yes/no) yes
+11:21:47  Cmd: SIZE vita.php
+11:21:47  213: 2468
+11:21:47  Cmd: MDTM vita.php
+11:21:47  213: 20101210150622
+11:21:47  Cmd: PASV
+11:21:47  227: Entering Passive Mode (84,38,79,50,142,68).
+11:21:47  Cmd: STOR vita.php
+11:21:47  150: Opening BINARY mode data connection for vita.php
+11:21:47  226: Transfer complete
+11:21:47  Cmd: SITE UTIME vita.php 20101211102147 20101211102145 20101211102145 UTC
+11:21:47  500: 'SITE UTIME' not understood
+11:21:47  Cmd: MDTM 20101211102145 vita.php
+11:21:47  550: 20101211102145 vita.php: No such file or directory
+11:22:01  > edit vita.php 
+
+11:22:01  Cmd: PWD
+11:22:01  257: "/html/apeter/seiten" is the current directory
+11:22:01  Cmd: CWD vita.php
+11:22:01  550: vita.php: No such file or directory
+11:22:01  Cmd: MDTM vita.php
+11:22:01  213: 20101211102148
+11:22:01  Please wait while vita.php is downloaded for editing.
+11:22:01  Cmd: SIZE vita.php
+11:22:01  213: 2438
+11:22:01  Cmd: MDTM vita.php
+11:22:01  213: 20101211102148
+11:22:01  Cmd: PASV
+11:22:01  227: Entering Passive Mode (84,38,79,50,152,6).
+11:22:01  Cmd: RETR vita.php
+11:22:01  150: Opening BINARY mode data connection for vita.php (2438 bytes)
+11:22:01  226: Transfer complete
+11:22:44  exec /usr/bin/vim '/tmp/ncftp_editcmd.3SJzUQ' (es=0)
+11:22:45  Put edited file "vita.php" ? (yes/no) yes
+11:22:45  Cmd: SIZE vita.php
+11:22:45  213: 2438
+11:22:45  Cmd: MDTM vita.php
+11:22:45  213: 20101211102148
+11:22:45  Cmd: PASV
+11:22:45  227: Entering Passive Mode (84,38,79,50,158,18).
+11:22:45  Cmd: STOR vita.php
+11:22:45  150: Opening BINARY mode data connection for vita.php
+11:22:45  226: Transfer complete
+11:23:11  > edit vita.php 
+
+11:23:11  Cmd: PWD
+11:23:11  257: "/html/apeter/seiten" is the current directory
+11:23:11  Cmd: CWD vita.php
+11:23:11  550: vita.php: No such file or directory
+11:23:11  Cmd: MDTM vita.php
+11:23:11  213: 20101211102246
+11:23:11  Please wait while vita.php is downloaded for editing.
+11:23:11  Cmd: SIZE vita.php
+11:23:11  213: 2474
+11:23:11  Cmd: MDTM vita.php
+11:23:11  213: 20101211102246
+11:23:11  Cmd: PASV
+11:23:11  227: Entering Passive Mode (84,38,79,50,198,41).
+11:23:11  Cmd: RETR vita.php
+11:23:11  150: Opening BINARY mode data connection for vita.php (2474 bytes)
+11:23:11  226: Transfer complete
+11:23:26  exec /usr/bin/vim '/tmp/ncftp_editcmd.neXAsL' (es=0)
+11:23:28  Put edited file "vita.php" ? (yes/no) yes
+11:23:28  Cmd: SIZE vita.php
+11:23:28  213: 2474
+11:23:28  Cmd: MDTM vita.php
+11:23:28  213: 20101211102246
+11:23:28  Cmd: PASV
+11:23:28  227: Entering Passive Mode (84,38,79,50,222,136).
+11:23:28  Cmd: STOR vita.php
+11:23:28  150: Opening BINARY mode data connection for vita.php
+11:23:28  226: Transfer complete

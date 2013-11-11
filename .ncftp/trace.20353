@@ -1,0 +1,91 @@
+SESSION STARTED at:  2013-02-13 19:16:07 CET +0100
+Program Version:     NcFTP 3.2.5/474 Feb 02 2011, 05:13 PM compiled for linux-x86_64-glibc2.15
+Compiled for:        linux-x86_64-glibc2.15
+Process ID:          20353
+Hostname:            david-nb.theo3.physik.uni-stuttgart.de  (rc=10)
+Terminal:            xterm
+19:16:07  Fw: firewall.domain.com  Type: 0  User: shark  Pass: ********  Port: 21
+19:16:07  FwExceptions: .probe.net,localhost,foo.bar.com,localdomain
+19:16:07  Resolving ftp.david-peter.de...
+19:16:07  Connecting to 84.38.79.50...
+19:16:07  LibNcFTP 3.2.5 (January 17, 2011) compiled for linux-x86_64-glibc2.15
+19:16:07  Uname: Linux|david-nb|3.5.0-24-generic|#37-Ubuntu SMP Thu Feb 7 01:50:30 UTC 2013|x86_64
+19:16:07  Contents of /etc/debian_version:
+19:16:07    wheezy/sid
+19:16:07  Contents of /etc/issue:
+19:16:07    Ubuntu 12.10 \n \l
+19:16:07  Glibc: 2.15 (stable)
+19:16:08  Remote server is running ProFTPD.
+19:16:08  Logging in...
+19:16:08  220: ProFTPD 1.3.3a Server (webserver51) [::ffff:84.38.79.50]
+19:16:08  Connected to 84.38.79.50.
+19:16:08  Cmd: USER web1039
+19:16:08  331: Password required for web1039
+19:16:08  Cmd: PASS xxxxxxxx
+19:16:08  Logging in...
+19:16:08  230: User web1039 logged in
+19:16:08  Cmd: PWD
+19:16:08  257: "/www" is the current directory
+19:16:08  Logged in to 84.38.79.50 as web1039.
+19:16:08  Cmd: FEAT
+19:16:08  211: Features:
+19:16:08        MDTM
+19:16:08        MFMT
+19:16:08        TVFS
+19:16:08        UTF8
+19:16:08        MFF modify;UNIX.group;UNIX.mode;
+19:16:08        MLST modify*;perm*;size*;type*;unique*;UNIX.group*;UNIX.mode*;UNIX.owner*;
+19:16:08        SITE MKDIR
+19:16:08        SITE RMDIR
+19:16:08        SITE UTIME
+19:16:08        SITE SYMLINK
+19:16:08        REST STREAM
+19:16:08        LANG de-DE.UTF-8*
+19:16:08        SIZE
+19:16:08       End
+19:16:08  Cmd: HELP SITE
+19:16:08  214: HELP
+19:16:08       CHGRP
+19:16:08       CHMOD
+19:16:08  Logged in to ftp.david-peter.de.
+19:16:08  Cmd: CWD www/html
+19:16:08  550: www/html: Datei oder Verzeichnis nicht gefunden
+19:16:08  Cmd: CWD www
+19:16:08  550: www: Datei oder Verzeichnis nicht gefunden
+19:16:08  Could not chdir to previous directory www/html: server said: www: Datei oder Verzeichnis nicht gefunden
+19:16:08  Current remote directory is /www.
+19:16:08  Cmd: CLNT NcFTP 3.2.5 linux-x86_64-glibc2.15
+19:16:08  500: CLNT not understood
+19:16:09  > cd html
+
+19:16:09  Cmd: CWD html
+19:16:09  250: CWD command successful
+19:16:10  > cd tmp
+
+19:16:10  Cmd: CWD tmp
+19:16:10  250: CWD command successful
+19:16:14  > put ricochet.pdf
+
+19:16:14  Cannot open local file ricochet.pdf for reading: Datei oder Verzeichnis nicht gefunden.
+19:16:14  put ricochet.pdf: could not open file.
+19:16:19  > lcd export/
+
+19:16:23  > put ricochet.pdf 
+
+19:16:23  Cmd: TYPE I
+19:16:23  200: Type set to I
+19:16:23  Cmd: OPTS MLST type;size;modify;UNIX.mode;perm;UNIX.owner;UNIX.group;
+19:16:23  200: OPTS MLST type;size;modify;UNIX.mode;perm;UNIX.owner;UNIX.group;
+19:16:23  Cmd: MLST ricochet.pdf
+19:16:23  550: 'ricochet.pdf' cannot be listed
+19:16:23  Cmd: SIZE ricochet.pdf
+19:16:23  550: ricochet.pdf: Datei oder Verzeichnis nicht gefunden
+19:16:23  Cmd: PASV
+19:16:23  227: Entering Passive Mode (84,38,79,50,204,34).
+19:16:23  Cmd: STOR ricochet.pdf
+19:16:23  150: Opening BINARY mode data connection for ricochet.pdf
+19:16:23  226: Transfer complete
+19:16:23  Cmd: MFF Modify=20130210155959;Create=20130210160103 ricochet.pdf
+19:16:23  213: Modify=20130210155959;Create=20130210160103 ricochet.pdf
+19:20:36  > l
+

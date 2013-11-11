@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/media/sda/Daten/Informatik/haskell/zehntausend-theorie/loeser'
+let g:netrw_dirhist_2='/media/sda/Daten/Informatik/haskell/zehntausend-theorie'
+let g:netrw_dirhist_3='/media/sda/Daten/Informatik/haskell/zehntausend-theorie/loeser'
+let g:netrw_dirhist_4='/home/shark/.xmonad'
+let g:netrw_dirhist_5='/media/sda/Daten/Informatik/python/roborall-AI/__pycache__'

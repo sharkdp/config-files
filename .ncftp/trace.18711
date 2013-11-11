@@ -1,0 +1,28 @@
+SESSION STARTED at:  2011-10-26 23:33:23 CEST +0200
+Program Version:     NcFTP 3.2.5/474 Feb 02 2011, 05:13 PM compiled for linux-x86_64-glibc2.13
+Compiled for:        linux-x86_64-glibc2.13
+Process ID:          18711
+Hostname:            david-nb.Speedport_W_921V_1_08_000  (rc=9)
+Terminal:            xterm
+23:33:23  Fw: firewall.Speedport_W_921V_1_08_000  Type: 0  User: shark  Pass: ********  Port: 21
+23:33:23  FwExceptions: .Speedport_W_921V_1_08_000,localhost,localdomain
+23:33:23  Resolving speedport.ip...
+23:33:23  Connecting to 192.168.2.1...
+23:33:23  LibNcFTP 3.2.5 (January 17, 2011) compiled for linux-x86_64-glibc2.13
+23:33:23  Uname: Linux|david-nb|3.0.0-13-generic|#21-Ubuntu SMP Mon Oct 17 20:18:51 UTC 2011|x86_64
+23:33:23  Contents of /etc/debian_version:
+23:33:23    wheezy/sid
+23:33:23  Contents of /etc/issue:
+23:33:23    Ubuntu 11.10 \n \l
+23:33:23  Glibc: 2.13 (stable)
+23:33:23  Logging in...
+23:33:23  220: Speedport W 921V FTP Server v1.08.000 ready
+23:33:23  Connected to 192.168.2.1.
+23:33:23  Cmd: USER usb
+23:33:25  331: User name OK, Enter PASS command
+23:33:25  Cmd: PASS xxxxxxxx
+23:33:25  550: Permission denied.
+23:33:25  Cmd: QUIT
+23:33:25  221: Goodbye!
+23:33:25  Sleeping 20 seconds.
+23:33:25  Sleeping 20 seconds...

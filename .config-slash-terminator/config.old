@@ -1,0 +1,21 @@
+[global_config]
+  enabled_plugins = TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  handle_size = 1
+[keybindings]
+  split_horiz = <Shift><Control>h
+  split_vert = <Shift><Control>j
+[profiles]
+  [[default]]
+    background_darkness = 0.84
+    scrollbar_position = hidden
+    background_type = transparent
+    show_titlebar = False
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
