@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/media/sda/Daten/Informatik/haskell/zehntausend-theorie/loeser'
 let g:netrw_dirhist_2='/media/sda/Daten/Informatik/haskell/zehntausend-theorie'
 let g:netrw_dirhist_3='/media/sda/Daten/Informatik/haskell/zehntausend-theorie/loeser'
 let g:netrw_dirhist_4='/home/shark/.xmonad'
 let g:netrw_dirhist_5='/media/sda/Daten/Informatik/python/roborall-AI/__pycache__'
+let g:netrw_dirhist_6='/home/shark/Dropbox/Einstellungen/config-files/.config-slash-terminator'
+let g:netrw_dirhist_7='/home/shark/Dropbox/Einstellungen/config-files/.config-slash-terminator~5ba0a6c6004555fa4d458bc43dff1364e2e1509f'
