@@ -1,66 +1,81 @@
-set ruler
+" vim instead of vi settings
 set nocompatible
+
+" spaces instead of tabs
 set expandtab
-set confirm
+set smarttab
+set shiftwidth=4
+set tabstop=4
+
+" Use C-style indentation
+set cindent
+
+" Do not show startup message
+set shortmess=aI
+
+" Dont write backup and swap files
 set nobackup
 set nowritebackup
 set noswapfile
 
-set clipboard=unnamed
+" Use the mouse to move the cursor
 set mouse=a
 
-" move blocks around
+" keep the selection when moving blocks in v-mode
 vnoremap < <gv
 vnoremap > >gv
 
-"jedi-vi
-
-
-set cindent
-set shortmess=aI
-
-set shiftwidth=4
-set tabstop=4
-
+" Search settings
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
-set smartindent
-set smarttab
-
+" using bash as standard shell
 set shell=bash
 
+" show current command, matching bracket and mode, line numbers
 set showcmd
 set showmatch
 set showmode
-
-set undolevels=1000
-set hidden
-
-set scrolloff=2
 set number
 
-set bs=indent,eol,start
+" Long undo history
+set undolevels=1000
 
+" hide buffers instead of closing
+set hidden
+
+" show a few lines below the current line
+set scrolloff=7
+
+" allow backspace to work over everything
+set backspace=indent,eol,start
+
+" Use backspace in command mode
+nnoremap <bs> X
+
+" do not wrap lines automatically
 set nowrap
-set digraph
 
-map + <C-W>+
-map - <C-W>-
-
+" Use Ctrl-q for quitting, Ctrl-s for saving
 map <C-Q> :q<CR>
-map <C-S> :w<CR>
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
 
+" remap :W, :Q etc if you press the shift key for too long
 cabbrev Q quit
 cabbrev W write
 cabbrev WQ wq
 cabbrev Wq wq
 
+" default encoding in UTF-8
 filetype plugin on
 set encoding=utf-8
+"set digraph 
 
+" Syntax highlighting and solarized colorscheme
 syntax enable
 set background=dark
 colorscheme solarized
@@ -69,18 +84,12 @@ let g:solarized_termcolors=256
 
 set listchars=tab:▸\ ,eol:¬
 
-call togglebg#map("<F5>")
-
+" Load plugins via pathogen
 execute pathogen#infect()
 
-" disable arrow keys
-" inoremap  <Up>     <NOP>
-" inoremap  <Down>   <NOP>
-" inoremap  <Left>   <NOP>
-" inoremap  <Right>  <NOP>
-" noremap   <Up>     <NOP>
-" noremap   <Down>   <NOP>
-" noremap   <Left>   <NOP>
-" noremap   <Right>  <NOP>
+" disable arrow keys :-)
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
 
-map <F5> :w<CR>:!make<CR><CR>

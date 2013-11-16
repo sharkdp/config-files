@@ -140,3 +140,7 @@ cleanLatexFolder() {
 
 
 alias git='LC_ALL=en_US git'
+
+# prevent Ctrl-S from freezing the terminal
+bind -r '\C-s'
+stty -ixon
