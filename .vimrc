@@ -40,8 +40,9 @@ set showmatch
 set showmode
 set number
 
-" Long undo history
+" Long undo and command history
 set undolevels=1000
+set history=200
 
 " hide buffers instead of closing
 set hidden
@@ -93,3 +94,15 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" Set leader key to ,
+let mapleader = ","
+
+" Clear search highlight with ,/
+nmap <silent> <Leader>/ :nohlsearch<CR>
+
+" Map 'jj' in insert mode to ESC (You'll never type jj anyway...)
+inoremap jj <Esc>
+
+" Autocompletion in command mode
+set wildmenu
+set wildmode=list:longest,full
