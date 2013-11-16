@@ -3,6 +3,18 @@ set nocompatible
 set expandtab
 set confirm
 set nobackup
+set nowritebackup
+set noswapfile
+
+set clipboard=unnamed
+set mouse=a
+
+" move blocks around
+vnoremap < <gv
+vnoremap > >gv
+
+"jedi-vi
+
 
 set cindent
 set shortmess=aI

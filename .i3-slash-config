@@ -173,6 +173,6 @@ bar {
 
 exec --no-startup-id /usr/bin/nm-applet
 exec ~/.dropbox-dist/dropboxd
-exec nitrogen --restore
 exec gnome-settings-daemon
+exec_always nitrogen --restore
 exec_always xmodmap ~/.xmodmap

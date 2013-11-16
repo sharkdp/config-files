@@ -1,0 +1,9 @@
+
+
+:def hoogle \x -> return $ ":!/home/shark/.cabal/bin/hoogle \"" ++ x ++ "\""
+:def pf \s -> return $ ":! pointfree \"" ++ s ++ "\""
+
+-- You must set your prompt to a lambda, it's a law.
+:set prompt "λ: "
+
+
