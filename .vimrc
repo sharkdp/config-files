@@ -19,7 +19,7 @@ set nowritebackup
 set noswapfile
 
 " Use the mouse to move the cursor
-set mouse=a
+"set mouse=a
 
 " keep the selection when moving blocks in v-mode
 vnoremap < <gv
@@ -53,7 +53,7 @@ set scrolloff=7
 " allow backspace to work over everything
 set backspace=indent,eol,start
 
-" Use backspace in command mode
+" Use backspace in normal mode
 nnoremap <bs> X
 
 " do not wrap lines automatically
@@ -99,9 +99,6 @@ let mapleader = ","
 
 " Clear search highlight with ,/
 nmap <silent> <Leader>/ :nohlsearch<CR>
-
-" Map 'jj' in insert mode to ESC (You'll never type jj anyway...)
-inoremap jj <Esc>
 
 " Autocompletion in command mode
 set wildmenu
