@@ -36,6 +36,12 @@ for_window [class="Qalculate"] floating enable
 
 font pango:Ubuntu Sans  10
 
+# Media keys
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -176,3 +182,4 @@ exec ~/.dropbox-dist/dropboxd
 exec gnome-settings-daemon
 exec_always nitrogen --restore
 exec_always xmodmap ~/.xmodmap
+exec pa-applet
