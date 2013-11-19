@@ -13,7 +13,7 @@ export darkred='\x1b[31;06m'
 export teal='\x1b[36;06m'
 export red='\x1b[31;01m'
 
-export PATH="${PATH}:/usr/sbin/:/opt/maple10/bin/"
+export PATH="${PATH}:/usr/sbin/:/home/shark/.cabal/bin"
 export EDITOR="/usr/bin/vim"
 
 include="/etc/profile.d/bash-completion"

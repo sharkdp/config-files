@@ -6,7 +6,7 @@ bindsym $mod+m exec Mathematica
 bindsym $mod+n exec nautilus
 bindsym $mod+b exec terminator -e alsamixer
 
-bindsym $mod+Shift+s exec dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
+bindsym $mod+Shift+s exec "sudo pm-suspend"
 
 bindsym F1 workspace 1
 bindsym F2 workspace 2
