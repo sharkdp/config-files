@@ -174,7 +174,13 @@ bar {
      }
 }
 
-
+# Passthrough mode which - when enabled - simply
+# disables all other keybindings so they are passed
+# through to the underlying application
+mode "passthrough" {
+        bindsym $mod+p mode "default"
+}
+bindsym $mod+p mode "passthrough"
 
 
 exec --no-startup-id /usr/bin/nm-applet
