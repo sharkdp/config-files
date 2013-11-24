@@ -39,6 +39,7 @@ set showcmd
 set showmatch
 set showmode
 set number
+set cmdheight=2
 
 " Long undo and command history
 set undolevels=1000

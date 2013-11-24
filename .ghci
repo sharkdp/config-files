@@ -1,9 +1,11 @@
 
+-- Search with Hoogle
+:def hoogle \x -> return $ ":!hoogle --count=15 \"" ++ x ++ "\""
 
-:def hoogle \x -> return $ ":!/home/shark/.cabal/bin/hoogle \"" ++ x ++ "\""
+-- Rewrite in pointfree style
 :def pf \s -> return $ ":! pointfree \"" ++ s ++ "\""
 
 -- You must set your prompt to a lambda, it's a law.
-:set prompt "λ: "
+:set prompt "\x1b[01mλ: \x1b[0m"
 
 
