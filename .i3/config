@@ -1,13 +1,16 @@
 # Modifier key
 set $mod Mod4
 
+# Shortcuts to open specific applications
 bindsym $mod+c exec google-chrome
 bindsym $mod+m exec Mathematica
 bindsym $mod+n exec nautilus
 bindsym $mod+b exec terminator -e alsamixer
+bindsym $mod+Return exec i3-sensible-terminal
 
 bindsym $mod+Shift+s exec "sudo pm-suspend"
 
+# Switch workspaces with F1-F9
 bindsym F1 workspace 1
 bindsym F2 workspace 2
 bindsym F3 workspace 3
@@ -18,53 +21,53 @@ bindsym F7 workspace 7
 bindsym F8 workspace 8
 bindsym F9 workspace 9
 
+# Behaviour
 focus_follows_mouse no
+popup_during_fullscreen smart
+workspace_auto_back_and_forth yes
+hide_edge_borders both
 
-# Start spotify on workspace 3
-assign [class="spotify"] 3
+# Assign specific workspaces to some applications
+assign [class="spotify"] 9
 #assign [class="Google-chrome"] 1
 
+# Enable floating mode (popup style) for some applications
 for_window [title="Welcome to Wolfram Mathematica 9"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [class="Pidgin"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Qalculate"] floating enable
 
+# Name the workspaces
 #set $ws 1: browser
 #set $ws 2: work
 #set $ws 3: music
 
+# Change Font
 font pango:Ubuntu Sans  10
 
-# Media keys
+# Enable media keys
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym Mod1+F4 kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
+# Use dmenu desktop version (.desktop-file aware)
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
+# change focus with Vim-style commands
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
+# alternatively, use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -76,7 +79,7 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
+# alternatively, use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -134,8 +137,10 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -143,10 +148,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
@@ -177,12 +178,13 @@ bar {
 # Passthrough mode which - when enabled - simply
 # disables all other keybindings so they are passed
 # through to the underlying application
+# (exit with $mod p)
 mode "passthrough" {
         bindsym $mod+p mode "default"
 }
 bindsym $mod+p mode "passthrough"
 
-
+# Autostart
 exec --no-startup-id /usr/bin/nm-applet
 exec ~/.dropbox-dist/dropboxd
 exec gnome-settings-daemon
