@@ -22,8 +22,8 @@ set noswapfile
 "set mouse=a
 
 " keep the selection when moving blocks in v-mode
-vnoremap < <gv
-vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
 
 " Search settings
 set hlsearch
