@@ -104,3 +104,10 @@ nmap <silent> <Leader>/ :nohlsearch<CR>
 " Autocompletion in command mode
 set wildmenu
 set wildmode=list:longest,full
+
+" Syntastic
+let g:syntastic_enable_highlighting=0
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
+let g:syntastic_enable_balloons=0
+let g:syntastic_python_checkers=['flake8']
