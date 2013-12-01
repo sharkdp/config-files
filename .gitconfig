@@ -2,7 +2,7 @@
 	name = sharkdp
 	email = davidpeter@web.de
 [credential]
-	helper = cache --timeout=86400
+	helper = cache --timeout=8640000
 [merge]
 	tool = diffuse
 [alias]
