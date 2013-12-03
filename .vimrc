@@ -111,3 +111,11 @@ let g:syntastic_check_on_open=0
 let g:syntastic_check_on_wq=0
 let g:syntastic_enable_balloons=0
 let g:syntastic_python_checkers=['flake8']
+
+" Use par to format text
+" http://vimcasts.org/episodes/formatting-text-with-par/
+set formatprg=par
+
+" Hightlight the 80th column
+set colorcolumn=80
+
