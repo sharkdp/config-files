@@ -21,6 +21,9 @@ bindsym F7 workspace number 7
 bindsym F8 workspace number 8
 bindsym F9 workspace number 9
 
+# Use $mod Tab to toggle workspaces
+bindsym $mod+Tab workspace back_and_forth
+
 # Behaviour
 focus_follows_mouse no
 popup_during_fullscreen smart
