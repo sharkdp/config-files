@@ -144,3 +144,17 @@ alias git='LC_ALL=en_US git'
 # prevent Ctrl-S from freezing the terminal
 bind -r '\C-s'
 stty -ixon
+
+# the only real way to use gnuplot is via killall
+gp() {
+    killall gnuplot
+    gnuplot -persist < "$1"
+}
+
+# call with 'runOnEdit <file> <command>'
+# This runs the command every time the file is changed
+runOnEdit() {
+     while inotifywait -q -e close_write "$1"; do
+         ${*:2}
+     done
+}
