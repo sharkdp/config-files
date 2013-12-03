@@ -14,7 +14,7 @@ GREEN = "ls 2"
 ORANGE = "ls 3"
 RED = "ls 4"
 MAGENTA = "ls 5"
-TURQUOISE = "ls 6"
+CYAN = "ls 6"
 BLACK = "ls 7"
 GRAY = "ls 8"
 
