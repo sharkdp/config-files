@@ -93,6 +93,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'coot/atp_vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'terryma/vim-multiple-cursors'
 
 " default encoding in UTF-8
 filetype plugin indent on
@@ -139,6 +140,7 @@ set colorcolumn=80
 
 " airline
 set laststatus=2
+let g:airline_powerline_fonts=1
 
 " Decrease dead time after ESC key
 set ttimeout
@@ -151,9 +153,16 @@ nmap <silent> <Leader>l :Latexmk<CR>
 " Call make
 nmap <silent> <Leader>m :make<CR>
 
+" Open NERDTree
+nmap <Leader>n :NERDTreeToggle<CR>
+
 " Vim Markdown
 let g:vim_markdown_folding_disabled=1
 
 " Swap the current word with the next word (which can be on a newline and
 " punctuation is skipped):
 nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
+
+" Move to beginning/end of line while in insert mode
+inoremap <C-a> <C-o>0
+inoremap <C-e> <C-o>$
