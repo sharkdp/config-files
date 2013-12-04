@@ -91,7 +91,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'groenewege/vim-less'
 Bundle 'coot/atp_vim'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
 
@@ -130,6 +130,7 @@ let g:syntastic_check_on_open=0
 let g:syntastic_check_on_wq=0
 let g:syntastic_enable_balloons=0
 let g:syntastic_python_checkers=['flake8']
+let g:syntastic_tex_checkers = []
 
 " Use par to format text
 " http://vimcasts.org/episodes/formatting-text-with-par/
@@ -166,3 +167,11 @@ nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
 " Move to beginning/end of line while in insert mode
 inoremap <C-a> <C-o>0
 inoremap <C-e> <C-o>$
+
+" Remember last position when reopening files
+set viminfo='10,\"100,:20,%,n~/.viminfo
+
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
