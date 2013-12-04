@@ -19,7 +19,7 @@ set nowritebackup
 set noswapfile
 
 " Use the mouse to move the cursor
-"set mouse=a
+set mouse=a
 
 " keep the selection when moving blocks in v-mode
 " vnoremap < <gv
@@ -80,6 +80,7 @@ call vundle#rc()
 
 " Bundles
 Bundle 'gmarik/vundle'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
@@ -89,12 +90,13 @@ Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'groenewege/vim-less'
-Bundle 'git://git.code.sf.net/p/atp-vim/code'
+Bundle 'coot/atp_vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'plasticboy/vim-markdown'
 
 " default encoding in UTF-8
 filetype plugin indent on
 set encoding=utf-8
-"set digraph
 
 " Syntax highlighting and solarized colorscheme
 syntax enable
@@ -148,3 +150,10 @@ nmap <silent> <Leader>l :Latexmk<CR>
 
 " Call make
 nmap <silent> <Leader>m :make<CR>
+
+" Vim Markdown
+let g:vim_markdown_folding_disabled=1
+
+" Swap the current word with the next word (which can be on a newline and
+" punctuation is skipped):
+nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
