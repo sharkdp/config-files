@@ -147,7 +147,7 @@ stty -ixon
 
 # the only real way to use gnuplot is via killall
 gp() {
-    killall gnuplot
+    killall gnuplot 2> /dev/null
     gnuplot -persist < "$1"
 }
 

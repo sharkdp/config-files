@@ -37,9 +37,9 @@ set shell=bash
 " show current command, matching bracket and mode, line numbers
 set showcmd
 set showmatch
-set showmode
+set noshowmode
 set number
-set cmdheight=2
+" set cmdheight=2
 
 " Long undo and command history
 set undolevels=1000
@@ -73,9 +73,9 @@ cabbrev WQ wq
 cabbrev Wq wq
 
 " default encoding in UTF-8
-filetype plugin on
+filetype plugin indent on
 set encoding=utf-8
-"set digraph 
+"set digraph
 
 " Syntax highlighting and solarized colorscheme
 syntax enable
@@ -119,3 +119,16 @@ set formatprg=par
 " Hightlight the 80th column
 set colorcolumn=80
 
+" airline
+set laststatus=2
+
+" Decrease dead time after ESC key
+set ttimeout
+set ttimeoutlen=50
+
+" Automatic Latex Plugin
+nmap <silent> <Leader>s :SyncTex!<CR>
+nmap <silent> <Leader>l :Latexmk<CR>
+
+" Call make
+nmap <silent> <Leader>m :make<CR>
