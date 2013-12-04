@@ -72,6 +72,25 @@ cabbrev W write
 cabbrev WQ wq
 cabbrev Wq wq
 
+" Vundle
+filetype off  " required to load Vundle
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" Bundles
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
+Bundle 'bling/vim-airline'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'groenewege/vim-less'
+Bundle 'git://git.code.sf.net/p/atp-vim/code'
+
 " default encoding in UTF-8
 filetype plugin indent on
 set encoding=utf-8
@@ -85,9 +104,6 @@ set t_Co=256
 let g:solarized_termcolors=256
 
 set listchars=tab:▸\ ,eol:¬
-
-" Load plugins via pathogen
-execute pathogen#infect()
 
 " disable arrow keys :-)
 noremap   <Up>     <NOP>
