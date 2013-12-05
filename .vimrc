@@ -1,3 +1,6 @@
+" Set leader key to ,
+let mapleader = ","
+
 " vim instead of vi settings
 set nocompatible
 
@@ -105,6 +108,10 @@ set background=dark
 colorscheme solarized
 set t_Co=256
 let g:solarized_termcolors=256
+" bug in vim-solarized: load togglebg automatically
+source ~/.vim/bundle/vim-colors-solarized/autoload/togglebg.vim
+" Toggle BG with ,t
+nmap <silent> <Leader>t :ToggleBG<CR>
 
 set listchars=tab:▸\ ,eol:¬
 
@@ -113,9 +120,6 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
-
-" Set leader key to ,
-let mapleader = ","
 
 " Clear search highlight with ,/
 nmap <silent> <Leader>/ :nohlsearch<CR>
@@ -142,6 +146,7 @@ set colorcolumn=80
 " airline
 set laststatus=2
 let g:airline_powerline_fonts=1
+" let g:airline#extensions#tabline#enabled=1
 
 " Decrease dead time after ESC key
 set ttimeout
@@ -170,8 +175,9 @@ inoremap <C-e> <C-o>$
 
 " Remember last position when reopening files
 set viminfo='10,\"100,:20,%,n~/.viminfo
-
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" Do not insert comment leaders automatically
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
