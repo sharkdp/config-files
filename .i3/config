@@ -41,6 +41,7 @@ assign [class="Spotify"] 9
 for_window [window_role="pop-up"] floating enable
 for_window [title="Welcome to Wolfram Mathematica 9"] floating enable
 for_window [title="Find and Replace"] floating enable
+for_window [title="Google Keep"] floating enable
 for_window [class="Pidgin"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Qalculate"] floating enable
