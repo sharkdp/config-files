@@ -39,7 +39,7 @@ set shell=bash
 
 " show current command, matching bracket and mode, line numbers
 set showcmd
-set showmatch
+set noshowmatch
 set noshowmode
 set number
 " set cmdheight=2
@@ -97,6 +97,11 @@ Bundle 'coot/atp_vim'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
+" Snipmate:
+" Bundle "MarcWeber/vim-addon-mw-utils"
+" Bundle "tomtom/tlib_vim"
+" Bundle "garbas/vim-snipmate"
+" Bundle "honza/vim-snippets"
 
 " default encoding in UTF-8
 filetype plugin indent on
@@ -172,6 +177,9 @@ nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
 " Move to beginning/end of line while in insert mode
 inoremap <C-a> <C-o>0
 inoremap <C-e> <C-o>$
+
+" Go in and out of paste mode with F10
+set pastetoggle=<F10>
 
 " Remember last position when reopening files
 set viminfo='10,\"100,:20,%,n~/.viminfo
