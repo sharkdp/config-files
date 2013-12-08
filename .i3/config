@@ -21,8 +21,8 @@ bindsym F7 workspace number 7
 bindsym F8 workspace number 8
 bindsym F9 workspace number 9
 
-# Use $mod Tab to toggle workspaces
-bindsym $mod+Tab workspace back_and_forth
+# Use $mod Tab to cycle workspaces
+bindsym $mod+Tab workspace next
 
 # Behaviour
 focus_follows_mouse no
@@ -45,6 +45,7 @@ for_window [title="Google Keep"] floating enable
 for_window [class="Pidgin"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Qalculate"] floating enable
+for_window [class="Steam"] floating enable
 
 # Change Font
 font pango:Ubuntu Sans  10
@@ -58,7 +59,7 @@ bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 bindsym Mod1+F4 kill
 
 # Use dmenu desktop version (.desktop-file aware)
