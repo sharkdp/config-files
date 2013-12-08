@@ -63,7 +63,8 @@ bindsym $mod+q kill
 bindsym Mod1+F4 kill
 
 # Use dmenu desktop version (.desktop-file aware)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop"
 
 # change focus with Vim-style commands
 bindsym $mod+h focus left
