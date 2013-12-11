@@ -87,6 +87,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
@@ -189,3 +190,9 @@ endif
 
 " Do not insert comment leaders automatically
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Bubble-move (inspired by http://vimcasts.org/episodes/bubbling-text/)
+nmap <C-k> [e`]        " single lines
+nmap <C-j> ]e`]
+vmap <C-k> [e`[V`]     " visual mode
+vmap <C-j> ]e`[V`]
