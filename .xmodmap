@@ -1,4 +1,14 @@
-remove Lock = Caps_Lock
+keycode 38 = a A bracketleft bracketleft bracketleft braceleft
+keycode 39 = s S parenleft parenleft parenleft parenleft
+keycode 40 = d D parenright parenright parenright parenright
+keycode 41 = f F bracketright bracketright bracketright braceright
+keycode 25 = w W slash slash slash slash
+keycode 27 = r R backslash backslash backslash backslash
+keycode 46 = l L percent percent percent percent
+keycode 133 = Super_R NoSymbol Super_R
+keycode 52 = y Y braceleft braceleft braceleft braceleft
+keycode 53 = x X braceright braceright braceright braceright
+keycode 42 = g G dollar dollar dollar dollar
+clear Lock
 keysym Caps_Lock = Escape
 add Lock = Caps_Lock
-
