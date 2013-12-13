@@ -151,10 +151,10 @@ gp() {
     gnuplot -persist < "$1"
 }
 
-# call with 'runOnEdit <file> <command>'
-# This runs the command every time the file is changed
+# call with 'runOnEdit <command> <file1> <file2>'
+# This runs the command every time one of the files is changed
 runOnEdit() {
-     while inotifywait -q -e close_write "$1"; do
-         ${*:2}
+     while inotifywait -q -e close_write ${*:2}; do
+         $1
      done
 }
