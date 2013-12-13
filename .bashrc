@@ -100,17 +100,18 @@ gp() {
 #
 trigger() {
     cmd="$1"
-    cmd="${cmd//#1/$2}"
-    cmd="${cmd//#2/$3}"
-    cmd="${cmd//#3/$4}"
-    cmd="${cmd//#4/$5}"
-    cmd="${cmd//#5/$6}"
+    shift
+    cmd="${cmd//#1/$1}"
+    cmd="${cmd//#2/$2}"
+    cmd="${cmd//#3/$3}"
+    cmd="${cmd//#4/$4}"
+    cmd="${cmd//#5/$5}"
 
     echo -e "$red>>>$reset Initial run of '$cmd'"
     eval "$cmd"
     echo
 
-    while cfile="`inotifywait -q --format '%w' -e close_write ${*:2}`"; do
+    while cfile="`inotifywait -q --format '%w' -e close_write \"$@\"`"; do
         echo -e "$red>>>$reset File '$cfile' has been changed"
         eval "$cmd"
         echo
