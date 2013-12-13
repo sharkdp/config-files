@@ -26,56 +26,6 @@ done
 
 eval `dircolors -b ~/.dir_colors`
 
-wb () {
-    if [ -z "$1" ]; then
-        echo -ne "${blue}wb${reset}> $red"
-        while read line
-        do
-            echo -e "${reset}"
-            wb "$line"
-            echo -ne "${blue}wb${reset}> $red"
-        done
-        echo
-        return
-    fi
-    tmp="/home/shark/.wb.tmp"
-    if [ "$1" != "-a" ]
-    then
-        words="\\<$@\\>"
-    else
-        shift
-        words=$@
-    fi
-    grep -i --color "${words}" ~shark/de-en | sed \
-        -e 's/^/'${darkblue}'/' \
-        -e 's/::/'$reset'->'${darkgreen}'/' \
-        -e 's/$/'${reset}'/' > $tmp
-    nr=`wc -l $tmp | awk '{ print $1 }'`
-    if [ $nr -lt 1 ]; then
-        echo -e "${bold}grep returned no results, trying agrep${reset}"
-        for i in `seq 1 8`; do
-            echo -e "${bold}agrep -$i${reset}"
-            agrep -i -$i "${words}" ~shark/de-en > $tmp
-            nr=`wc -l $tmp | awk '{ print $1 }'`
-            if [ $nr -gt 0 ]; then
-                cat $tmp | sed \
-                    -e 's/^/'${darkblue}'/' \
-                    -e 's/::/'$reset'->'${darkgreen}'/' \
-                    -e 's/$/'${reset}'/'
-                rm $tmp
-                return
-            fi
-        done
-    else
-        cat $tmp
-        rm $tmp
-    fi
-}
-
-rehash () {
-    . ~/.bashrc 2> /dev/null
-}
-
 PS1="\[\033[1;34m\]\u\[\033[0m\] (\w) $ "
 
 case ${TERM} in
@@ -84,10 +34,8 @@ case ${TERM} in
         ;;
 esac
 
-
 export HISTCONTROL="ignoredups"
 export HISTFILESIZE="1000"
-
 
 shopt -s checkwinsize
 
@@ -97,25 +45,16 @@ if [ -f /etc/bash_completion ]; then
  . /etc/bash_completion
 fi
 
-
-geounp() {
-    unp $1
-    rm ${1/.zip/-wpts.gpx} $1
-    mv ${1/.zip/.gpx} $2.gpx
+rehash () {
+    . ~/.bashrc 2> /dev/null
 }
 
-
-cd /home/shark
-
-export PATH="$PATH:/home/shark/Informatik/java/android-sdk-linux/platform-tools/"
-
 nwlook() {
-#avahi-browse -t -a | grep --color=never IPv4 | grep mvagusta
     avahi-browse -t -a | grep --color=never IPv4
 }
 
 remotenwlook() {
-    ssh peter@sultan.theo3.physik.uni-stuttgart.de 'avahi-browse -t -a | grep --color=never IPv4 | grep -v mvagusta;avahi-browse -t -a  | grep --color=never IPv4 | grep mvagusta'
+    ssh peter@sultan.theo3.physik.uni-stuttgart.de 'avahi-browse -t -a | grep --color=never IPv4 | grep -v mvagusta;avahi-browse -t -a  | grep --color=never IPv4'
 }
 
 pdfFontToOutlines() {
@@ -126,6 +65,7 @@ notify() {
     /home/shark/.nwlook/notify.sh &
 }
 
+# removes all those anoying files from LaTeX working directories
 cleanLatexFolder() {
     for file in *.aux *.toc *.blg *.bbl *.synctex.gz *.dvi *.fdb_latexmk *.out *.ps *Notes.bib *.log; do
        if [ -e "$file" ]; then
@@ -138,10 +78,7 @@ cleanLatexFolder() {
     done
 }
 
-
-alias git='LC_ALL=en_US git'
-
-# prevent Ctrl-S from freezing the terminal
+# prevent Ctrl-S from freezing the terminal to use the shortcut in vim
 bind -r '\C-s'
 stty -ixon
 
@@ -151,10 +88,31 @@ gp() {
     gnuplot -persist < "$1"
 }
 
-# call with 'runOnEdit <command> <file1> <file2>'
-# This runs the command every time one of the files is changed
-runOnEdit() {
-     while inotifywait -q -e close_write ${*:2}; do
-         $1
-     done
+# call with 'trigger <cmd> <file1> <file2>'
+#
+# This will run the command 'cmd' every time one
+# of the files is changed
+#
+# In the command string, #1, #2, can be used as a
+# synonym for file1, file2, ..
+#
+# Example: trigger 'python #1' run.py config.py
+#
+trigger() {
+    cmd="$1"
+    cmd="${cmd//#1/$2}"
+    cmd="${cmd//#2/$3}"
+    cmd="${cmd//#3/$4}"
+    cmd="${cmd//#4/$5}"
+    cmd="${cmd//#5/$6}"
+
+    echo -e "$red>>>$reset Initial run of '$cmd'"
+    eval "$cmd"
+    echo
+
+    while cfile="`inotifywait -q --format '%w' -e close_write ${*:2}`"; do
+        echo -e "$red>>>$reset File '$cfile' has been changed"
+        eval "$cmd"
+        echo
+    done
 }

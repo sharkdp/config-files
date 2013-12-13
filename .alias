@@ -1,32 +1,39 @@
+# essentials
 alias ..='cd ..'
 alias cp='cp -v'
+
+# ls essentials
 alias ls='ls --color=auto'
 alias sl='ls'
 alias ll='ls -lh'
 alias l='ls -alh'
+alias lsrecent='ls -l --sort=time -r'
+
+# program default options / shortcuts
 alias py='python3'
-alias rb='ruby'
+alias ipy='ipython3'
 alias txz='tar xvzf'
 alias txj='tar xvjf'
-alias bc='qcl'
-alias :wq='exit'
 alias nc='ncftpbookmarks'
 alias grep='grep --color'
 alias am='alsamixer'
 alias df='df -h'
-alias mp='mplayer -nosound -fs'
-alias sshbodensee='ssh davidpeter@bodensee.pi5.physik.uni-stuttgart.de'
-alias mountbodensee='sshfs davidpeter@bodensee.pi5.physik.uni-stuttgart.de:/raid1/ /home/shark/mp'
+alias git='LC_ALL=en_US git'
+alias svim='vim --servername vim'
+alias gnuplot='rlwrap -c -a gnuplot'
+
+# SSH
 alias mountsultan='sshfs peter@sultan.theo3.physik.uni-stuttgart.de:/ /home/shark/mp'
 alias mountlukas='sshfs peter@lukas.theo3.physik.uni-stuttgart.de:/disk2/httpd/htdocs/ /home/shark/mp'
-alias tunnelbodensee='ssh -C -g -L2631:bodensee.pi5.physik.uni-stuttgart.de:631 -L 3128:bodensee.pi5.physik.uni-stuttgart.de:3128 -L27000:license.pi5.physik.uni-stuttgart.de:27000 -L58050:bodensee.pi5.physik.uni-stuttgart.de:58050 -L1465:bodensee.pi5.physik.uni-stuttgart.de:465 -L16286:license.pi5.physik.uni-stuttgart.de:16286 -L16287:license.pi5.physik.uni-stuttgart.de:16286 -t davidpeter@bodensee.pi5.physik.uni-stuttgart.de'
 alias rootsultan='ssh root@sultan.theo3.physik.uni-stuttgart.de'
-alias sshsultan='ssh peter@sultan.theo3.physik.uni-stuttgart.de'
 alias rootlukas='ssh root@lukas.theo3.physik.uni-stuttgart.de'
-alias ipy='ipython3'
-alias lsrecent='ls -l --sort=time -r'
-alias gnuplot='rlwrap -c -a gnuplot'
-alias svim='vim --servername vim'
+alias sshsultan='ssh peter@sultan.theo3.physik.uni-stuttgart.de'
+
+# Edit config files
 alias vimrc='vim ~/.cf/.vimrc'
+alias bashrc='vim ~/.cf/.bashrc'
+alias i3conf='vim ~/.cf/.i3/config'
+
+# Scripts
 alias getpw='python ~/Informatik/python/lastpass-python/getpw.py'
 alias pl='/home/shark/pl/cli/paperlocator'
