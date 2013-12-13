@@ -32,7 +32,7 @@ alias sshsultan='ssh peter@sultan.theo3.physik.uni-stuttgart.de'
 # Edit config files
 alias vimrc='vim ~/.cf/.vimrc'
 alias bashrc='vim ~/.cf/.bashrc && rehash'
-alias i3conf='vim ~/.cf/.i3/config'
+alias i3conf='vim ~/.cf/.i3/config && i3 restart'
 
 # Scripts
 alias getpw='python ~/Informatik/python/lastpass-python/getpw.py'
