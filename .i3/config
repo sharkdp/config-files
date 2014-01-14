@@ -1,6 +1,8 @@
 # Modifier key
 set $mod Mod4
 
+new_window pixel 1
+
 # Shortcuts to open specific applications
 bindsym $mod+c exec google-chrome
 bindsym $mod+m exec Mathematica
@@ -47,6 +49,7 @@ for_window [class="Pidgin"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Qalculate"] floating enable
 for_window [class="Steam"] floating enable
+for_window [class="Gxmessage"] floating enable
 
 # Change Font
 font pango:Ubuntu Sans  10

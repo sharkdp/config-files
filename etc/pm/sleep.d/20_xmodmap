@@ -1,0 +1,6 @@
+case "${1}" in
+    resume|thaw)
+        export DISPLAY=:0.0
+        su - shark -c "i3 restart"
+;;
+esac
