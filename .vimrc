@@ -196,3 +196,6 @@ nmap <C-k> [e`]        " single lines
 nmap <C-j> ]e`]
 vmap <C-k> [e`[V`]     " visual mode
 vmap <C-j> ]e`[V`]
+
+" Switch off octal/hex number detection for <C-a>, <C-x>
+set nrformats=
