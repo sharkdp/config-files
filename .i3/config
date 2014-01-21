@@ -3,6 +3,9 @@ set $mod Mod4
 
 new_window pixel 1
 
+# Toggle titlebar
+bindsym $mod+t border toggle
+
 # Shortcuts to open specific applications
 bindsym $mod+c exec google-chrome
 bindsym $mod+m exec Mathematica

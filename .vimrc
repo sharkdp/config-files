@@ -94,10 +94,11 @@ Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'groenewege/vim-less'
-Bundle 'coot/atp_vim'
+" Bundle 'coot/atp_vim'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'travitch/hasksyn'
 " Snipmate:
 " Bundle "MarcWeber/vim-addon-mw-utils"
 " Bundle "tomtom/tlib_vim"
@@ -199,3 +200,6 @@ vmap <C-j> ]e`[V`]
 
 " Switch off octal/hex number detection for <C-a>, <C-x>
 set nrformats=
+
+" Use '\' as ',' for going backwards trough character finds (opposite of ';')
+noremap \ ,
