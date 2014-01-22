@@ -99,6 +99,29 @@ Bundle 'groenewege/vim-less'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'travitch/hasksyn'
+Bundle 'repeat.vim'
+
+
+" User defined text objects (i* and a*)
+Bundle 'kana/vim-textobj-user'
+
+    " Last search pattern (/)
+    Bundle 'kana/vim-textobj-lastpat'
+
+    " Comment (c)
+    Bundle 'glts/vim-textobj-comment'
+
+    " Entire file (e)
+    Bundle 'kana/vim-textobj-entire'
+
+    " Current line (l)
+    Bundle 'kana/vim-textobj-line'
+
+    " Functions (f) and classes (c) for python
+    " TODO: c clashes with *c*omment
+    Bundle 'bps/vim-textobj-python'
+
+
 " Snipmate:
 " Bundle "MarcWeber/vim-addon-mw-utils"
 " Bundle "tomtom/tlib_vim"
