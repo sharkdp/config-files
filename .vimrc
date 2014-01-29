@@ -100,6 +100,7 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'travitch/hasksyn'
 Bundle 'repeat.vim'
+Bundle 'bronson/vim-visual-star-search'
 
 
 " User defined text objects (i* and a*)
@@ -151,8 +152,8 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
-" Clear search highlight with ,/
-nmap <silent> <Leader>/ :nohlsearch<CR>
+" Clear search highlight (and redraw screen) with C-l
+nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
 " Autocompletion in command mode
 set wildmenu

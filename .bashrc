@@ -67,7 +67,7 @@ notify() {
 
 # removes all those anoying files from LaTeX working directories
 cleanLatexFolder() {
-    for file in *.aux *.toc *.blg *.bbl *.synctex.gz *.dvi *.fdb_latexmk *.out *.ps *Notes.bib *.log; do
+    for file in *.aux *.toc *.blg *.bbl *.synctex.gz *.dvi *.fdb_latexmk *.out *.ps *Notes.bib *.log *._aux *._log *.fls; do
        if [ -e "$file" ]; then
             echo -n "Delete '$file' [y]: "
             read answ
@@ -116,4 +116,11 @@ trigger() {
         eval "$cmd"
         echo
     done
+}
+
+# Version of 'trigger' for latexmk
+# "continuous latexmk"
+clatexmk() {
+    # trigger "latexmk -pvc -pdf #1" "$1"
+    latexmk -pvc -pdf "$1"
 }

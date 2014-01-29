@@ -6,6 +6,6 @@
 :def pf \s -> return $ ":! pointfree \"" ++ s ++ "\""
 
 -- You must set your prompt to a lambda, it's a law.
-:set prompt "\x1b[01mλ: \x1b[0m"
+:set prompt "\n\x1b[01mλ:  \x1b[0m"
 
 
