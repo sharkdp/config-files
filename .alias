@@ -37,3 +37,4 @@ alias i3conf='vim ~/.cf/.i3/config && i3 restart'
 # Scripts
 alias getpw='python ~/Informatik/python/lastpass-python/getpw.py'
 alias pl='/home/shark/pl/cli/paperlocator'
+alias tinytag='python3 /home/shark/Informatik/python/tinytag/tinytag.py'
