@@ -227,3 +227,6 @@ set nrformats=
 
 " Use '\' as ',' for going backwards trough character finds (opposite of ';')
 noremap \ ,
+
+" Faster TeX syntax highlighting (disables some highlighting features)
+let g:tex_fast="M"
