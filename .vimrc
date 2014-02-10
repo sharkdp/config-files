@@ -124,10 +124,10 @@ Bundle 'kana/vim-textobj-user'
 
 
 " Snipmate:
-" Bundle "MarcWeber/vim-addon-mw-utils"
-" Bundle "tomtom/tlib_vim"
-" Bundle "garbas/vim-snipmate"
-" Bundle "honza/vim-snippets"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " default encoding in UTF-8
 filetype plugin indent on
