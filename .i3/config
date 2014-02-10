@@ -187,18 +187,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar
 bar {
-     status_command i3status
+     status_command py3status -c ~/.i3status.conf
      colors {
          statusline #999999
      }
 }
 
-# Passthrough mode which - when enabled - simply
-# disables all other keybindings so they are passed
-# through to the underlying application
+# Passthrough mode which - when enabled - simply disables all other
+# keybindings so they are passed through to the underlying application
 # (exit with $mod p)
 mode "passthrough" {
         bindsym $mod+p mode "default"
@@ -207,8 +205,9 @@ bindsym $mod+p mode "passthrough"
 
 # Autostart
 exec --no-startup-id /usr/bin/nm-applet # network applet
-exec ~/.dropbox-dist/dropboxd
-exec gnome-settings-daemon # enable GTK designs
-exec_always nitrogen --restore # draw background
-exec_always xmodmap ~/.xmodmap
-exec pa-applet # Pulse audio applet
+exec --no-startup-id ~/.dropbox-dist/dropboxd
+exec --no-startup-id gnome-settings-daemon # enable GTK designs
+exec --no-startup-id pa-applet # Pulse audio applet
+exec_always --no-startup-id nitrogen --restore # draw background
+exec_always --no-startup-id xmodmap ~/.xmodmap
+exec_always --no-startup-id sleep 3 && xmodmap ~/.xmodmap
