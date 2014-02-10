@@ -33,8 +33,10 @@ alias sshsultan='ssh peter@sultan.theo3.physik.uni-stuttgart.de'
 alias vimrc='vim ~/.cf/.vimrc'
 alias bashrc='vim ~/.cf/.bashrc && rehash'
 alias i3conf='vim ~/.cf/.i3/config && i3 restart'
+alias zshrc='vim ~/.cf/.zshrc && rehash'
 
 # Scripts
 alias getpw='python ~/Informatik/python/lastpass-python/getpw.py'
 alias pl='/home/shark/pl/cli/paperlocator'
 alias tinytag='python3 /home/shark/Informatik/python/tinytag/tinytag.py'
+
