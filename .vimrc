@@ -230,3 +230,6 @@ noremap \ ,
 
 " Faster TeX syntax highlighting (disables some highlighting features)
 let g:tex_fast="M"
+
+" Use english messages
+language en_US.UTF-8
