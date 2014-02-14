@@ -183,9 +183,22 @@ let g:airline_powerline_fonts=1
 set ttimeout
 set ttimeoutlen=50
 
-" Automatic Latex Plugin
-nmap <silent> <Leader>s :SyncTex!<CR>
-nmap <silent> <Leader>l :Latexmk<CR>
+" Synctex forward searching (use with <Leader> s)
+" See http://tex.stackexchange.com/a/10374/42128
+" Configure okular to call "vim --servername VIM --remote +'%l' '%f'"
+" for backward searching (vim needs to run in server mode).
+function! SynctexShow()
+    let synctex = glob("*.synctex.gz")
+    if strlen(synctex) == 0
+        echo "No synctex file found."
+    else
+        let pdffile = substitute(synctex, "synctex.gz", "pdf", "")
+        let execline = printf(":silent !okular --noraise --unique '%s\\#src:%d %s' & > /dev/null", shellescape(pdffile), line("."), shellescape(expand("%:p")))
+        exec execline
+        :redraw!
+    end
+endfunction
+nmap <Leader>s :call SynctexShow()<CR>
 
 " Call make
 nmap <silent> <Leader>m :make<CR>

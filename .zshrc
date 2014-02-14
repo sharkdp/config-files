@@ -146,4 +146,8 @@ source ~/.alias
 
 eval `dircolors -b ~/.dir_colors`
 
-# bindkey -v
+#  bindkey -v
+
+# Keep jobs running in the background
+setopt NO_HUP
+setopt NO_CHECK_JOBS
