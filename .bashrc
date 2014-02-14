@@ -117,10 +117,3 @@ trigger() {
         echo
     done
 }
-
-# Version of 'trigger' for latexmk
-# "continuous latexmk"
-clatexmk() {
-    # trigger "latexmk -pvc -pdf #1" "$1"
-    latexmk -pvc -pdf "$1"
-}
