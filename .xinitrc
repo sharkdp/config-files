@@ -1,1 +1,2 @@
 xmodmap ~/.xmodmap
+nitrogen --restore &
