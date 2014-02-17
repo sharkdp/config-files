@@ -193,7 +193,7 @@ function! SynctexShow()
         echo "No synctex file found."
     else
         let pdffile = substitute(synctex, "synctex.gz", "pdf", "")
-        let execline = printf(":silent !okular --noraise --unique '%s\\#src:%d %s' & > /dev/null", shellescape(pdffile), line("."), shellescape(expand("%:p")))
+        let execline = printf(":silent !okular --noraise --unique '%s\\#src:%d %s' & > /dev/null 2> /dev/null", shellescape(pdffile), line("."), shellescape(expand("%:p")))
         exec execline
         :redraw!
     end
