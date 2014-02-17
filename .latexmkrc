@@ -1,2 +1,2 @@
 $pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode';
-$pdf_previewer = 'evince';
+$pdf_previewer = 'okular --unique --noraise';
