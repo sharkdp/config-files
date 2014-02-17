@@ -1,0 +1,68 @@
+disper (0.2.3) jaunty; urgency=low
+
+  * New point release
+  * Make disper work with non-release Python versions (closes lp:#360100)
+  * Add option to switch to secondary screen (patch contributed by Arjan Scherpenisse)
+
+ -- Willem van Engen <dev-disper@willem.engen.nl>  Thu, 21 May 2009 12:25:09 +0200
+
+disper (0.2.2) unstable; urgency=low
+
+  * New point release
+  * Work on older XRandR systems and workaround ctypes trouble
+    (closes lp:#338978)
+  * Work on Python versions 2.3 and 2.4 as well
+  * Remove trailing zero from string query replies (closes lp:#337721)
+
+ -- Willem van Engen <dev-disper@willem.engen.nl>  Thu, 09 Apr 2009 21:38:32 +0200
+
+disper (0.2.1) unstable; urgency=low
+
+  * New point release
+  * Detect DFP scaling from ~/.nvidia-settings-rc or override on command-line
+    (closes lp:#315139)
+  * Don't crash when DISPLAY is invalid (closes lp:#327133)
+  * Make panel placement consistent on switch by setting Xinerama details
+    (closes lp:#321288)
+  * Make switching between single displays work when they are disconnected at
+    the time of switch (not all cases are covered yet, laptops should be ok)
+    (closes lp:#315920)
+
+ -- Willem van Engen <dev-disper@willem.engen.nl>  Fri, 13 Feb 2009 16:47:52 +0100
+
+disper (0.2.0) unstable; urgency=low
+
+  * New point release
+  * Allow import/export of current configuration
+  * Add extend functionality in addition to clone
+  * More intelligent resolution selection
+  * Initial XRandR backend (without import/export)
+
+ -- Willem van Engen <dev-disper@willem.engen.nl>  Thu, 04 Dec 2008 10:46:34 +0100
+
+disper (0.1.3) unstable; urgency=low
+
+  * Avoid metamode problems (including crashes) by cleaning up metamodes
+
+ -- Willem van Engen <dev-disper@willem.engen.nl>  Fri, 28 Nov 2008 09:20:35 +0100
+
+disper (0.1.2) unstable; urgency=low
+
+  * Avoid X server crashes by more delicate display association
+  * Make display switching work at once instead of twice
+
+ -- Willem van Engen <dev-disper@willem.engen.nl>  Fri, 28 Nov 2008 09:20:32 +0100
+
+disper (0.1.1-1) unstable; urgency=low
+
+  * Allow display selection on command-line
+  * More complete command-line options
+  * Use symbolic display names instead of numbers
+
+ -- Willem van Engen <dev-disper@willem.engen.nl>  Tue, 25 Nov 2008 14:15:47 +0100
+
+disper (0.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Willem van Engen <dev-disper@willem.engen.nl>  Mon, 24 Nov 2008 15:58:01 +0100

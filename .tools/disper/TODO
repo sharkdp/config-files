@@ -1,0 +1,16 @@
+
+* general
+  - expand manpage with details and hairy issues (like nvidia bug #315920)
+
+* nVidia backend:
+  - Warn if interal display not connected; such is required for the workaround
+    to bug #315920.
+  - Cycling between different configurations (bug #315090)
+  - Make tv-output work.
+  - When switching between two external displays, go via the internal display as
+    a workaround for bug #315920.
+
+* complete XrandR backend
+
+* investigate ati backend
+

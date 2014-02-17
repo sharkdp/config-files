@@ -1,0 +1,33 @@
+Disper
+------
+
+Disper is an on-the-fly display switch utility. It is intended to be used just
+before giving a presentation with a laptop, when all one wants is that the
+beamer, which has just been connected, is able to show whatever you prepared.
+
+Disper gives you the option to either clone the all detected displays, or
+extend the desktop to them. Resolutions are automatically detected. For
+cloning, the highest resolution supported by all displays devices is chosen;
+for extending every display device gets its highest supported resolution.
+For special setups requiring more detailed control, one can still use the
+standard display configuration utilites.
+
+At the moment only nVidia cards are supported. I'm still looking for a laptop
+that supports XRandR 1.2 completely to develop an XRandR backend.
+
+Generally, one would bind 'disper -c' to a shortcut key (or if you rather
+like to extend your desktop, use 'disper -e'). Without an external display
+or beamer connected, you'll get your laptop's full resolution; when an external
+display is present, it switches to clone mode after the keypress (or extend, if
+you configured it that way).
+
+In the future a graphical user interface may be added. For now I hope that it'll
+save you some time at the beginning of presentations.
+
+The development of this program was supported Frans and Linda Reijnhoudt.
+A big thanks to them!
+
+http://willem.engen.nl/projects/disper/
+
+- Willem van Engen <dev-disper@willem.engen.nl>
+

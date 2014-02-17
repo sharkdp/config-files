@@ -1,0 +1,18 @@
+Source: disper
+Section: x11
+Priority: optional
+Maintainer: Willem van Engen <dev-disper@willem.engen.nl>
+Build-Depends: debhelper (>= 4.1.67)
+Build-Depends-Indep: python-dev, python-support (>= 0.4)
+Standards-Version: 3.8.0
+Homepage: http://willem.engen.nl/projects/disper/
+
+Package: disper
+Architecture: all
+Depends: ${python:Depends}, libxrandr2, libx11-6
+Description: Display switcher for attaching/detaching displays easily
+ No more headaches just before your presentation. Disper lets you add and
+ remove display devices at the press of a button.  It detects what display
+ devices are attached at the moment, and configures the display output
+ automatically. You can specify whether to clone the output on all displays,
+ or to extend the desktop.
