@@ -37,7 +37,7 @@ CASE_SENSITIVE="true"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
@@ -139,7 +139,7 @@ trigger() {
 # "continuous latexmk"
 clatexmk() {
     # trigger "latexmk -pvc -pdf #1" "$1"
-    latexmk -pvc -pdf "$1"
+    latexmk -silent -pvc -pdf "$1"
 }
 
 source ~/.alias
@@ -151,3 +151,21 @@ eval `dircolors -b ~/.dir_colors`
 # Keep jobs running in the background
 setopt NO_HUP
 setopt NO_CHECK_JOBS
+
+# Run program silently in the background
+background() {
+    silent "$*" &!
+}
+
+# Start tex environment
+texenv() {
+    i3-msg "split v"
+    terminator -e "sleep .1 && i3-msg 'focus parent' && sleep .1 && i3-msg 'split h' && sleep .1 && latexmk -silent -pvc -pdf '$1'" &!
+    sleep 3.0
+    silent i3-msg "focus left"
+    sleep .3
+    silent i3-msg "resize grow down"
+    silent i3-msg "resize grow down"
+    silent i3-msg "resize grow down"
+    svim "$1"
+}
