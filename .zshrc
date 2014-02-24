@@ -160,12 +160,19 @@ background() {
 # Start tex environment
 texenv() {
     i3-msg "split v"
-    terminator -e "sleep .1 && i3-msg 'focus parent' && sleep .1 && i3-msg 'split h' && sleep .1 && latexmk -silent -pvc -pdf '$1'" &!
-    sleep 3.0
-    silent i3-msg "focus left"
-    sleep .3
-    silent i3-msg "resize grow down"
-    silent i3-msg "resize grow down"
-    silent i3-msg "resize grow down"
+    sleep .1
+    terminator -e "source ~/.zshrc && _client_texenv '$1'" &!
     svim "$1"
+}
+
+_client_texenv() {
+    silent i3-msg "resize shrink up"
+    silent i3-msg "resize shrink up"
+    silent i3-msg "resize shrink up"
+    sleep .1
+    silent i3-msg 'focus parent'
+    sleep .1
+    silent i3-msg 'split h'
+    sleep .1
+    latexmk -silent -pvc -pdf "$1"
 }
