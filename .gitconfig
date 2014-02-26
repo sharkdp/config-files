@@ -10,6 +10,7 @@
 	br = branch
 	ci = commit
 	st = status
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [push]
 	default = simple
 [color]

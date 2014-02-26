@@ -89,7 +89,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
+" Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bronson/vim-trailing-whitespace'
@@ -101,6 +101,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'travitch/hasksyn'
 Bundle 'repeat.vim'
 Bundle 'bronson/vim-visual-star-search'
+Bundle 'tommcdo/vim-exchange'
 
 
 " User defined text objects (i* and a*)
