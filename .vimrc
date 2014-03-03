@@ -144,6 +144,7 @@ let g:solarized_termcolors=256
 source ~/.vim/bundle/vim-colors-solarized/autoload/togglebg.vim
 " Toggle BG with ,t
 nmap <silent> <Leader>t :ToggleBG<CR>
+highlight clear SignColumn
 
 set listchars=tab:▸\ ,eol:¬
 
