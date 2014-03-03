@@ -78,16 +78,16 @@ notify() {
 
 # removes all those anoying files from LaTeX working directories
 cleanLatexFolder() {
+    setopt null_glob
     for file in *.aux *.toc *.blg *.bbl *.synctex.gz *.dvi *.fdb_latexmk *.out *.ps *Notes.bib *.log *._aux *._log *.fls; do
-       if [ -e "$file" ]; then
+       if [[ -e "$file" ]]; then
             echo -n "Delete '$file' [y]: "
             read answ
-            if [ x"$answ" == x"y" ] || [ x"$answ" == x"" ]; then
+            if [[ x"$answ" == x"y" ]] || [[ x"$answ" == x"" ]]; then
                 rm "$file"
             fi
         fi
     done
-
 }
 
 # prevent Ctrl-S from freezing the terminal to use the shortcut in vim
@@ -113,11 +113,11 @@ gp() {
 trigger() {
     cmd="$1"
     shift
-    cmd="${cmd//#1/$1}"
-    cmd="${cmd//#2/$2}"
-    cmd="${cmd//#3/$3}"
-    cmd="${cmd//#4/$4}"
-    cmd="${cmd//#5/$5}"
+    cmd="${cmd//\#1/$1}"
+    cmd="${cmd//\#2/$2}"
+    cmd="${cmd//\#3/$3}"
+    cmd="${cmd//\#4/$4}"
+    cmd="${cmd//\#5/$5}"
 
     echo -e "$red>>>$reset Initial run of '$cmd'"
     eval "$cmd"
@@ -128,13 +128,6 @@ trigger() {
         eval "$cmd"
         echo
     done
-}
-
-# Version of 'trigger' for latexmk
-# "continuous latexmk"
-clatexmk() {
-    # trigger "latexmk -pvc -pdf #1" "$1"
-    latexmk -silent -pvc -pdf "$1"
 }
 
 # Run program silently in the background
@@ -159,5 +152,11 @@ _client_texenv() {
     sleep .1
     silent i3-msg 'split h'
     sleep .1
-    latexmk -silent -pvc -pdf "$1"
+    clatexmk "$1"
 }
+
+# Alt-S inserts "sudo " at the start of line:
+insert_sudo () { zle beginning-of-line; zle -U "sudo " }
+zle -N insert-sudo insert_sudo
+bindkey "^[s" insert-sudo
+

@@ -37,7 +37,7 @@ alias zshrc='vim ~/.cf/.zshrc && rehash'
 
 # Scripts
 alias getpw='python ~/Informatik/python/lastpass-python/getpw.py'
-alias pl='/home/shark/pl/cli/paperlocator'
+alias paperlocator='/home/shark/pl/cli/paperlocator'
 alias tinytag='python3 /home/shark/Informatik/python/tinytag/tinytag.py'
 
 # Continuously run latexmk in the background on a TeX file
