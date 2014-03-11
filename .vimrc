@@ -102,6 +102,7 @@ Bundle 'travitch/hasksyn'
 Bundle 'repeat.vim'
 Bundle 'bronson/vim-visual-star-search'
 Bundle 'tommcdo/vim-exchange'
+Bundle 'godlygeek/tabular'
 
 
 " User defined text objects (i* and a*)
@@ -248,3 +249,10 @@ let g:tex_fast="M"
 
 " Use english messages
 language en_US.UTF-8
+
+" Align with respect to = or : with <Leader>= and <Leader>:
+nmap <Leader>= :Tabularize /=<CR>
+vmap <Leader>= :Tabularize /=<CR>
+nmap <Leader>: :Tabularize /:\zs<CR>
+vmap <Leader>: :Tabularize /:\zs<CR>
+
