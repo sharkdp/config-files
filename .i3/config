@@ -10,7 +10,7 @@ bindsym $mod+t border toggle
 bindsym $mod+c exec google-chrome
 bindsym $mod+m exec Mathematica
 bindsym $mod+n exec nautilus
-bindsym $mod+b exec terminator -e alsamixer
+bindsym $mod+b exec pavucontrol
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xcwd | xargs terminator --working-directory
 
@@ -36,23 +36,32 @@ popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
 hide_edge_borders both
 
+## Mathematica
+# Open main window on workspace 3
+assign [title="Untitled-1"] 3
+# Don't show the startup pop-up:
+assign [instance="Qt-subapplication" class="^Mathematica$" title="^Qt-subapplication$"] 10
+# Close the stupid 'Welcome to mathematica' popup
+for_window [title="Welcome to Wolfram Mathematica 9"] kill
+
 # Assign specific workspaces to some applications
+assign [class="Mendeley"] 7
 assign [class="Skype"] 8
 assign [class="Pidgin"] 8
-
 assign [class="Spotify"] 9
-#assign [class="Google-chrome"] 1
 
 # Enable floating mode (popup style) for some applications
 for_window [window_role="pop-up"] floating enable
-for_window [title="Welcome to Wolfram Mathematica 9"] floating enable
 for_window [title="Find and Replace"] floating enable
-for_window [title="Google Keep"] floating enable
+for_window [title="^Google Keep$"] floating enable
 for_window [class="Pidgin"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Qalculate"] floating enable
 for_window [class="Steam"] floating enable
 for_window [class="Gxmessage"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [title="^Preferences$"] floating enable
+for_window [title="^RescueTime$"] floating enable
 
 # Change Font
 font pango:Ubuntu Sans  10
@@ -112,10 +121,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space floating toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -208,6 +214,7 @@ exec --no-startup-id /usr/bin/nm-applet # network applet
 exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec --no-startup-id gnome-settings-daemon # enable GTK designs
 exec --no-startup-id pa-applet # Pulse audio applet
+exec spotify
 exec_always --no-startup-id nitrogen --restore # draw background
 exec_always --no-startup-id xmodmap ~/.xmodmap
 exec_always --no-startup-id sleep 3 && xmodmap ~/.xmodmap
