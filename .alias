@@ -21,6 +21,7 @@ alias df='df -h'
 alias git='LC_ALL=en_US git'
 alias svim='vim --servername vim'
 alias gnuplot='rlwrap -c -a gnuplot'
+alias pf='pointfree'
 
 # SSH
 alias mountsultan='sshfs peter@sultan.theo3.physik.uni-stuttgart.de:/ /home/shark/mp'
@@ -47,3 +48,16 @@ alias clatexmk='latexmk -pvc -pdf'
 # Zsh filetype aliases
 alias -s tex='svim'
 alias -s pdf='background okular'
+alias -s hs='vim'
+alias -s js='vim'
+alias -s html='vim'
+alias -s py='vim'
+alias -s css='vim'
+alias -s less='vim'
+
+alias nvidia-settings-opti='optirun -b none nvidia-settings -c :8'
+
+# trigger certain programs on file change
+alias tg_doctest='trigger "doctest #1"'
+alias tg_make='trigger "make"'
+alias tg_python='py "make"'
