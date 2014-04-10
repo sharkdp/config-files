@@ -36,7 +36,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found web-search)
+plugins=(command-not-found web-search archlinux autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -61,11 +61,11 @@ rehash() {
 }
 
 nwlook() {
-    avahi-browse -t -a | grep --color=never IPv4
+    avahi-browse -t -a | grep --color=never IPv4 | grep -v LaserJet | grep -v KONICA
 }
 
 remotenwlook() {
-    ssh peter@sultan.theo3.physik.uni-stuttgart.de 'avahi-browse -t -a | grep --color=never IPv4 | grep -v mvagusta;avahi-browse -t -a  | grep --color=never IPv4'
+    ssh peter@sultan.theo3.physik.uni-stuttgart.de 'avahi-browse -t -a | grep --color=never IPv4 | grep -v LaserJet | grep -v KONICA'
 }
 
 pdfFontToOutlines() {
@@ -160,3 +160,4 @@ insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
+setopt interactivecomments
