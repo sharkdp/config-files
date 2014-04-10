@@ -17,7 +17,7 @@
     cursor_color = "#eee8d5"
     foreground_color = "#eee8d5"
     show_titlebar = False
-    font = Monospace 11
+    font = Source Code Pro Ultra-Light 11
     background_color = "#002b36"
   [[solarized-dark]]
     scrollbar_position = hidden
@@ -27,7 +27,7 @@
     cursor_color = "#eee8d5"
     foreground_color = "#eee8d5"
     show_titlebar = False
-    font = Monospace 11
+    font = Source Code Pro Medium 11
     background_color = "#002b36"
 [layouts]
   [[default]]
