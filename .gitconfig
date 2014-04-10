@@ -15,3 +15,5 @@
 	default = simple
 [color]
 	ui = true
+[core]
+	pager = less -F -X
