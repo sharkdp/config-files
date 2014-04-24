@@ -64,10 +64,13 @@ nnoremap <bs> X
 set nowrap
 
 " Use Ctrl-q for quitting, Ctrl-s for saving
-map <C-Q> :q<CR>
+noremap <C-Q> :q<CR>
+vnoremap <C-Q> <Esc>:q<CR>
+inoremap <C-Q> <Esc>:q<CR>
+
 noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
+vnoremap <silent> <C-S>         <Esc>:update<CR>
+inoremap <silent> <C-S>         <Esc>:update<CR>
 
 " remap :W, :Q etc if you press the shift key for too long
 cabbrev Q quit
@@ -256,3 +259,8 @@ vmap <Leader>= :Tabularize /=<CR>
 nmap <Leader>: :Tabularize /:\zs<CR>
 vmap <Leader>: :Tabularize /:\zs<CR>
 
+" In tex, add a & to the first = in this line and append '\\' at the end
+nmap <Leader>& ^f=i&<ESC>A \\<ESC>
+
+" In addition to C-w: delete word around/after the cursor
+imap <C-d> <C-o>daw
