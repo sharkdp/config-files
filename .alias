@@ -11,6 +11,7 @@ alias lsrecent='ls -l --sort=time -r'
 
 # program default options / shortcuts
 alias py='python3'
+alias py2='python2'
 alias ipy='ipython3'
 alias txz='tar xvzf'
 alias txj='tar xvjf'
