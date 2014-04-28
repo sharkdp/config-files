@@ -106,6 +106,7 @@ Plugin 'repeat.vim'
 Plugin 'bronson/vim-visual-star-search'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'godlygeek/tabular'
+Plugin 'wellle/targets.vim'
 
 
 " User defined text objects (i* and a*)
@@ -254,8 +255,14 @@ vmap <Leader>= :Tabularize /=<CR>
 nmap <Leader>: :Tabularize /:\zs<CR>
 vmap <Leader>: :Tabularize /:\zs<CR>
 
-" In tex, add a & to the first = in this line and append '\\' at the end
+" LaTeX helpers
+" Add a & to the first = in this line and append '\\' at the end
 nmap <Leader>& ^f=i&<ESC>A \\<ESC>
+" Change a ( .. ) part to \br{ .. }
+nmap <Leader>b cs({i\bb<ESC>
 
 " In addition to C-w: delete word around/after the cursor
 imap <C-d> <C-o>daw
+
+" Use pointfree with 'gq' in haskell files
+autocmd BufEnter *.hs set formatprg=xargs\ -0\ pointfree
