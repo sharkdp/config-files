@@ -66,7 +66,6 @@ for_window [class="Steam"] floating enable
 for_window [class="Gxmessage"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [title="^Preferences$"] floating enable
-for_window [title="^RescueTime$"] floating enable
 for_window [class="Anki"] floating enable
 for_window [class="Textext.py"] floating enable
 
@@ -226,7 +225,6 @@ bindsym $mod+i move workspace to output right
 exec --no-startup-id /usr/bin/nm-applet # network applet
 # exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec --no-startup-id dropboxd
-exec --no-startup-id rescuetime
 # exec --no-startup-id gnome-settings-daemon # enable GTK designs
 exec --no-startup-id pa-applet # Pulse audio applet
 exec sleep 10 && spotify

@@ -178,8 +178,8 @@ background() {
     silent "$*" &!
 }
 
-# Start tex environment
-texenv() {
+# Start LaTeX 'environment'
+te() {
     i3-msg "split v"
     sleep .1
     terminator -e "source ~/.zshrc && _client_texenv '$1'" &!
