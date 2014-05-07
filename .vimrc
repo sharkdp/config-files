@@ -128,11 +128,8 @@ Plugin 'kana/vim-textobj-user'
     " TODO: c clashes with *c*omment
     Plugin 'bps/vim-textobj-python'
 
-
-" Snipmate:
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" UltiSnips
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 call vundle#end()
@@ -266,3 +263,8 @@ imap <C-d> <C-o>daw
 
 " Use pointfree with 'gq' in haskell files
 autocmd BufEnter *.hs set formatprg=xargs\ -0\ pointfree
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
