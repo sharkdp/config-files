@@ -92,13 +92,11 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/syntastic'
-" Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'travitch/hasksyn'
 Plugin 'groenewege/vim-less'
-" Plugin 'coot/atp_vim'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
@@ -107,7 +105,6 @@ Plugin 'bronson/vim-visual-star-search'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'godlygeek/tabular'
 Plugin 'wellle/targets.vim'
-
 
 " User defined text objects (i* and a*)
 Plugin 'kana/vim-textobj-user'
@@ -268,3 +265,6 @@ autocmd BufEnter *.hs set formatprg=xargs\ -0\ pointfree
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Duplicate a line and comment out the top one
+nmap <Leader>c Ypkgccj
