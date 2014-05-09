@@ -56,6 +56,21 @@ eval `dircolors -b ~/.dir_colors`
 setopt NO_HUP
 setopt NO_CHECK_JOBS
 
+export reset='\x1b[0m'
+export blue='\x1b[34;01m'
+export turquoise='\x1b[36;01m'
+export darkgreen='\x1b[32;06m'
+export bold='\x1b[01m'
+export brown='\x1b[33;06m'
+export purple='\x1b[35;06m'
+export fuscia='\x1b[35;01m'
+export yellow='\x1b[33;01m'
+export darkblue='\x1b[34;06m'
+export green='\x1b[32;01m'
+export darkred='\x1b[31;06m'
+export teal='\x1b[36;06m'
+export red='\x1b[31;01m'
+
 rehash() {
     . ~/.zshrc
 }
@@ -73,7 +88,7 @@ pdfFontToOutlines() {
 }
 
 notify() {
-    /home/shark/.nwlook/notify.sh &
+    /home/shark/.cf/.nwlook/notify.sh &
 }
 
 # removes all those anoying files from LaTeX working directories
@@ -90,13 +105,27 @@ cleanLatexFolder() {
     done
 }
 
+# the same for haskell folders
+cleanHaskellFolder() {
+    setopt null_glob
+    for file in *.hi *.o; do
+       if [[ -e "$file" ]]; then
+            echo -n "Delete '$file' [y]: "
+            read answ
+            if [[ x"$answ" == x"y" ]] || [[ x"$answ" == x"" ]]; then
+                rm "$file"
+            fi
+        fi
+    done
+}
+
 # prevent Ctrl-S from freezing the terminal to use the shortcut in vim
 # bind -r '\C-s'
 stty start '^-' stop '^-'
 
 # the only real way to use gnuplot is via killall
 gp() {
-    killall gnuplot 2> /dev/null
+    killall gnuplot_qt 2> /dev/null
     gnuplot -persist < "$1"
 }
 
@@ -130,13 +159,27 @@ trigger() {
     done
 }
 
+# another wrapper on top of 'trigger'
+#
+# Usage:
+# >>> tg python script.py
+#
+# is equivalent to:
+# >>> trigger 'python #1' script.py
+#
+tg() {
+    cmd="$1"
+    shift
+    trigger "$cmd #1" $*
+}
+
 # Run program silently in the background
 background() {
     silent "$*" &!
 }
 
-# Start tex environment
-texenv() {
+# Start LaTeX 'environment'
+te() {
     i3-msg "split v"
     sleep .1
     terminator -e "source ~/.zshrc && _client_texenv '$1'" &!

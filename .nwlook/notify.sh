@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOT="/home/shark/.nwlook"
+ROOT="/home/shark/.cf/.nwlook"
 OLD="$ROOT/old"
 NEW="$ROOT/new"
 

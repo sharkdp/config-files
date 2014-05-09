@@ -8,4 +8,7 @@
 -- You must set your prompt to a lambda, it's a law.
 :set prompt "\n\x1b[01mλ:  \x1b[0m"
 
+-- Load some modules which are needed all the time
+:m +Test.QuickCheck
+:m +Control.Monad
 

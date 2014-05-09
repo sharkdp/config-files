@@ -6,15 +6,22 @@ new_window pixel 1
 # Toggle titlebar
 bindsym $mod+t border toggle
 
+# Switch to new displays
+bindsym $mod+z exec "autorandr --change --default single"
+
 # Shortcuts to open specific applications
-bindsym $mod+c exec google-chrome
-bindsym $mod+m exec Mathematica
+bindsym $mod+c exec google-chrome-stable
+bindsym $mod+m exec Mathematica -nosplash
 bindsym $mod+n exec nautilus
 bindsym $mod+b exec pavucontrol
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xcwd | xargs terminator --working-directory
 
 bindsym $mod+Shift+s exec "sudo pm-suspend"
+
+# Screen brightness
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 # Switch workspaces with F1-F9
 bindsym F1 workspace number 1
@@ -36,11 +43,9 @@ popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
 hide_edge_borders both
 
-## Mathematica
+## Mathematic
 # Open main window on workspace 3
 assign [title="Untitled-1"] 3
-# Don't show the startup pop-up:
-assign [instance="Qt-subapplication" class="^Mathematica$" title="^Qt-subapplication$"] 10
 # Close the stupid 'Welcome to mathematica' popup
 for_window [title="Welcome to Wolfram Mathematica 9"] kill
 
@@ -61,7 +66,8 @@ for_window [class="Steam"] floating enable
 for_window [class="Gxmessage"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [title="^Preferences$"] floating enable
-for_window [title="^RescueTime$"] floating enable
+for_window [class="Anki"] floating enable
+for_window [class="Textext.py"] floating enable
 
 # Change Font
 font pango:Ubuntu Sans  10
@@ -195,7 +201,8 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar
 bar {
-     status_command py3status -c ~/.i3status.conf
+     # status_command py3status -c ~/.i3status.conf
+     status_command python ~/.cf/i3pystatus.conf.py
      colors {
          statusline #999999
      }
@@ -209,12 +216,19 @@ mode "passthrough" {
 }
 bindsym $mod+p mode "passthrough"
 
+# Multiple screens
+bindsym $mod+u move workspace to output left
+bindsym $mod+i move workspace to output right
+
+
 # Autostart
 exec --no-startup-id /usr/bin/nm-applet # network applet
-exec --no-startup-id ~/.dropbox-dist/dropboxd
-exec --no-startup-id gnome-settings-daemon # enable GTK designs
+# exec --no-startup-id ~/.dropbox-dist/dropboxd
+exec --no-startup-id dropboxd
+# exec --no-startup-id gnome-settings-daemon # enable GTK designs
 exec --no-startup-id pa-applet # Pulse audio applet
-exec spotify
+exec sleep 10 && spotify
+exec google-chrome-stable
 exec_always --no-startup-id nitrogen --restore # draw background
-exec_always --no-startup-id xmodmap ~/.xmodmap
+# exec_always --no-startup-id xmodmap ~/.xmodmap
 exec_always --no-startup-id sleep 3 && xmodmap ~/.xmodmap

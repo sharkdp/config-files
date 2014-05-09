@@ -11,6 +11,7 @@ alias lsrecent='ls -l --sort=time -r'
 
 # program default options / shortcuts
 alias py='python3'
+alias py2='python2'
 alias ipy='ipython3'
 alias txz='tar xvzf'
 alias txj='tar xvjf'
@@ -18,7 +19,6 @@ alias nc='ncftpbookmarks'
 alias grep='grep --color'
 alias am='alsamixer'
 alias df='df -h'
-alias git='LC_ALL=en_US git'
 alias svim='vim --servername vim'
 alias gnuplot='rlwrap -c -a gnuplot'
 alias pf='pointfree'
@@ -56,8 +56,3 @@ alias -s css='vim'
 alias -s less='vim'
 
 alias nvidia-settings-opti='optirun -b none nvidia-settings -c :8'
-
-# trigger certain programs on file change
-alias tg_doctest='trigger "doctest #1"'
-alias tg_make='trigger "make"'
-alias tg_python='py "make"'

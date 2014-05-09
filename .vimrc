@@ -34,8 +34,8 @@ set incsearch
 set ignorecase
 set smartcase
 
-" using bash as standard shell
-set shell=bash
+" using zsh as standard shell
+set shell=zsh
 
 " show current command, matching bracket and mode, line numbers
 set showcmd
@@ -64,10 +64,13 @@ nnoremap <bs> X
 set nowrap
 
 " Use Ctrl-q for quitting, Ctrl-s for saving
-map <C-Q> :q<CR>
+noremap <C-Q> :q<CR>
+vnoremap <C-Q> <Esc>:q<CR>
+inoremap <C-Q> <Esc>:q<CR>
+
 noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
+vnoremap <silent> <C-S>         <Esc>:update<CR>
+inoremap <silent> <C-S>         <Esc>:update<CR>
 
 " remap :W, :Q etc if you press the shift key for too long
 cabbrev Q quit
@@ -78,58 +81,55 @@ cabbrev Wq wq
 " Vundle
 filetype off  " required to load Vundle
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Bundles
-Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'scrooloose/syntastic'
-" Bundle 'scrooloose/nerdtree'
-Bundle 'bling/vim-airline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'groenewege/vim-less'
-" Bundle 'coot/atp_vim'
-" Bundle 'Valloric/YouCompleteMe'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'travitch/hasksyn'
-Bundle 'repeat.vim'
-Bundle 'bronson/vim-visual-star-search'
-Bundle 'tommcdo/vim-exchange'
-Bundle 'godlygeek/tabular'
-
+Plugin 'gmarik/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'travitch/hasksyn'
+Plugin 'groenewege/vim-less'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'repeat.vim'
+Plugin 'bronson/vim-visual-star-search'
+Plugin 'tommcdo/vim-exchange'
+Plugin 'godlygeek/tabular'
+Plugin 'wellle/targets.vim'
 
 " User defined text objects (i* and a*)
-Bundle 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-user'
 
     " Last search pattern (/)
-    Bundle 'kana/vim-textobj-lastpat'
+    Plugin 'kana/vim-textobj-lastpat'
 
     " Comment (c)
-    Bundle 'glts/vim-textobj-comment'
+    Plugin 'glts/vim-textobj-comment'
 
     " Entire file (e)
-    Bundle 'kana/vim-textobj-entire'
+    Plugin 'kana/vim-textobj-entire'
 
     " Current line (l)
-    Bundle 'kana/vim-textobj-line'
+    Plugin 'kana/vim-textobj-line'
 
     " Functions (f) and classes (c) for python
     " TODO: c clashes with *c*omment
-    Bundle 'bps/vim-textobj-python'
+    Plugin 'bps/vim-textobj-python'
 
+" UltiSnips
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
-" Snipmate:
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
+call vundle#end()
 
 " default encoding in UTF-8
 filetype plugin indent on
@@ -141,10 +141,6 @@ set background=dark
 colorscheme solarized
 set t_Co=256
 let g:solarized_termcolors=256
-" bug in vim-solarized: load togglebg automatically
-source ~/.vim/bundle/vim-colors-solarized/autoload/togglebg.vim
-" Toggle BG with ,t
-nmap <silent> <Leader>t :ToggleBG<CR>
 highlight clear SignColumn
 
 set listchars=tab:▸\ ,eol:¬
@@ -206,9 +202,6 @@ nmap <Leader>s :call SynctexShow()<CR>
 " Call make
 nmap <silent> <Leader>m :make<CR>
 
-" Open NERDTree
-nmap <Leader>n :NERDTreeToggle<CR>
-
 " Vim Markdown
 let g:vim_markdown_folding_disabled=1
 
@@ -256,3 +249,22 @@ vmap <Leader>= :Tabularize /=<CR>
 nmap <Leader>: :Tabularize /:\zs<CR>
 vmap <Leader>: :Tabularize /:\zs<CR>
 
+" LaTeX helpers
+" Add a & to the first = in this line and append '\\' at the end
+nmap <Leader>& ^f=i&<ESC>A \\<ESC>
+" Change a ( .. ) part to \br{ .. }
+nmap <Leader>b cs({i\bb<ESC>
+
+" In addition to C-w: delete word around/after the cursor
+imap <C-d> <C-o>daw
+
+" Use pointfree with 'gq' in haskell files
+autocmd BufEnter *.hs set formatprg=xargs\ -0\ pointfree
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Duplicate a line and comment out the top one
+nmap <Leader>c Ypkgccj
