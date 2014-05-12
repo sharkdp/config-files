@@ -266,5 +266,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" Duplicate a line and comment out the top one
+" Duplicate a line / selection and comment out the first
 nmap <Leader>c Ypkgccj
+vmap <Leader>c gcgvyPgvgc
