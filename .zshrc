@@ -204,3 +204,7 @@ zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
 setopt interactivecomments
+
+# Ignore some file patterns for vim
+zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*?.aux' '*?.bbl' \
+    '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.hi' '*?.o' '*?.pdf' '*?.bak' '*\~'
