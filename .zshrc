@@ -208,3 +208,12 @@ setopt interactivecomments
 # Ignore some file patterns for vim
 zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*?.aux' '*?.bbl' \
     '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.hi' '*?.o' '*?.pdf' '*?.bak' '*\~'
+
+# custom auto completion
+compdef '_files -g "*.tex"' te
+compdef '_files -g "*.tex"' clatexmk
+
+compdef '_files -g "*.py"' py
+compdef '_files -g "*.py"' py2
+
+compdef '_files -g "*.hs"' ghci
