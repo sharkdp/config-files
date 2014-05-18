@@ -276,6 +276,17 @@ vmap <Leader>c gcgvyPgvgc
 nmap <Leader>h :SidewaysLeft<CR>
 nmap <Leader>l :SidewaysRight<CR>
 
+" Use sideways.vim with Haskell
+autocmd FileType haskell let b:sideways_definitions = [
+      \   {
+      \     'start':       '::\s*',
+      \     'end':         '^$',
+      \     'delimiter':   '^\s*->\s*',
+      \     'skip':        '^\s',
+      \     'brackets':    ['(', ')'],
+      \   },
+      \ ]
+
 " Expand/Shrink visual selection
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
