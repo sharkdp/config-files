@@ -105,6 +105,8 @@ Plugin 'bronson/vim-visual-star-search'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'godlygeek/tabular'
 Plugin 'wellle/targets.vim'
+Plugin 'AndrewRadev/sideways.vim'
+Plugin 'terryma/vim-expand-region'
 
 " User defined text objects (i* and a*)
 Plugin 'kana/vim-textobj-user'
@@ -269,3 +271,11 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " Duplicate a line / selection and comment out the first
 nmap <Leader>c Ypkgccj
 vmap <Leader>c gcgvyPgvgc
+
+" Add quick mappings for sideways.vim that allow shifting of arguments
+nmap <Leader>h :SidewaysLeft<CR>
+nmap <Leader>l :SidewaysRight<CR>
+
+" Expand/Shrink visual selection
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)

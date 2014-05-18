@@ -11,4 +11,7 @@
 -- Load some modules which are needed all the time
 :m +Test.QuickCheck
 :m +Control.Monad
+:m +Control.Applicative
+:m +Data.List
+:m +Data.Ord
 

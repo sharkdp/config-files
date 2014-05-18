@@ -56,3 +56,4 @@ alias -s css='vim'
 alias -s less='vim'
 
 alias nvidia-settings-opti='optirun -b none nvidia-settings -c :8'
+alias tgYinsh='trigger make Yinsh.hs Floyd.hs Frontend.hs'
