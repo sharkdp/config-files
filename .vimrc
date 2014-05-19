@@ -63,6 +63,9 @@ nnoremap <bs> X
 " do not wrap lines automatically
 set nowrap
 
+" Use softwrapping in text documents
+autocmd FileType text,markdown,html,tex setlocal wrap linebreak textwidth=80
+
 " Use Ctrl-q for quitting, Ctrl-s for saving
 noremap <C-Q> :q<CR>
 vnoremap <C-Q> <Esc>:q<CR>
