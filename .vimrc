@@ -64,7 +64,7 @@ nnoremap <bs> X
 set nowrap
 
 " Use softwrapping in text documents
-autocmd FileType text,markdown,html,tex setlocal wrap linebreak textwidth=80
+autocmd FileType text,markdown,html,tex setlocal wrap linebreak
 
 " Use Ctrl-q for quitting, Ctrl-s for saving
 noremap <C-Q> :q<CR>
@@ -110,6 +110,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'wellle/targets.vim'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'terryma/vim-expand-region'
+Plugin 'nishigori/increment-activator'
 
 " User defined text objects (i* and a*)
 Plugin 'kana/vim-textobj-user'
@@ -197,7 +198,7 @@ function! SynctexShow()
         echo "No synctex file found."
     else
         let pdffile = substitute(synctex, "synctex.gz", "pdf", "")
-        let execline = printf(":silent !okular --noraise --unique '%s\\#src:%d %s' & > /dev/null 2> /dev/null", shellescape(pdffile), line("."), shellescape(expand("%:p")))
+        let execline = printf(":silent !okular --noraise --unique '%s\\#src:%d %s' > /dev/null 2> /dev/null &", shellescape(pdffile), line("."), shellescape(expand("%:p")))
         exec execline
         :redraw!
     end
@@ -293,3 +294,8 @@ autocmd FileType haskell let b:sideways_definitions = [
 " Expand/Shrink visual selection
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+" Typing gcc is too much
+nmap <C-e> gcc
+imap <C-e> <C-o>gcc
+vmap <C-e> gc
