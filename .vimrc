@@ -1,5 +1,5 @@
 " Set leader key to ,
-let mapleader = ","
+let mapleader = "\<Space>"
 
 " vim instead of vi settings
 set nocompatible
@@ -299,3 +299,12 @@ vmap <C-v> <Plug>(expand_region_shrink)
 nmap <C-e> gcc
 imap <C-e> <C-o>gcc
 vmap <C-e> gc
+
+" Copy and paste to system clipboard with <Leader>p and <Leader>y
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
