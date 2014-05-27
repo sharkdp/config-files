@@ -1,0 +1,17 @@
+# Unison preferences file
+root = /media/Daten
+root = /media/shark/disk
+
+path = mp3
+path = Informatik
+path = Studium
+path = Bilder
+path = Dokumente
+path = Kontoumsatz
+path = Matlab
+path = smsbilliger
+path = Sonstiges
+path = tmp
+path = Geocaching
+path = GPS
+path = Einstellungen
