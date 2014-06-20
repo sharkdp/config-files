@@ -80,7 +80,7 @@ nwlook() {
 }
 
 remotenwlook() {
-    ssh peter@sultan.theo3.physik.uni-stuttgart.de 'avahi-browse -t -a | grep --color=never IPv4 | grep -v LaserJet | grep -v KONICA'
+    ssh peter@sultan.theo3.physik.uni-stuttgart.de -t 'avahi-browse -t -a | grep --color=never IPv4 | grep -v LaserJet | grep -v KONICA'
 }
 
 pdfFontToOutlines() {

@@ -29,6 +29,7 @@ alias mountlukas='sshfs peter@lukas.theo3.physik.uni-stuttgart.de:/disk2/httpd/h
 alias rootsultan='ssh root@sultan.theo3.physik.uni-stuttgart.de'
 alias rootlukas='ssh root@lukas.theo3.physik.uni-stuttgart.de'
 alias sshsultan='ssh peter@sultan.theo3.physik.uni-stuttgart.de'
+alias sshvis='ssh itp3@vis'
 
 # Edit config files
 alias vimrc='vim ~/.cf/.vimrc'

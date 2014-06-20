@@ -263,6 +263,7 @@ nmap <Leader>b cs({i\bb<ESC>
 
 " In addition to C-w: delete word around/after the cursor
 imap <C-d> <C-o>daw
+nmap <C-d> daw
 
 " Use pointfree with 'gq' in haskell files
 autocmd BufEnter *.hs set formatprg=xargs\ -0\ pointfree
