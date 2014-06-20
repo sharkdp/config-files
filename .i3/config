@@ -68,6 +68,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [title="^Preferences$"] floating enable
 for_window [class="Anki"] floating enable
 for_window [class="Textext.py"] floating enable
+for_window [class="Tomighty"] floating enable
 
 # Change Font
 font pango:Ubuntu Sans  10
