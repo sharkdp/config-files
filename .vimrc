@@ -309,3 +309,7 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+" Gnuplot
+autocmd BufNewFile,BufRead *.gp set filetype=gnuplot
+autocmd FileType gnuplot set commentstring=#\ %s
+
