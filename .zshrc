@@ -217,3 +217,8 @@ compdef '_files -g "*.py"' py
 compdef '_files -g "*.py"' py2
 
 compdef '_files -g "*.hs"' ghci
+
+compdef '_files -g "*.gp"' gp
+compdef '_files -g "*.gp"' gnuplot
+
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
