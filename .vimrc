@@ -14,7 +14,7 @@ set tabstop=4
 set cindent
 
 " Do not show startup message
-set shortmess=aI
+set shortmess=aIO
 
 " Dont write backup and swap files
 set nobackup
@@ -71,9 +71,9 @@ noremap <C-Q> :q<CR>
 vnoremap <C-Q> <Esc>:q<CR>
 inoremap <C-Q> <Esc>:q<CR>
 
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <Esc>:update<CR>
-inoremap <silent> <C-S>         <Esc>:update<CR>
+noremap <silent> <C-S>          :write<CR>
+vnoremap <silent> <C-S>         <Esc>:write<CR>
+inoremap <silent> <C-S>         <Esc>:write<CR>
 
 " remap :W, :Q etc if you press the shift key for too long
 cabbrev Q quit
