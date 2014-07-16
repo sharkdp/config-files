@@ -13,8 +13,8 @@ status.register("clock",
     format="%a %-d %b %X",)
 
 # Shows your CPU temperature, if you have a Intel CPU
-status.register("temp",
-    format="{temp:.0f}°C",)
+# status.register("temp",
+#     format="{temp:.0f}°C",)
 
 status.register("cpu_usage",
     format="{usage:02}%",)

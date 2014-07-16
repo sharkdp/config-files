@@ -223,13 +223,11 @@ bindsym $mod+i move workspace to output right
 
 
 # Autostart
-exec --no-startup-id /usr/bin/nm-applet # network applet
-# exec --no-startup-id ~/.dropbox-dist/dropboxd
-exec --no-startup-id dropboxd
-# exec --no-startup-id gnome-settings-daemon # enable GTK designs
-exec --no-startup-id pa-applet # Pulse audio applet
+exec_always --no-startup-id /usr/bin/nm-applet # network applet
+exec_always --no-startup-id dropboxd
+exec_always --no-startup-id pa-applet # Pulse audio applet
+exec_always --no-startup-id batti # Battery indicator
 exec sleep 10 && spotify
 exec google-chrome-stable
 exec_always --no-startup-id nitrogen --restore # draw background
-# exec_always --no-startup-id xmodmap ~/.xmodmap
 exec_always --no-startup-id sleep 3 && xmodmap ~/.xmodmap
