@@ -223,10 +223,10 @@ bindsym $mod+i move workspace to output right
 
 
 # Autostart
-exec_always --no-startup-id /usr/bin/nm-applet # network applet
+exec --no-startup-id /usr/bin/nm-applet # network applet
 exec_always --no-startup-id dropboxd
-exec_always --no-startup-id pa-applet # Pulse audio applet
-exec_always --no-startup-id batti # Battery indicator
+exec --no-startup-id pa-applet # Pulse audio applet
+# exec --no-startup-id batti # Battery indicator
 exec sleep 10 && spotify
 exec google-chrome-stable
 exec_always --no-startup-id nitrogen --restore # draw background

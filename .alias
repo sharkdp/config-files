@@ -21,7 +21,6 @@ alias grep='grep --color'
 alias am='alsamixer'
 alias df='df -h'
 alias svim='vim --servername vim'
-alias gnuplot='rlwrap -c -a gnuplot'
 alias pf='pointfree'
 
 # SSH
