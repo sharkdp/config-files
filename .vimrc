@@ -89,7 +89,6 @@ call vundle#begin()
 
 " Bundles
 Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
@@ -111,6 +110,8 @@ Plugin 'wellle/targets.vim'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'nishigori/increment-activator'
+Plugin 'tomasr/molokai'
+Plugin 'vim-scripts/gnuplot.vim'
 
 " User defined text objects (i* and a*)
 Plugin 'kana/vim-textobj-user'
@@ -141,13 +142,12 @@ call vundle#end()
 filetype plugin indent on
 set encoding=utf-8
 
-" Syntax highlighting and solarized colorscheme
-syntax enable
-set background=dark
-colorscheme solarized
+" Syntax highlighting
 set t_Co=256
-let g:solarized_termcolors=256
-highlight clear SignColumn
+syntax enable
+colorscheme molokai
+" hi SignColumn      ctermfg=118 ctermbg=235
+hi ColorColumn      ctermfg=118 ctermbg=232
 
 set listchars=tab:▸\ ,eol:¬
 
