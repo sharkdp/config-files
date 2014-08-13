@@ -58,3 +58,6 @@ alias -s less='vim'
 
 alias nvidia-settings-opti='optirun -b none nvidia-settings -c :8'
 alias tgYinsh='trigger make Yinsh.hs Floyd.hs Frontend.hs'
+
+alias todo='python ~/.cf/.tools/cliist/cliist.py'
+alias task='todo -d today -a'
