@@ -147,7 +147,8 @@ set t_Co=256
 syntax enable
 colorscheme molokai
 " hi SignColumn      ctermfg=118 ctermbg=235
-hi ColorColumn      ctermfg=118 ctermbg=232
+hi ColorColumn      ctermbg=232
+hi Visual           ctermbg=237
 
 set listchars=tab:▸\ ,eol:¬
 
