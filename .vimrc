@@ -172,6 +172,7 @@ let g:syntastic_check_on_wq=0
 let g:syntastic_enable_balloons=0
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_tex_checkers = []
+let g:syntastic_sh_checkers=['shellcheck']
 
 " Use par to format text
 " http://vimcasts.org/episodes/formatting-text-with-par/

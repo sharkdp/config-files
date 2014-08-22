@@ -42,7 +42,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/sbin/:/home/shark/.cabal/bin"
+export PATH="/home/shark/.cabal/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/sbin/"
 
 export EDITOR='vim'
 
@@ -220,5 +220,7 @@ compdef '_files -g "*.hs"' ghci
 
 compdef '_files -g "*.gp"' gp
 compdef '_files -g "*.gp"' gnuplot
+
+compdef '_files -g "*.sh"' bash
 
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'

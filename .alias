@@ -22,6 +22,8 @@ alias am='alsamixer'
 alias df='df -h'
 alias svim='vim --servername vim'
 alias pf='pointfree'
+alias p='/usr/bin/py'
+alias unp='unp -U'
 
 # SSH
 alias mountsultan='sshfs peter@sultan.theo3.physik.uni-stuttgart.de:/ /home/shark/mp'
@@ -41,6 +43,7 @@ alias zshrc='vim ~/.cf/.zshrc && rehash'
 alias getpw='python ~/Informatik/python/lastpass-python/getpw.py'
 alias paperlocator='/home/shark/pl/cli/paperlocator'
 alias tinytag='python3 /home/shark/Informatik/python/tinytag/tinytag.py'
+alias dcp='bash /home/shark/.cf/.tools/dcp.sh'
 
 # Continuously run latexmk in the background on a TeX file
 # (calls pdf viewer, see ~/.latexmkrc)

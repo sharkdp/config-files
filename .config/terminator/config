@@ -12,6 +12,7 @@
     background_image = None
     background_darkness = 0.89
     use_system_font = False
+    cursor_color = "#8e8e8e"
     foreground_color = "#f2f2f2"
     icon_bell = False
     show_titlebar = False
