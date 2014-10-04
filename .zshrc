@@ -84,11 +84,11 @@ remotenwlook() {
 }
 
 pdfFontToOutlines() {
-    gs -sDEVICE=pswrite -dNOCACHE -sOutputFile=- -q -dbatch -dNOPAUSE -dQUIET "$1" -c quit | ps2pdf - "$2"
+    gs -sDEVICE=ps2write -dNOCACHE -sOutputFile=- -q -dbatch -dNOPAUSE -dQUIET "$1" -c quit | ps2pdf - "$2"
 }
 
 notify() {
-    /home/shark/.cf/.nwlook/notify.sh &
+    /home/shark/.cf/.nwlook/notify.sh "$@" &
 }
 
 # removes all those anoying files from LaTeX working directories
@@ -180,9 +180,11 @@ background() {
 
 # Start LaTeX 'environment'
 te() {
-    i3-msg "split v"
-    sleep .1
-    terminator -e "source ~/.zshrc && _client_texenv '$1'" &!
+    if [[ $(psgrep -n latexmk) == "" ]]; then
+        i3-msg "split v"
+        sleep .1
+        terminator -e "source ~/.zshrc && _client_texenv '$1'" &!
+    fi
     svim "$1"
 }
 
@@ -224,3 +226,5 @@ compdef '_files -g "*.gp"' gnuplot
 compdef '_files -g "*.sh"' bash
 
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+setopt no_share_history

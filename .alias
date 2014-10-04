@@ -24,6 +24,7 @@ alias svim='vim --servername vim'
 alias pf='pointfree'
 alias p='/usr/bin/py'
 alias unp='unp -U'
+alias hgrep='history | grep'
 
 # SSH
 alias mountsultan='sshfs peter@sultan.theo3.physik.uni-stuttgart.de:/ /home/shark/mp'
