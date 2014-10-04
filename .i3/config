@@ -69,6 +69,8 @@ for_window [title="^Preferences$"] floating enable
 for_window [class="Anki"] floating enable
 for_window [class="Textext.py"] floating enable
 for_window [class="Tomighty"] floating enable
+for_window [class="Gvim"] floating enable
+for_window [title="^XML-Editor"] floating enable
 
 # Change Font
 font pango:Ubuntu Sans  10
@@ -219,7 +221,6 @@ bindsym $mod+p mode "passthrough"
 
 # Multiple screens
 bindsym $mod+u move workspace to output left
-bindsym $mod+i move workspace to output right
 
 
 # Autostart
