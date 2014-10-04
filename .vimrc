@@ -64,7 +64,7 @@ nnoremap <bs> X
 set nowrap
 
 " Use softwrapping in text documents
-autocmd FileType text,markdown,html,tex setlocal wrap linebreak
+autocmd FileType text,markdown,html setlocal wrap linebreak
 
 " Use Ctrl-q for quitting, Ctrl-s for saving
 noremap <C-Q> :q<CR>
@@ -315,3 +315,9 @@ vmap <Leader>P "+P
 autocmd BufNewFile,BufRead *.gp set filetype=gnuplot
 autocmd FileType gnuplot set commentstring=#\ %s
 
+" GitGutter keymappings
+nmap <Leader>j <Plug>GitGutterNextHunk
+nmap <Leader>k <Plug>GitGutterPrevHunk
+nmap <Leader>r <Plug>GitGutterRevertHunk
+
+let g:tex_flavor='latex'
