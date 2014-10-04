@@ -1,0 +1,3 @@
+i3-msg restart
+nm-applet &
+pa-applet &
