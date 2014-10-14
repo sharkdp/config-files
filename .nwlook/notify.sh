@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 ROOT="/home/shark/.cf/.nwlook"
 OLD="$ROOT/old"
 NEW="$ROOT/new"

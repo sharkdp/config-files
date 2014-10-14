@@ -1,11 +1,13 @@
 output eDP1
+primary
 mode 1920x1080
 pos 1680x0
-primary
+rotate normal
+output HDMI1
+off
 output VGA1
 mode 1680x1050
 pos 0x0
-output HDMI1
-off
+rotate normal
 output VIRTUAL1
 off

@@ -1,3 +1,5 @@
 i3-msg restart
+killall nm-applet
+killall pa-applet
 nm-applet &
 pa-applet &
