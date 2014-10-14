@@ -259,7 +259,9 @@ vmap <Leader>: :Tabularize /:\zs<CR>
 
 " LaTeX helpers
 " Add a & to the first = in this line and append '\\' at the end
-nmap <Leader>& ^f=i&<ESC>A \\<ESC>
+nmap <Leader>& ml^f=i&<ESC>A \\<ESC>`l
+" Only append \\
+nmap <Leader>e mlA\\<ESC>`l
 " Change a ( .. ) part to \br{ .. }
 nmap <Leader>b cs({i\bb<ESC>
 
@@ -319,5 +321,6 @@ autocmd FileType gnuplot set commentstring=#\ %s
 nmap <Leader>j <Plug>GitGutterNextHunk
 nmap <Leader>k <Plug>GitGutterPrevHunk
 nmap <Leader>r <Plug>GitGutterRevertHunk
+nmap <Leader>a <Plug>GitGutterStageHunk
 
 let g:tex_flavor='latex'
