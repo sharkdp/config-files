@@ -1,0 +1,20 @@
+# essentials
+alias ..='cd ..'
+alias cp='cp -v'
+
+# ls essentials
+alias ls='ls --color=auto'
+alias sl='ls'
+alias ll='ls -lh'
+alias l='ls -alh'
+alias lsrecent='ls -l --sort=time -r'
+
+# program default options / shortcuts
+alias py='python3'
+alias py2='python2'
+alias ipy='ipython3'
+alias ipy2='ipython2'
+alias txz='tar xvzf'
+alias txj='tar xvjf'
+alias grep='grep --color'
+alias hgrep='history | grep'
