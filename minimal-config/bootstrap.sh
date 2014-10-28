@@ -14,7 +14,10 @@ mkdir "${bd}"
 
 for file in $files; do
     path="$HOME/$file"
-    echo "Backing up and downloading new $file"
-    cp -v "$path" "${bd}/$file"
+    echo "Backing up and $file"
+    if [[ -e "$path" ]]; then
+        cp -v "$path" "${bd}/$file"
+    fi
+    echo "Downloading minimal $file"
     wget -q --no-check-certificate -O "$path" "${rootpath}/$file"
 done
