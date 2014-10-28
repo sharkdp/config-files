@@ -5,7 +5,7 @@ rootpath="https://raw.githubusercontent.com/sharkdp/config-files/master/minimal-
 files=".vimrc .bashrc .alias"
 
 bd="$HOME/.backup-config-files"
-if [ -f "$bd" ]; then
+if [ -e "$bd" ]; then
     echo -n "Delete old backup in '$bd' (Ctrl-C to cancel)?"
     read
     rm -r "${bd}"

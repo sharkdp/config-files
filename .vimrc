@@ -48,6 +48,10 @@ set number
 set undolevels=1000
 set history=200
 
+" Save undo history permanently
+set undodir=~/.vimundo
+set undofile
+
 " hide buffers instead of closing
 set hidden
 

@@ -15,4 +15,5 @@
 :m +Control.Applicative
 :m +Data.List
 :m +Data.Ord
+:m +Data.Maybe
 
