@@ -1,5 +1,3 @@
-Install via `wget`:
+Install set of minimal config files:
 
-```sh
-wget --no-check-certificate -O - https://raw.githubusercontent.com/sharkdp/config-files/master/minimal-config/bootstrap.sh | bash
-```
+` wget -q --no-check-certificate -O - https://raw.githubusercontent.com/sharkdp/config-files/master/minimal-config/bootstrap.sh | bash`

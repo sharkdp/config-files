@@ -89,9 +89,6 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 set wildmenu
 set wildmode=list:longest,full
 
-" Hightlight the 80th column
-set colorcolumn=80
-
 " Decrease dead time after ESC key
 set ttimeout
 set ttimeoutlen=50
