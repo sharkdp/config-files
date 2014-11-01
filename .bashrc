@@ -21,25 +21,15 @@ include="$include ${HOME}/.alias"
 
 for inc in $include
 do
-    [ -f $inc ] && source $inc
+    [[ -f $inc ]] && source "$inc"
 done
 
 eval `dircolors -b ~/.dir_colors`
-
-PS1="\[\033[1;34m\]\u\[\033[0m\] (\w) $ "
-
-case ${TERM} in
-    xterm*|rxvt|Eterm|eterm)
-        PS1="${PS1}\[\e]0;\w\a\]"
-        ;;
-esac
 
 export HISTCONTROL="ignoredups"
 export HISTFILESIZE="1000"
 
 shopt -s checkwinsize
-
-export GTK2_RC_FILES=$HOME/.gtkrc-2.0
 
 if [ -f /etc/bash_completion ]; then
  . /etc/bash_completion
@@ -117,3 +107,5 @@ trigger() {
         echo
     done
 }
+
+. ~/.bash_prompt
