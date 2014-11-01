@@ -19,10 +19,10 @@ fi
 . ~/.bash_prompt
 
 # bash completion on Arch
-[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 # and on Ubuntu
-[ -r /etc/bash_completion   ] && . /etc/bash_completion
+[ -r /etc/bash_completion ] && . /etc/bash_completion
 
 # custom settings
 source ~/.shellrc

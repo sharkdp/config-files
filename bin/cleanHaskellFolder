@@ -1,7 +1,6 @@
 #!/bin/bash
 # Clean up a Haskell source code folder
 
-setopt null_glob
 for file in *.hi *.o; do
    if [[ -e "$file" ]]; then
         echo -n "Delete '$file' [y]: "

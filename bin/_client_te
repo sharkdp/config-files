@@ -1,0 +1,12 @@
+#!/bin/bash
+# helper for the command 'te'
+
+silent i3-msg "resize shrink up"
+silent i3-msg "resize shrink up"
+silent i3-msg "resize shrink up"
+sleep .1
+silent i3-msg 'focus parent'
+sleep .1
+silent i3-msg 'split h'
+sleep .1
+clatexmk "$1"

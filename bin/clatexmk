@@ -1,0 +1,6 @@
+#!/bin/bash
+# Continuously run latexmk in the background on a TeX file
+# (calls pdf viewer, see ~/.latexmkrc)
+
+latexmk -pvc -pdf "$*"
+
