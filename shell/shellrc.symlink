@@ -92,7 +92,7 @@ tg() {
 
 # Run program silently in the background
 background() {
-    silent "$*" &!
+    silent "$*" &
 }
 
 # Start LaTeX 'environment'
