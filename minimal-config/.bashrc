@@ -8,9 +8,12 @@ rehash () {
     . ~/.bashrc 2> /dev/null
 }
 
-# prevent Ctrl-S from freezing the terminal to use the shortcut in vim
-bind -r '\C-s'
-stty -ixon
+# prevent Ctrl-S from freezing the terminal to use the shortcut in vim.
+# only in interactive shells
+if [[ -n "$PS1" ]]; then
+    bind -r '\C-s'
+    stty -ixon
+fi
 
 if [[ $(whoami) == "root" ]]; then
     PS1="\[\033[1;31m\]\u\[\033[0m\]@\h (\w) # "

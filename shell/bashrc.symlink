@@ -8,9 +8,12 @@ rehash () {
     . ~/.bashrc 2> /dev/null
 }
 
-# prevent Ctrl-S from freezing the terminal to use the shortcut in vim
-bind -r '\C-s'
-stty -ixon
+# prevent Ctrl-S from freezing the terminal to use the shortcut in vim.
+# only in interactive shells
+if [[ -n "$PS1" ]]; then
+    bind -r '\C-s'
+    stty -ixon
+fi
 
 # fancy bash prompt
 . ~/.bash_prompt
