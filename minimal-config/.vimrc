@@ -60,6 +60,9 @@ nnoremap <bs> X
 " do not wrap lines automatically
 set nowrap
 
+" Use softwrapping in text documents
+autocmd FileType text,markdown,html setlocal wrap linebreak
+
 " Use Ctrl-q for quitting, Ctrl-s for saving
 noremap <C-Q> :q<CR>
 vnoremap <C-Q> <Esc>:q<CR>
@@ -81,6 +84,13 @@ set encoding=utf-8
 
 " Syntax highlighting
 syntax enable
+set listchars=tab:▸\ ,eol:¬
+
+" disable arrow keys :-)
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
 
 " Clear search highlight (and redraw screen) with C-l
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
@@ -89,9 +99,19 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 set wildmenu
 set wildmode=list:longest,full
 
+" Use par to format text
+" http://vimcasts.org/episodes/formatting-text-with-par/
+set formatprg=par
+
+" Hightlight the 80th column
+set colorcolumn=80
+
 " Decrease dead time after ESC key
 set ttimeout
 set ttimeoutlen=50
+
+" Call make
+nmap <silent> <Leader>m :make<CR>
 
 
 " Swap the current word with the next word (which can be on a newline and
@@ -101,6 +121,9 @@ nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
 " Move to beginning/end of line while in insert mode
 inoremap <C-a> <C-o>0
 inoremap <C-e> <C-o>$
+
+" Go in and out of paste mode with F10
+set pastetoggle=<F10>
 
 " Remember last position when reopening files
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -125,6 +148,14 @@ noremap \ ,
 
 " Use english messages
 language en_US.UTF-8
+
+" LaTeX helpers
+" Add a & to the first = in this line and append '\\' at the end
+nmap <Leader>& ml^f=i&<ESC>A \\<ESC>`l
+" Only append \\
+nmap <Leader>e mlA\\<ESC>`l
+" Change a ( .. ) part to \br{ .. }
+nmap <Leader>b cs({i\bb<ESC>
 
 " In addition to C-w: delete word around/after the cursor
 imap <C-d> <C-o>daw
