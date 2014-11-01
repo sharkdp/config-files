@@ -37,9 +37,7 @@ set smartcase
 " show current command, matching bracket and mode, line numbers
 set showcmd
 set noshowmatch
-set noshowmode
 set number
-" set cmdheight=2
 
 " Long undo and command history
 set undolevels=1000
