@@ -1,5 +1,20 @@
 #!/bin/bash
 
+echo "                .__       .__               .__   "
+echo "          _____ |__| ____ |__| _____ _____  |  |  "
+echo "         /     \|  |/    \|  |/     \\__  \ |  |  "
+echo "        |  Y Y  \  |   |  \  |  Y Y  \/ __ \|  |__"
+echo "        |__|_|  /__|___|  /__|__|_|  (____  /____/"
+echo "              \/        \/         \/     \/      "
+echo "                               _____.__           "
+echo "            ____  ____   _____/ ____\__| ____     "
+echo "          _/ ___\/  _ \ /    \   __\|  |/ ___\    "
+echo "          \  \__(  <_> )   |  \  |  |  / /_/  >   "
+echo "           \___  >____/|___|  /__|  |__\___  /    "
+echo "               \/           \/        /_____/     "
+echo
+echo
+
 githubLoad() {
     path="$1"
     dest="$2"
@@ -15,11 +30,10 @@ mkdir "${bd}"
 
 for file in $files; do
     path="$HOME/$file"
-    echo "Backing up and $file"
     if [[ -e "$path" ]]; then
         cp -v "$path" "${bd}/$file"
     fi
-    echo "Downloading minimal $file"
+    echo "Downloading $file"
     githubLoad "${rootpath}/$file" "$path"
 done
 
