@@ -1,5 +1,8 @@
-Installation
+config-files
 ============
+
+Install
+-------
 
 Before installing, make sure the following packages are installed:
 ```
@@ -12,6 +15,15 @@ cd ~/.cf
 ./bootstrap
 ```
 
-Minimal set of config files
-===========================
-See [set of minimal config files](minimal-config).
+Update
+------
+```bash
+cd ~/.cf
+git pull
+./bootstrap
+```
+
+Minimal set
+-----------
+
+To install just the essentials, see the set of [minimal config files](minimal-config).
