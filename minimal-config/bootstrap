@@ -1,7 +1,12 @@
 #!/bin/bash
 
-rootpath="https://raw.githubusercontent.com/sharkdp/config-files/master/minimal-config"
+githubLoad() {
+    path="$1"
+    dest="$2"
+    wget -q --no-check-certificate -O "$dest" "https://raw.githubusercontent.com/$path"
+}
 
+rootpath="sharkdp/config-files/master/minimal-config"
 files=".vimrc .bashrc .alias .profile"
 
 bd="$HOME/.backup-config-files"
@@ -19,5 +24,9 @@ for file in $files; do
         cp -v "$path" "${bd}/$file"
     fi
     echo "Downloading minimal $file"
-    wget -q --no-check-certificate -O "$path" "${rootpath}/$file"
+    githubLoad "${rootpath}/$file" "$path"
 done
+
+# Install molokai theme for vim
+mkdir -p ~/.vim/colors
+githubLoad "tomasr/molokai/master/colors/molokai.vim" ~/.vim/colors/molokai.vim
