@@ -10,11 +10,7 @@ rootpath="sharkdp/config-files/master/minimal-config"
 files=".vimrc .bashrc .alias .profile"
 
 bd="$HOME/.backup-config-files"
-if [[ -e "$bd" ]]; then
-    echo -n "Delete old backup in '$bd' (Ctrl-C to cancel)? "
-    read
-    rm -r "${bd}"
-fi
+rm -r "${bd}"
 mkdir "${bd}"
 
 for file in $files; do
@@ -27,6 +23,6 @@ for file in $files; do
     githubLoad "${rootpath}/$file" "$path"
 done
 
-# Install molokai theme for vim
-mkdir -p ~/.vim/colors
-githubLoad "tomasr/molokai/master/colors/molokai.vim" ~/.vim/colors/molokai.vim
+echo "Installing monokai theme for vim"
+mkdir -p "$HOME/.vim/colors"
+githubLoad "sickill/vim-monokai/master/colors/monokai.vim" "$HOME/.vim/colors/monokai.vim"
