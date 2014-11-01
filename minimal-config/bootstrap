@@ -1,6 +1,8 @@
+#!/bin/bash
+
 rootpath="https://raw.githubusercontent.com/sharkdp/config-files/master/minimal-config"
 
-files=".vimrc .bashrc .alias"
+files=".vimrc .bashrc .alias .profile"
 
 bd="$HOME/.backup-config-files"
 if [[ -e "$bd" ]]; then
