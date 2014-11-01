@@ -8,6 +8,11 @@ rehash () {
     . ~/.bashrc 2> /dev/null
 }
 
+# update minimal set of config files
+update () {
+    wget -q --no-check-certificate -O - https://raw.githubusercontent.com/sharkdp/config-files/master/minimal-config/bootstrap | bash
+}
+
 # prevent Ctrl-S from freezing the terminal to use the shortcut in vim.
 # only in interactive shells
 if [[ -n "$PS1" ]]; then
