@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo
 echo "                .__       .__               .__   "
 echo "          _____ |__| ____ |__| _____ _____  |  |  "
 echo "         /     \|  |/    \|  |/     \\__  \ |  |  "
@@ -12,7 +13,6 @@ echo "          _/ ___\/  _ \ /    \   __\|  |/ ___\    "
 echo "          \  \__(  <_> )   |  \  |  |  / /_/  >   "
 echo "           \___  >____/|___|  /__|  |__\___  /    "
 echo "               \/           \/        /_____/     "
-echo
 echo
 
 githubLoad() {
@@ -40,3 +40,6 @@ done
 echo "Installing molokai theme for vim"
 mkdir -p "$HOME/.vim/colors"
 githubLoad "tomasr/molokai/master/colors/molokai.vim" "$HOME/.vim/colors/molokai.vim"
+
+echo "Reloading settings"
+source "$HOME/.bashrc"
