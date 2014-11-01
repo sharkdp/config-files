@@ -10,7 +10,7 @@ rootpath="sharkdp/config-files/master/minimal-config"
 files=".vimrc .bashrc .alias .profile"
 
 bd="$HOME/.backup-config-files"
-rm -r "${bd}"
+rm -rf "${bd}"
 mkdir "${bd}"
 
 for file in $files; do
