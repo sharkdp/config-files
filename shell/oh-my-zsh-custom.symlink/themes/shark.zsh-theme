@@ -17,8 +17,8 @@ ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 
 if [[ "`whoami`" == "shark" ]]; then
-    PROMPT="${pwd} $ "
+    PROMPT="${pwd} ❯ "
 else
-    PROMPT="${user} ${pwd} $ "
+    PROMPT="${user} ${pwd} ❯ "
 fi
 RPROMPT="${return_code} ${git_branch}"
