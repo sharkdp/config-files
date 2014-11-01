@@ -1,2 +1,3 @@
+shell/oh-my-zsh-custom.symlink/plugins
 programming/ipython.symlink/profile_default/history.sqlite
 __pycache__
