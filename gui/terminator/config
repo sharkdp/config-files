@@ -8,7 +8,7 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#333333:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2:#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2"
+    palette = "#292429:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
     background_image = None
     background_darkness = 0.89
     use_system_font = False
@@ -17,7 +17,7 @@
     icon_bell = False
     show_titlebar = False
     font = Source Code Pro 11
-    background_color = "#1b1e1f"
+    background_color = "#1a1a1a"
     scrollback_infinite = True
   [[solarized-dark]]
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
