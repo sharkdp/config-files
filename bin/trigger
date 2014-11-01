@@ -1,0 +1,31 @@
+#!/bin/bash
+# call with 'trigger <cmd> <file1> <file2>'
+#
+# This will run the command 'cmd' every time one
+# of the files is changed
+#
+# In the command string, #1, #2, can be used as a
+# synonym for file1, file2, ..
+#
+# Example: trigger 'python #1' run.py config.py
+#
+# See also: tg
+#
+
+cmd="$1"
+shift
+cmd="${cmd//\#1/$1}"
+cmd="${cmd//\#2/$2}"
+cmd="${cmd//\#3/$3}"
+cmd="${cmd//\#4/$4}"
+cmd="${cmd//\#5/$5}"
+
+echo -e "$red>>>$reset Initial run of '$cmd'"
+eval "$cmd"
+echo
+
+while cfile="$(inotifywait -q --format '%w' -e close_write \"$@\")"; do
+    echo -e "$red>>>$reset File '$cfile' has been changed"
+    eval "$cmd"
+    echo
+done

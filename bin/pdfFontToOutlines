@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gs -sDEVICE=ps2write -dNOCACHE -sOutputFile=- -q -dbatch -dNOPAUSE -dQUIET "$1" -c quit | ps2pdf - "$2"

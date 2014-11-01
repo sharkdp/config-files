@@ -50,3 +50,6 @@ alias tinytag='python3 /home/shark/Informatik/python/tinytag/tinytag.py'
 # Continuously run latexmk in the background on a TeX file
 # (calls pdf viewer, see ~/.latexmkrc)
 alias clatexmk='latexmk -pvc -pdf'
+
+# Lastpass
+alias githubpw='lpass show --clip --password github.com'

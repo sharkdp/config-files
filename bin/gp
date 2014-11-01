@@ -1,0 +1,5 @@
+#!/bin/bash
+# the only real way to use gnuplot is via killall
+
+killall gnuplot_qt 2> /dev/null
+gnuplot -persist < "$1"
