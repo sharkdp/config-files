@@ -34,9 +34,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-" using zsh as standard shell
-set shell=zsh
-
 " show current command, matching bracket and mode, line numbers
 set showcmd
 set noshowmatch
