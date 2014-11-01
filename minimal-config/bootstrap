@@ -23,6 +23,6 @@ for file in $files; do
     githubLoad "${rootpath}/$file" "$path"
 done
 
-echo "Installing monokai theme for vim"
+echo "Installing molokai theme for vim"
 mkdir -p "$HOME/.vim/colors"
-githubLoad "sickill/vim-monokai/master/colors/monokai.vim" "$HOME/.vim/colors/monokai.vim"
+githubLoad "tomasr/molokai/master/colors/molokai.vim" "$HOME/.vim/colors/molokai.vim"

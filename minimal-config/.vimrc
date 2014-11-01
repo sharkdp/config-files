@@ -85,7 +85,7 @@ set encoding=utf-8
 " Syntax highlighting
 set t_Co=256
 syntax enable
-colorscheme monokai
+colorscheme molokai
 " hi SignColumn      ctermfg=118 ctermbg=235
 hi ColorColumn      ctermbg=232
 hi Visual           ctermbg=237
