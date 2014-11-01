@@ -205,7 +205,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar
 bar {
      # status_command py3status -c ~/.i3status.conf
-     status_command python ~/.cf/i3pystatus.conf.py
+     status_command python ~/.cf/gui/i3/i3pystatus.conf.py
      colors {
          statusline #999999
      }

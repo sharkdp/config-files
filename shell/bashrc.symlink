@@ -1,0 +1,25 @@
+export HISTCONTROL="ignoredups"
+export HISTFILESIZE="1000"
+
+shopt -s checkwinsize
+
+# reload .bashrc
+rehash () {
+    . ~/.bashrc 2> /dev/null
+}
+
+# prevent Ctrl-S from freezing the terminal to use the shortcut in vim
+bind -r '\C-s'
+stty -ixon
+
+# fancy bash prompt
+. ~/.bash_prompt
+
+# bash completion on Arch
+[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+
+# and on Ubuntu
+[ -r /etc/bash_completion   ] && . /etc/bash_completion
+
+# custom settings
+source ~/.shellrc

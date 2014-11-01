@@ -39,33 +39,14 @@ alias sshsultan='ssh peter@sultan.theo3.physik.uni-stuttgart.de'
 alias sshvis='ssh itp3@vis'
 
 # Edit config files
-alias vimrc='vim ~/.cf/.vimrc'
-alias bashrc='vim ~/.cf/.bashrc && rehash'
-alias i3conf='vim ~/.cf/.i3/config && i3 restart'
-alias zshrc='vim ~/.cf/.zshrc && rehash'
+alias vimrc='vim ~/.cf/vim/vimrc.symlink'
+alias bashrc='vim ~/.cf/shell/bashrc.symlink && rehash'
+alias i3conf='vim ~/.cf/gui/i3/i3.symlink/config && i3 restart'
+alias zshrc='vim ~/.cf/shell/zshrc.symlink && rehash'
 
 # Scripts
-alias getpw='python ~/Informatik/python/lastpass-python/getpw.py'
-alias paperlocator='/home/shark/pl/cli/paperlocator'
 alias tinytag='python3 /home/shark/Informatik/python/tinytag/tinytag.py'
-alias dcp='bash /home/shark/.cf/.tools/dcp.sh'
 
 # Continuously run latexmk in the background on a TeX file
 # (calls pdf viewer, see ~/.latexmkrc)
 alias clatexmk='latexmk -pvc -pdf'
-
-# Zsh filetype aliases
-alias -s tex='svim'
-alias -s pdf='background okular'
-alias -s hs='vim'
-alias -s js='vim'
-alias -s html='vim'
-alias -s py='vim'
-alias -s css='vim'
-alias -s less='vim'
-
-alias nvidia-settings-opti='optirun -b none nvidia-settings -c :8'
-alias tgYinsh='trigger make Yinsh.hs Floyd.hs Frontend.hs'
-
-alias todo='python ~/.cf/.tools/cliist/cliist.py'
-alias task='todo -d today -a'

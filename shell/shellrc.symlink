@@ -1,0 +1,153 @@
+# this file is shared between my .zshrc and .bashrc
+
+nwlook() {
+    avahi-browse -t -a | grep --color=never IPv4 | grep -v LaserJet | grep -v KONICA
+}
+
+remotenwlook() {
+    ssh peter@sultan.theo3.physik.uni-stuttgart.de -t 'avahi-browse -t -a | grep --color=never IPv4 | grep -v LaserJet | grep -v KONICA'
+}
+
+pdfFontToOutlines() {
+    gs -sDEVICE=ps2write -dNOCACHE -sOutputFile=- -q -dbatch -dNOPAUSE -dQUIET "$1" -c quit | ps2pdf - "$2"
+}
+
+# removes all those anoying files from LaTeX working directories
+cleanLatexFolder() {
+    setopt null_glob
+    for file in *.aux *.toc *.blg *.bbl *.synctex.gz *.dvi *.fdb_latexmk *.out *.ps *Notes.bib *.log *._aux *._log *.fls; do
+       if [[ -e "$file" ]]; then
+            echo -n "Delete '$file' [y]: "
+            read answ
+            if [[ x"$answ" == x"y" ]] || [[ x"$answ" == x"" ]]; then
+                rm "$file"
+            fi
+        fi
+    done
+}
+
+# the same for haskell folders
+cleanHaskellFolder() {
+    setopt null_glob
+    for file in *.hi *.o; do
+       if [[ -e "$file" ]]; then
+            echo -n "Delete '$file' [y]: "
+            read answ
+            if [[ x"$answ" == x"y" ]] || [[ x"$answ" == x"" ]]; then
+                rm "$file"
+            fi
+        fi
+    done
+}
+
+# the only real way to use gnuplot is via killall
+gp() {
+    killall gnuplot_qt 2> /dev/null
+    gnuplot -persist < "$1"
+}
+
+# call with 'trigger <cmd> <file1> <file2>'
+#
+# This will run the command 'cmd' every time one
+# of the files is changed
+#
+# In the command string, #1, #2, can be used as a
+# synonym for file1, file2, ..
+#
+# Example: trigger 'python #1' run.py config.py
+#
+trigger() {
+    cmd="$1"
+    shift
+    cmd="${cmd//\#1/$1}"
+    cmd="${cmd//\#2/$2}"
+    cmd="${cmd//\#3/$3}"
+    cmd="${cmd//\#4/$4}"
+    cmd="${cmd//\#5/$5}"
+
+    echo -e "$red>>>$reset Initial run of '$cmd'"
+    eval "$cmd"
+    echo
+
+    while cfile="`inotifywait -q --format '%w' -e close_write \"$@\"`"; do
+        echo -e "$red>>>$reset File '$cfile' has been changed"
+        eval "$cmd"
+        echo
+    done
+}
+
+# another wrapper on top of 'trigger'
+#
+# Usage:
+# >>> tg python script.py
+#
+# is equivalent to:
+# >>> trigger 'python #1' script.py
+#
+tg() {
+    cmd="$1"
+    shift
+    trigger "$cmd #1" $*
+}
+
+# Run program silently in the background
+background() {
+    silent "$*" &!
+}
+
+# Start LaTeX 'environment'
+te() {
+    if [[ $(psgrep -n latexmk) == "" ]]; then
+        i3-msg "split v"
+        sleep .1
+        terminator -e "source ~/.zshrc && _client_texenv '$1'" &!
+    fi
+    svim "$1"
+}
+
+# helper for te()
+_client_texenv() {
+    silent i3-msg "resize shrink up"
+    silent i3-msg "resize shrink up"
+    silent i3-msg "resize shrink up"
+    sleep .1
+    silent i3-msg 'focus parent'
+    sleep .1
+    silent i3-msg 'split h'
+    sleep .1
+    clatexmk "$1"
+}
+
+# settings
+export reset='\x1b[0m'
+export blue='\x1b[34;01m'
+export turquoise='\x1b[36;01m'
+export darkgreen='\x1b[32;06m'
+export bold='\x1b[01m'
+export brown='\x1b[33;06m'
+export purple='\x1b[35;06m'
+export fuscia='\x1b[35;01m'
+export yellow='\x1b[33;01m'
+export darkblue='\x1b[34;06m'
+export green='\x1b[32;01m'
+export darkred='\x1b[31;06m'
+export teal='\x1b[36;06m'
+export red='\x1b[31;01m'
+
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+PATH="/home/shark/.cf/bin"
+PATH+=":/home/shark/.cabal/bin"
+PATH+=":/usr/local/bin"
+PATH+=":/usr/sbin"
+PATH+=":/usr/bin"
+PATH+=":/sbin"
+PATH+=":/bin"
+export PATH
+
+export EDITOR='vim'
+
+# read aliases and dir colors
+source ~/.alias
+
+eval `dircolors -b ~/.dir_colors`

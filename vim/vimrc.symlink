@@ -328,3 +328,8 @@ nmap <Leader>r <Plug>GitGutterRevertHunk
 nmap <Leader>a <Plug>GitGutterStageHunk
 
 let g:tex_flavor='latex'
+
+" Help in detecting the filetype of config files
+au BufRead,BufNewFile bashrc.symlink set filetype=sh
+au BufRead,BufNewFile alias.symlink set filetype=sh
+au BufRead,BufNewFile shellrc.symlink set filetype=sh

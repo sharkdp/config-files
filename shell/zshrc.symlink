@@ -1,0 +1,86 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="shark"
+
+# Set to this to use case-sensitive completion
+CASE_SENSITIVE="false"
+
+# How often before auto-updates occur? (in days)
+export UPDATE_ZSH_DAYS=31
+
+# Uncomment following line if you want to  shown in the command execution time stamp
+# in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
+# yyyy-mm-dd
+HIST_STAMPS="mm/dd/yyyy"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(command-not-found web-search archlinux autojump cabal python sudo zsh-syntax-highlighting)
+
+# Load oh my zsh
+source "$ZSH/oh-my-zsh.sh"
+
+# User configuration
+
+# Keep jobs running in the background
+setopt NO_HUP
+setopt NO_CHECK_JOBS
+
+# Reload .zshrc
+rehash() {
+    . ~/.zshrc
+}
+
+# Alt-S inserts "sudo " at the start of line:
+insert_sudo () {
+    zle beginning-of-line; zle -U "sudo "
+}
+zle -N insert-sudo insert_sudo
+bindkey "^[s" insert-sudo
+
+# allow comments at the prompt
+setopt interactivecomments
+
+# prevent Ctrl-S from freezing the terminal to use the shortcut in vim
+# bind -r '\C-s'
+stty start '^-' stop '^-'
+
+# Ignore some file patterns for vim
+zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*?.aux' '*?.bbl' \
+    '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.hi' '*?.o' '*?.pdf' '*?.bak' '*\~'
+
+# custom auto completion
+compdef '_files -g "*.tex"' te
+compdef '_files -g "*.tex"' clatexmk
+
+compdef '_files -g "*.py"' py
+compdef '_files -g "*.py"' py2
+
+compdef '_files -g "*.hs"' ghci
+
+compdef '_files -g "*.gp"' gp
+compdef '_files -g "*.gp"' gnuplot
+
+compdef '_files -g "*.sh"' bash
+
+# Zsh filetype aliases
+alias -s tex='svim'
+alias -s pdf='background okular'
+alias -s hs='vim'
+alias -s js='vim'
+alias -s html='vim'
+alias -s py='vim'
+alias -s css='vim'
+alias -s less='vim'
+
+# do not share history between zsh sessions
+setopt no_share_history
+
+# read more custom settings
+source ~/.shellrc
