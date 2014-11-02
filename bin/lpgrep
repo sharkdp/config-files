@@ -27,7 +27,9 @@ elif [[ $numres == "1" ]]; then
     lpass show --clip --password "$id" || exit
 
     website=$(echo "$out" | sed -re 's/ \[id: [0-9]+\]$//')
-    echo "Copied password for '$website' to clipboard"
+    user=$(lpass show --user "$id")
+    echo "Copied password for '$website' to clipboard."
+    [[ -n $user ]] && echo "The username is '$user'."
 else
     match
 fi
