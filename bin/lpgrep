@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Usage: lpgrep <query>
+#
+# Search for a website / service in the LastPass vault and copy
+# the password to the clipboard if there is exactly one match.
+# Otherwise, show a list of matching entries.
+#
+# Requirements:
+#   lastpass-cli (https://github.com/lastpass/lastpass-cli)
+#
+
+match() {
+    lpass ls | grep -E ' \[id: [0-9]+\]$' | grep --color "$query"
+}
+
+query="$*"
+out=$(match)
+numres=$(echo "$out" | wc -l)
+
+if [[ -z $out ]]; then
+    echo "No matching results for query '$query'"
+elif [[ $numres == "1" ]]; then
+    # Capture the ID from the output of the form 'website.com: [id: 12345]'.
+    # We use lookbehind (?<= ...) and lookahead (?= ...) to return the id alone.
+    id=$(echo "$out" | grep -Po '(?<= \[id: )[0-9]+(?=\])')
+    lpass show --clip --password "$id" || exit
+
+    website=$(echo "$out" | sed -re 's/ \[id: [0-9]+\]$//')
+    echo "Copied password for '$website' to clipboard"
+else
+    match
+fi
