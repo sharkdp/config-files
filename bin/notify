@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [[ $1 != "--daemon" ]]; then
+    echo "Daemonizing myself"
+    nohup "$0" "--daemon" "$@" > /dev/null 2>&1 &
+    exit
+fi
+
+shift
+
 ROOT="/tmp/"
 OLD="$ROOT/old"
 NEW="$ROOT/new"
