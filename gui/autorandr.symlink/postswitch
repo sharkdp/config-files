@@ -1,5 +1,7 @@
 i3-msg restart
 killall nm-applet
 killall pa-applet
+killall spotify
 nm-applet &
 pa-applet &
+(sleep 10 && spotify) &
