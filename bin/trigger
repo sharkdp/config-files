@@ -24,7 +24,7 @@ echo -e "$red>>>$reset Initial run of '$cmd'"
 eval "$cmd"
 echo
 
-while cfile="$(inotifywait -q --format '%w' -e close_write \"$@\")"; do
+while cfile=$(inotifywait -q --format '%w' -e close_write "$@"); do
     echo -e "$red>>>$reset File '$cfile' has been changed"
     eval "$cmd"
     echo
