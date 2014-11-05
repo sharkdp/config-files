@@ -43,6 +43,12 @@ set number
 set undolevels=1000
 set history=200
 
+" Save undo history permanently
+if has('persistent_undo')
+    set undodir=~/.vimundo
+    set undofile
+endif
+
 " hide buffers instead of closing
 set hidden
 
@@ -108,7 +114,9 @@ set wildmode=list:longest,full
 set formatprg=par
 
 " Hightlight the 80th column
-set colorcolumn=80
+if exists("+colorcolumn")
+    set colorcolumn=80
+endif
 
 " Decrease dead time after ESC key
 set ttimeout

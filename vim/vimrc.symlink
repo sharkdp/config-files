@@ -46,8 +46,10 @@ set undolevels=1000
 set history=200
 
 " Save undo history permanently
-set undodir=~/.vimundo
-set undofile
+if has('persistent_undo')
+    set undodir=~/.vimundo
+    set undofile
+endif
 
 " hide buffers instead of closing
 set hidden
@@ -89,7 +91,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Bundles
-Plugin 'gmarik/Vundle.vim'
+lugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
@@ -180,7 +182,9 @@ let g:syntastic_sh_checkers=['shellcheck']
 set formatprg=par
 
 " Hightlight the 80th column
-set colorcolumn=80
+if exists("+colorcolumn")
+    set colorcolumn=80
+endif
 
 " airline
 set laststatus=2
