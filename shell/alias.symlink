@@ -35,8 +35,11 @@ alias rootholle='ssh root@holle'
 alias rootnepomuk='ssh root@nepomuk'
 alias rootmeer='ssh root@meer'
 alias roothexe='ssh root@hexe'
-alias sshsultan='ssh peter@sultan.theo3.physik.uni-stuttgart.de'
-alias sshvis='ssh itp3@vis'
+alias sultan='ssh peter@sultan.theo3.physik.uni-stuttgart.de'
+alias holle='ssh holle'
+alias hexe='ssh hexe'
+alias meer='ssh meer'
+alias vis='ssh itp3@vis'
 
 # Edit config files
 alias vimrc='vim ~/.cf/vim/vimrc.symlink'
