@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [[ $# != 2 ]]; then
+    echo "Usage: runOnAll <user> <command>"
+    exit 1
+fi
+
+user="$1"
+cmd="$2"
+
+hostsFile="$HOME/.hosts"
+
+if [[ ! -f $hostsFile ]]; then
+    echo "Please create the file $hostsFile with a list of hosts"
+    exit 1
+fi
+
+list=''
+while read -r -u9 host; do
+    [[ $host == "" ]] || echo "$host" | grep -q '^#' && continue
+    list="$list$host "
+done 9< "$hostsFile"
+
+echo "Command: $cmd"
+echo "User:    $user"
+echo "Hosts:   $list"
+echo
+echo -n "Type password for $user to continue: "
+read -s sshpass
+echo
+
+while read -r -u9 host; do
+    [[ $host == "" ]] || echo "$host" | grep -q '^#' && continue
+
+    echo "=== Running on $host:"
+    sshpass -p "$sshpass" ssh "$user@$host" "$cmd" || echo "could not access host"
+done 9< "$hostsFile"

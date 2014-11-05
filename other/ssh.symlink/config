@@ -1,6 +1,15 @@
 Host sultan
     User peter
 
+Host holle
+    User peter
+
+Host hexe
+    User peter
+
+Host meer
+    User peter
+
 Host oblong
     User peter
 
@@ -8,4 +17,19 @@ Host lulu
     User peter
 
 Host vis
+    User peter
+
+Host wilde13
+    User peter
+
+Host pepik
+    User peter
+
+Host ritter
+    User peter
+
+Host billbo
+    User peter
+
+Host knopf
     User peter
