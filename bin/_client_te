@@ -9,4 +9,4 @@ silent i3-msg 'focus parent'
 sleep .1
 silent i3-msg 'split h'
 sleep .1
-clatexmk "$1"
+clatexmk "$@"

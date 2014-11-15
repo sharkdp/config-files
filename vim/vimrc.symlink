@@ -11,7 +11,7 @@ set shiftwidth=4
 set tabstop=4
 
 " Use C-style indentation
-set cindent
+set autoindent
 
 " Do not show startup message
 set shortmess=aIO
@@ -56,6 +56,9 @@ set hidden
 
 " show a few lines below the current line
 set scrolloff=7
+
+" the same horizontally
+set sidescrolloff=5
 
 " allow backspace to work over everything
 set backspace=indent,eol,start
@@ -153,6 +156,7 @@ colorscheme molokai
 hi ColorColumn      ctermbg=232
 hi Visual           ctermbg=237
 
+" Visible whitespace with :set list
 set listchars=tab:▸\ ,eol:¬
 
 " disable arrow keys :-)
