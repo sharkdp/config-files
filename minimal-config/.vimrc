@@ -11,7 +11,7 @@ set shiftwidth=4
 set tabstop=4
 
 " Use C-style indentation
-set cindent
+set autoindent
 
 " Do not show startup message
 set shortmess=aIO
@@ -55,6 +55,9 @@ set hidden
 " show a few lines below the current line
 set scrolloff=7
 
+" the same horizontally
+set sidescrolloff=5
+
 " allow backspace to work over everything
 set backspace=indent,eol,start
 
@@ -65,7 +68,7 @@ nnoremap <bs> X
 set nowrap
 
 " Use softwrapping in text documents
-autocmd FileType text,markdown,html setlocal wrap linebreak
+autocmd FileType text,markdown,html,tex setlocal wrap linebreak
 
 " Use Ctrl-q for quitting, Ctrl-s for saving
 noremap <C-Q> :q<CR>
@@ -94,6 +97,7 @@ colorscheme molokai
 hi ColorColumn      ctermbg=232
 hi Visual           ctermbg=237
 
+" Visible whitespace with :set list
 set listchars=tab:▸\ ,eol:¬
 
 " disable arrow keys :-)
