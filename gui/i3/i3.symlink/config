@@ -7,7 +7,7 @@ new_window pixel 1
 bindsym $mod+t border toggle
 
 # Switch to new displays
-bindsym $mod+z exec "autorandr --change --default single"
+bindsym $mod+z exec "autorandr --change --default single --force"
 
 # Shortcuts to open specific applications
 bindsym $mod+c exec google-chrome-stable
