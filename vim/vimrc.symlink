@@ -178,6 +178,7 @@ let g:syntastic_check_on_open=0
 let g:syntastic_check_on_wq=0
 let g:syntastic_enable_balloons=0
 let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--max-line-length=99'
 let g:syntastic_tex_checkers = []
 let g:syntastic_sh_checkers=['shellcheck']
 let g:syntastic_javascript_jslint_args = " "  " show all warnings
@@ -186,9 +187,9 @@ let g:syntastic_javascript_jslint_args = " "  " show all warnings
 " http://vimcasts.org/episodes/formatting-text-with-par/
 set formatprg=par
 
-" Hightlight the 80th column
+" Hightlight the 100th column
 if exists("+colorcolumn")
-    set colorcolumn=80
+    set colorcolumn=100
 endif
 
 " airline
