@@ -1,11 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #
 # Inspired by (stolen from) https://github.com/holman/dotfiles
 
 cd "$(dirname "$0")"
 DOTFILES_ROOT=$(pwd)
-
-set -e
 
 echo ''
 
@@ -106,7 +104,7 @@ install_cf () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find "$DOTFILES_ROOT" -maxdepth 3 -name '*.symlink')
+  for src in $(find "$DOTFILES_ROOT/" 3 -name '*.symlink')
   do
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
@@ -120,8 +118,9 @@ echo '  All symlinks installed!'
 echo ''
 
 # find the installers and run them iteratively
-find . -name install.sh | while read installer ; do
-    sh -c "${installer}"
+find "$DOTFILES_ROOT/" -name install.sh | while read installer ; do
+    info "Running '${installer}'"
+    bash -c "${installer}"
     if [[ $? ]]; then
         success "successfully ran $installer"
     else
