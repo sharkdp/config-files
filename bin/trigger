@@ -20,12 +20,22 @@ cmd="${cmd//\#3/$3}"
 cmd="${cmd//\#4/$4}"
 cmd="${cmd//\#5/$5}"
 
-echo -e "$red>>>$reset Initial run of '$cmd'"
-eval "$cmd"
-echo
+run() {
+    starttime=$SECONDS
+    eval "$cmd"
+    if [[ $? == 0 ]]; then
+        col=$green
+    else
+        col=$red
+    fi
+    elapsed=$((SECONDS - starttime))
+    echo -e "$col>>>$reset finished after $elapsed second(s)"
+}
+
+echo -e "$blue>>>$reset Initial run of '$cmd'"
+run
 
 while cfile=$(inotifywait -q --format '%w' -e close_write "$@"); do
-    echo -e "$red>>>$reset File '$cfile' has been changed"
-    eval "$cmd"
-    echo
+    echo -e "$blue>>>$reset File '$cfile' has been changed"
+    run
 done
