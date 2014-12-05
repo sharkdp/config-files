@@ -14,7 +14,7 @@ set tabstop=4
 set autoindent
 
 " Do not show startup message
-set shortmess=aIO
+set shortmess=atIO
 
 " Dont write backup and swap files
 set nobackup
@@ -105,7 +105,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'travitch/hasksyn'
 Plugin 'groenewege/vim-less'
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'repeat.vim'
@@ -118,6 +117,7 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'nishigori/increment-activator'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/gnuplot.vim'
+Plugin 'davidhalter/jedi-vim'
 
 " User defined text objects (i* and a*)
 Plugin 'kana/vim-textobj-user'
@@ -127,16 +127,6 @@ Plugin 'kana/vim-textobj-user'
 
     " Comment (c)
     Plugin 'glts/vim-textobj-comment'
-
-    " Entire file (e)
-    Plugin 'kana/vim-textobj-entire'
-
-    " Current line (l)
-    Plugin 'kana/vim-textobj-line'
-
-    " Functions (f) and classes (c) for python
-    " TODO: c clashes with *c*omment
-    Plugin 'bps/vim-textobj-python'
 
 " UltiSnips
 Plugin 'SirVer/ultisnips'
@@ -340,3 +330,7 @@ let g:tex_flavor='latex'
 au BufRead,BufNewFile bashrc.symlink set filetype=sh
 au BufRead,BufNewFile alias.symlink set filetype=sh
 au BufRead,BufNewFile shellrc.symlink set filetype=sh
+
+" Jedi
+let g:jedi#popup_on_dot = 0
+let g:jedi#rename_comand = "<leader>f"  " reFactor
