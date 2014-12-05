@@ -220,7 +220,7 @@ mode "passthrough" {
 bindsym $mod+p mode "passthrough"
 
 # Multiple screens
-bindsym $mod+u move workspace to output left
+bindsym $mod+u move workspace to output right
 
 
 # Autostart
