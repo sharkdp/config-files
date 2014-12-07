@@ -37,7 +37,6 @@ set smartcase
 " show current command, matching bracket and mode, line numbers
 set showcmd
 set noshowmatch
-set noshowmode
 set number
 
 " Long undo and command history
@@ -120,12 +119,8 @@ Plugin 'davidhalter/jedi-vim'
 
 " User defined text objects (i* and a*)
 Plugin 'kana/vim-textobj-user'
-
-    " Last search pattern (/)
-    Plugin 'kana/vim-textobj-lastpat'
-
-    " Comment (c)
-    Plugin 'glts/vim-textobj-comment'
+Plugin 'kana/vim-textobj-lastpat'  " Last search pattern (/)
+Plugin 'glts/vim-textobj-comment'  " Comment (c)
 
 " UltiSnips
 Plugin 'SirVer/ultisnips'
@@ -161,17 +156,6 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 set wildmenu
 set wildmode=list:longest,full
 
-" Syntastic
-let g:syntastic_enable_highlighting=0
-let g:syntastic_check_on_open=0
-let g:syntastic_check_on_wq=0
-let g:syntastic_enable_balloons=0
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--max-line-length=99'
-let g:syntastic_tex_checkers = []
-let g:syntastic_sh_checkers=['shellcheck']
-let g:syntastic_javascript_jslint_args = " "  " show all warnings
-
 " Use par to format text
 " http://vimcasts.org/episodes/formatting-text-with-par/
 set formatprg=par
@@ -181,37 +165,12 @@ if exists("+colorcolumn")
     set colorcolumn=100
 endif
 
-" airline
-set laststatus=2
-let g:airline_powerline_fonts=1
-" let g:airline#extensions#tabline#enabled=1
-
 " Decrease dead time after ESC key
 set ttimeout
 set ttimeoutlen=50
 
-" Synctex forward searching (use with <Leader> s)
-" See http://tex.stackexchange.com/a/10374/42128
-" Configure okular to call "vim --servername VIM --remote +'%l' '%f'"
-" for backward searching (vim needs to run in server mode).
-function! SynctexShow()
-    let synctex = glob("*.synctex.gz")
-    if strlen(synctex) == 0
-        echo "No synctex file found."
-    else
-        let pdffile = substitute(synctex, "synctex.gz", "pdf", "")
-        let execline = printf(":silent !okular --noraise --unique '%s\\#src:%d %s' > /dev/null 2> /dev/null &", shellescape(pdffile), line("."), shellescape(expand("%:p")))
-        exec execline
-        :redraw!
-    end
-endfunction
-nmap <Leader>s :call SynctexShow()<CR>
-
 " Call make
 nmap <silent> <Leader>m :make<CR>
-
-" Vim Markdown
-let g:vim_markdown_folding_disabled=1
 
 " Swap the current word with the next word (which can be on a newline and
 " punctuation is skipped):
@@ -245,18 +204,6 @@ set nrformats=
 " Use '\' as ',' for going backwards trough character finds (opposite of ';')
 noremap \ ,
 
-" Faster TeX syntax highlighting (disables some highlighting features)
-let g:tex_fast="M"
-
-" Use english messages
-language en_US.UTF-8
-
-" Align with respect to = or : with <Leader>= and <Leader>:
-nmap <Leader>= :Tabularize /=<CR>
-vmap <Leader>= :Tabularize /=<CR>
-nmap <Leader>: :Tabularize /:\zs<CR>
-vmap <Leader>: :Tabularize /:\zs<CR>
-
 " LaTeX helpers
 " Add a & to the first = in this line and append '\\' at the end
 nmap <Leader>& ml^f=i&<ESC>A \\<ESC>`l
@@ -272,29 +219,9 @@ nmap <C-d> daw
 " Use pointfree with 'gq' in haskell files
 autocmd BufEnter *.hs set formatprg=xargs\ -0\ pointfree
 
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 " Duplicate a line / selection and comment out the first
 nmap <Leader>c Ypkgccj
 vmap <Leader>c gcgvyPgvgc
-
-" Add quick mappings for sideways.vim that allow shifting of arguments
-nmap <Leader>h :SidewaysLeft<CR>
-nmap <Leader>l :SidewaysRight<CR>
-
-" Use sideways.vim with Haskell
-autocmd FileType haskell let b:sideways_definitions = [
-      \   {
-      \     'start':       '::\s*',
-      \     'end':         '^$',
-      \     'delimiter':   '^\s*->\s*',
-      \     'skip':        '^\s',
-      \     'brackets':    ['(', ')'],
-      \   },
-      \ ]
 
 " Expand/Shrink visual selection
 vmap v <Plug>(expand_region_expand)
@@ -316,6 +243,79 @@ vmap <Leader>P "+P
 " Gnuplot
 autocmd BufNewFile,BufRead *.gp set filetype=gnuplot
 autocmd FileType gnuplot set commentstring=#\ %s
+
+" Syntastic
+let g:syntastic_enable_highlighting=0
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
+let g:syntastic_enable_balloons=0
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--max-line-length=99'
+let g:syntastic_tex_checkers = []
+let g:syntastic_sh_checkers=['shellcheck']
+let g:syntastic_javascript_jslint_args = " "  " show all warnings
+
+" airline
+set laststatus=2
+let g:airline_powerline_fonts=1
+" let g:airline#extensions#tabline#enabled=1
+set noshowmode  " airline already shows it
+
+" Synctex forward searching (use with <Leader> s)
+" See http://tex.stackexchange.com/a/10374/42128
+" Configure okular to call "vim --servername VIM --remote +'%l' '%f'"
+" for backward searching (vim needs to run in server mode).
+function! SynctexShow()
+    let synctex = glob("*.synctex.gz")
+    if strlen(synctex) == 0
+        echo "No synctex file found."
+    else
+        let pdffile = substitute(synctex, "synctex.gz", "pdf", "")
+        let execline = printf(":silent !okular --noraise --unique '%s\\#src:%d %s' > /dev/null 2> /dev/null &", shellescape(pdffile), line("."), shellescape(expand("%:p")))
+        exec execline
+        :redraw!
+    end
+endfunction
+nmap <Leader>s :call SynctexShow()<CR>
+
+
+
+" Vim Markdown
+let g:vim_markdown_folding_disabled=1
+
+
+" Faster TeX syntax highlighting (disables some highlighting features)
+let g:tex_fast="M"
+
+" Use english messages
+language en_US.UTF-8
+
+" Align with respect to = or : with <Leader>= and <Leader>:
+nmap <Leader>= :Tabularize /=<CR>
+vmap <Leader>= :Tabularize /=<CR>
+nmap <Leader>: :Tabularize /:\zs<CR>
+vmap <Leader>: :Tabularize /:\zs<CR>
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Add quick mappings for sideways.vim that allow shifting of arguments
+nmap <Leader>h :SidewaysLeft<CR>
+nmap <Leader>l :SidewaysRight<CR>
+
+" Use sideways.vim with Haskell
+autocmd FileType haskell let b:sideways_definitions = [
+      \   {
+      \     'start':       '::\s*',
+      \     'end':         '^$',
+      \     'delimiter':   '^\s*->\s*',
+      \     'skip':        '^\s',
+      \     'brackets':    ['(', ')'],
+      \   },
+      \ ]
+
 
 " GitGutter keymappings
 nmap <Leader>j <Plug>GitGutterNextHunk

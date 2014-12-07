@@ -129,7 +129,6 @@ set ttimeoutlen=50
 " Call make
 nmap <silent> <Leader>m :make<CR>
 
-
 " Swap the current word with the next word (which can be on a newline and
 " punctuation is skipped):
 nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
