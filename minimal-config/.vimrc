@@ -14,7 +14,7 @@ set tabstop=4
 set autoindent
 
 " Do not show startup message
-set shortmess=aIO
+set shortmess=atIO
 
 " Dont write backup and swap files
 set nobackup
@@ -117,9 +117,9 @@ set wildmode=list:longest,full
 " http://vimcasts.org/episodes/formatting-text-with-par/
 set formatprg=par
 
-" Hightlight the 80th column
+" Hightlight the 100th column
 if exists("+colorcolumn")
-    set colorcolumn=80
+    set colorcolumn=100
 endif
 
 " Decrease dead time after ESC key
