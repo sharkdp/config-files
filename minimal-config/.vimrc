@@ -162,9 +162,6 @@ set nrformats=
 " Use '\' as ',' for going backwards trough character finds (opposite of ';')
 noremap \ ,
 
-" Use english messages
-language en_US.UTF-8
-
 " LaTeX helpers
 " Add a & to the first = in this line and append '\\' at the end
 nmap <Leader>& ml^f=i&<ESC>A \\<ESC>`l
