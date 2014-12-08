@@ -116,6 +116,7 @@ Plugin 'nishigori/increment-activator'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/gnuplot.vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 
 " User defined text objects (i* and a*)
 Plugin 'kana/vim-textobj-user'

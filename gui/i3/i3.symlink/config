@@ -232,3 +232,5 @@ exec sleep 10 && spotify
 exec google-chrome-stable
 exec_always --no-startup-id nitrogen --restore # draw background
 exec_always --no-startup-id sleep 3 && xmodmap ~/.xmodmap
+
+# vim:filetype=i3
