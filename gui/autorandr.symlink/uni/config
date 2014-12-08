@@ -5,11 +5,11 @@ pos 3000x1000
 rotate normal
 output HDMI1
 mode 1920x1080
-pos 0x500
+pos 1080x500
 rotate normal
 output VGA1
 mode 1920x1080
-pos 1920x000
+pos 0x000
 rotate left
 output VIRTUAL1
 off
