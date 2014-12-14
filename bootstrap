@@ -28,7 +28,9 @@ fail () {
 link_file () {
   local src=$1 dst=$2
 
-  local overwrite= backup= skip=
+  local overwrite=
+  local backup=
+  local skip=
   local action=
 
   if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
@@ -104,9 +106,16 @@ install_cf () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find "$DOTFILES_ROOT/" 3 -name '*.symlink')
+  for src in $(find "$DOTFILES_ROOT/" -name '*.symlink')
   do
     dst="$HOME/.$(basename "${src%.*}")"
+    link_file "$src" "$dst"
+  done
+
+  mkdir -p $HOME/.config
+  for src in $(find "$DOTFILES_ROOT/" -name '*.symlink-config')
+  do
+    dst="$HOME/.config/$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
 }
