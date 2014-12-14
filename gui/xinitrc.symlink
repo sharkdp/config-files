@@ -2,4 +2,6 @@ autorandr --change --default single
 
 numlockx &
 
+xrdb ~/.Xresources &
+
 exec i3 -V > .i3log 2>&1
