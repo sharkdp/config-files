@@ -333,4 +333,4 @@ au BufRead,BufNewFile shellrc.symlink set filetype=sh
 
 " Jedi
 let g:jedi#popup_on_dot = 0
-let g:jedi#rename_comand = "<leader>f"  " reFactor
+let g:jedi#rename_command = "<leader>f"  " reFactor
