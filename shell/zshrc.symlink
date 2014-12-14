@@ -106,3 +106,6 @@ setopt no_share_history
 
 # read more custom settings
 source ~/.shellrc
+
+# zsh bugfix: may be deleted in the future?
+unset GREP_OPTIONS
