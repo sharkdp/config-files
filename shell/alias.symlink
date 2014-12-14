@@ -7,7 +7,7 @@ alias ls='ls --color=auto'
 alias sl='ls'
 alias ll='ls -lh'
 alias l='ls -alh'
-alias lsrecent='ls -l --sort=time -r'
+alias lsrecent='ls -lh --sort=time -r'
 
 # program default options / shortcuts
 alias py='python3'
