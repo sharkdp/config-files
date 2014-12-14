@@ -9,6 +9,12 @@ alias ll='ls -lh'
 alias l='ls -alh'
 alias lsrecent='ls -lh --sort=time -r'
 
+# Edit config files
+alias vimrc='vim ~/.cf/vim/vimrc.symlink'
+alias bashrc='vim ~/.cf/shell/bashrc.symlink && rehash'
+alias i3conf='vim ~/.cf/gui/i3/i3.symlink/config && i3 restart'
+alias zshrc='vim ~/.cf/shell/zshrc.symlink && rehash'
+
 # program default options / shortcuts
 alias py='python3'
 alias py2='python2'
@@ -16,15 +22,15 @@ alias ipy='ipython3'
 alias ipy2='ipython2'
 alias txz='tar xvzf'
 alias txj='tar xvjf'
-alias nc='ncftpbookmarks'
 alias grep='grep --color'
+alias hgrep='fc -El 0 | grep'
 alias am='alsamixer'
 alias df='df -h'
 alias svim='vim --servername vim'
 alias pf='pointfree'
 alias p='/usr/bin/py'
 alias unp='unp -U'
-alias hgrep='fc -El 0 | grep'
+alias nc='ncftpbookmarks'
 
 # SSH
 alias mountsultan='sshfs peter@sultan.theo3.physik.uni-stuttgart.de:/ /home/shark/mp'
@@ -40,12 +46,6 @@ alias holle='ssh holle'
 alias hexe='ssh hexe'
 alias meer='ssh meer'
 alias vis='ssh itp3@vis'
-
-# Edit config files
-alias vimrc='vim ~/.cf/vim/vimrc.symlink'
-alias bashrc='vim ~/.cf/shell/bashrc.symlink && rehash'
-alias i3conf='vim ~/.cf/gui/i3/i3.symlink/config && i3 restart'
-alias zshrc='vim ~/.cf/shell/zshrc.symlink && rehash'
 
 # Scripts
 alias tinytag='python3 /home/shark/Informatik/python/tinytag/tinytag.py'

@@ -15,14 +15,16 @@ if [[ -n "$PS1" ]]; then
     stty -ixon
 fi
 
-# fancy bash prompt
-. ~/.bash_prompt
-
 # bash completion on Arch
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 # and on Ubuntu
 [ -r /etc/bash_completion ] && . /etc/bash_completion
+
+
+# Fancy bash prompt
+. ~/.bash_prompt
+
 
 # custom settings
 source ~/.shellrc
