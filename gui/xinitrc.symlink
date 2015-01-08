@@ -1,7 +1,13 @@
 autorandr --change --default single
 
-numlockx &
-
 xrdb ~/.Xresources &
 
+# we want to type numbers on the numpad
+numlockx &
+
+# disable screen timeout after 10min
+xset s off
+xset -dpms
+
+# start I3
 exec i3 -V > .i3log 2>&1
