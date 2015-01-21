@@ -34,4 +34,5 @@ while read -r -u9 host; do
 
     echo "=== Running on $host:"
     sshpass -p "$sshpass" ssh "$user@$host" "$cmd" || echo "could not access host"
+    echo
 done 9< "$hostsFile"
