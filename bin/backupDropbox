@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+
+date=$(date +"%y%m%d")
+
+src="/home/shark/Dropbox/"
+base="/run/media/shark/extern/dropbox-backup/"
+current="$base/current"
+incremental="$base/differential-$date"
+
+if [[ ! -e $base ]]; then
+    echo "Target directory for backup does not exist: '$base'"
+    exit 1
+fi
+
+mkdir -p "$current"
+
+rsync \
+    --verbose \
+    --archive \
+    --delete \
+    --backup \
+    --progress \
+    --backup-dir="$incremental" \
+    --checksum \
+    --one-file-system \
+    "$src" "$current"

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+src="/run/media/daten/Daten/"
+target="/run/media/shark/extern/daten-backup/Daten/"
+
+if [[ ! -e $src ]]; then
+    echo "Source directory for backup does not exist: '$src'"
+    exit 1
+fi
+
+if [[ ! -e $target ]]; then
+    echo "Target directory for backup does not exist: '$target'"
+    exit 1
+fi
+
+rsync \
+    --verbose \
+    --archive \
+    --delete \
+    --progress \
+    --one-file-system \
+    "$src" "$target"
