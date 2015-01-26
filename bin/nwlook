@@ -1,3 +1,23 @@
 #!/bin/bash
 
-avahi-browse -t -a | grep --color=never IPv4 | grep -v LaserJet | grep -v KONICA
+if [[ $1 == "-r" ]]; then
+    avahi-browse -t -a -r
+else
+    # Plumbing:
+    avahi-browse -t -a -p \
+        | sed -re 's/^\+;[a-z0-9]+;IPv4;//' \
+        | sed -re 's/;.*$//' \
+        | sed -re 's/\\032/ /g' \
+        | sed -re 's/\\0.*$//' \
+        | sed -re 's/\\[0-9]+//g' \
+        | sed -re 's/ +$//g' \
+        | grep -v KONICA \
+        | grep -v LaserJet \
+        | grep -v 1126 \
+        | grep -v 50841 \
+        | grep -v 92AD52F95A78EF92 \
+        | sort -u \
+        | sed -re 's/$/,/' \
+        | xargs echo \
+        | sed -re 's/,$//'
+fi
