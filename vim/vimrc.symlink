@@ -137,7 +137,6 @@ set encoding=utf-8
 set t_Co=256
 syntax enable
 colorscheme molokai
-" hi SignColumn      ctermfg=118 ctermbg=235
 hi ColorColumn      ctermbg=232
 hi Visual           ctermbg=237
 
@@ -224,10 +223,6 @@ autocmd BufEnter *.hs set formatprg=xargs\ -0\ pointfree
 nmap <Leader>c Ypkgccj
 vmap <Leader>c gcgvyPgvgc
 
-" Expand/Shrink visual selection
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-
 " Typing gcc is too much
 nmap <C-e> gcc
 imap <C-e> <C-o>gcc
@@ -279,11 +274,8 @@ function! SynctexShow()
 endfunction
 nmap <Leader>s :call SynctexShow()<CR>
 
-
-
 " Vim Markdown
 let g:vim_markdown_folding_disabled=1
-
 
 " Faster TeX syntax highlighting (disables some highlighting features)
 let g:tex_fast="M"
@@ -316,7 +308,6 @@ autocmd FileType haskell let b:sideways_definitions = [
       \     'brackets':    ['(', ')'],
       \   },
       \ ]
-
 
 " GitGutter keymappings
 nmap <Leader>j <Plug>GitGutterNextHunk
