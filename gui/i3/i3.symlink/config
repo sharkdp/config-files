@@ -14,8 +14,8 @@ bindsym $mod+c exec google-chrome-stable
 bindsym $mod+m exec Mathematica -nosplash
 bindsym $mod+n exec nautilus
 bindsym $mod+b exec pavucontrol
-# bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xcwd | xargs terminator --working-directory
+bindsym $mod+o exec killall spotify && spotify
 
 bindsym $mod+Shift+s exec "sudo pm-suspend"
 
