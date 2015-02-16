@@ -68,7 +68,7 @@ nnoremap <bs> X
 set nowrap
 
 " Use softwrapping in text documents
-autocmd FileType text,markdown,html,tex setlocal wrap linebreak
+autocmd FileType text,markdown,tex setlocal wrap linebreak
 
 " Use Ctrl-q for quitting, Ctrl-s for saving
 noremap <C-Q> :q<CR>

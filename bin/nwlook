@@ -16,8 +16,6 @@ else
         | grep -v 1126 \
         | grep -v 50841 \
         | grep -v 92AD52F95A78EF92 \
-        | sort -u \
-        | sed -re 's/$/,/' \
-        | xargs echo \
-        | sed -re 's/,$//'
+        | grep -v 34694 \
+        | sort -u
 fi
