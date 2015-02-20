@@ -1,0 +1,26 @@
+#!/bin/bash
+# Simple wrapper script that uses pandoc to convert markdown to pdf
+
+markdown="$1"
+
+if [[ ! -e "$markdown" || "$#" -ge 2 ]]; then
+    echo "Usage: mdtopdf <markdown file> <pdf output file>"
+    echo "If the second argument is not given, the '.md' file extension"
+    echo "of the first filename is replaced by '.pdf'."
+    exit 1
+fi
+
+if [[ $# -ne 2 ]]; then
+    pdf="${1/.md/.pdf}"
+else
+    pdf="$2"
+fi
+
+pandoc \
+    -f markdown \
+    -t latex \
+    -V fontsize=12pt \
+    -V papersize=a4paper \
+    -V documentclass=scrartcl \
+    -o "$pdf" \
+    "$markdown"
