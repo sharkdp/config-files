@@ -158,6 +158,7 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 " Autocompletion in command mode
 set wildmenu
 set wildmode=list:longest,full
+set wildignore+=*/dist/*,*.pdf
 
 " Use par to format text
 " http://vimcasts.org/episodes/formatting-text-with-par/
