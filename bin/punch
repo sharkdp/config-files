@@ -1,0 +1,13 @@
+#!/bin/bash
+# Usage: punch FILE
+# Like 'touch', only harder.
+
+file="$1"
+
+cp "$file" /tmp/punch-original
+
+# modify file by adding a line at the end
+echo "% file has been punched" >> "$file"
+
+# reset file to original after 1sec
+(sleep 1 && mv /tmp/punch-original "$file") &
