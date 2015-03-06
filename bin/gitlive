@@ -1,0 +1,10 @@
+#!/bin/bash
+# continously show the current status of the repository
+
+clear
+date
+echo
+git status
+sleep 3
+
+gitlive &
