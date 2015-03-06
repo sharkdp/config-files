@@ -266,9 +266,9 @@ set noshowmode  " airline already shows it
 " Configure okular to call "vim --servername VIM --remote +'%l' '%f'"
 " for backward searching (vim needs to run in server mode).
 function! SynctexShow()
-    let synctex = glob("*.synctex.gz")
+    let synctex = glob("*.synctex.gz", 1)
     if strlen(synctex) == 0
-        let synctex = glob("dist/*.synctex.gz")
+        let synctex = glob("dist/*.synctex.gz", 1)
         if strlen(synctex) == 0
             echo "No synctex file found."
             return 0
