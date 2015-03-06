@@ -1,0 +1,29 @@
+#!/bin/bash
+# Start LaTeX 'environment' for PhD thesis
+
+dir="/home/shark/t"
+file="main.tex"
+
+cd $dir
+
+# this is rude:
+killall okular
+psgrep -n latexmk | awk '{print $2}' | xargs kill
+
+# open okular in split view
+i3-msg "split h"
+okular "dist/main.pdf" &
+sleep .5
+
+# open latexmk on workspace 8
+i3-msg "workspace 8"
+i3-msg "move workspace to output left"
+sleep .1
+terminator -e "source ~/.zshrc && latexmk -pvc '$file'" &
+sleep .2
+
+# open vim
+i3-msg "workspace 2"
+i3-msg "focus left"
+sleep .1
+vim --servername vim "$file"
