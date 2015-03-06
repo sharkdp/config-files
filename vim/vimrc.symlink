@@ -85,6 +85,9 @@ cabbrev W write
 cabbrev WQ wq
 cabbrev Wq wq
 
+" call :Vimrc to edit ~/.vimrc
+command Vimrc edit ~/.vimrc
+
 " Vundle
 filetype off  " required to load Vundle
 
