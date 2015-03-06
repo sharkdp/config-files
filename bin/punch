@@ -15,4 +15,4 @@ cp "$file" /tmp/punch-original
 echo "% file has been punched" >> "$file"
 
 # reset file to original after 1sec
-(sleep 1 && mv /tmp/punch-original "$file") &
+(sleep 2 && mv /tmp/punch-original "$file") &
