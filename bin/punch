@@ -4,6 +4,11 @@
 
 file="$1"
 
+if [[ ! -e "$file" ]]; then
+    echo "File '$file' not found."
+    exit 1
+fi
+
 cp "$file" /tmp/punch-original
 
 # modify file by adding a line at the end
