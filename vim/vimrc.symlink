@@ -1,4 +1,4 @@
-" vim: set filetype=VimL:
+" vim: set filetype=vim:
 
 " Set leader key to ,
 let mapleader = "\<Space>"
