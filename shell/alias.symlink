@@ -28,11 +28,12 @@ alias am='alsamixer'
 alias df='df -h'
 alias svim='vim --servername vim'
 alias pf='pointfree'
-alias p='/usr/bin/py'
 alias unp='unp -U'
 alias nc='ncftpbookmarks'
 alias sqlite='sqlite3'
 alias copy='rsync --archive --stats --progress'
+alias s='git status'
+alias p='git push'
 
 # SSH
 alias mountsultan='sshfs peter@sultan.theo3.physik.uni-stuttgart.de:/ /home/shark/mp'
