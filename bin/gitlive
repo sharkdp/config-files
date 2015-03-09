@@ -3,8 +3,16 @@
 
 clear
 date
-echo
-git status
+
+function show() {
+    echo -e "\n####### $1"
+    eval "$1"
+}
+
+show "git status"
+show "git diff --stat"
+show "git diff --cached --stat"
+
 sleep 3
 
 gitlive &
