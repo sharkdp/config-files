@@ -339,3 +339,5 @@ let g:jedi#rename_command = "<leader>f"  " reFactor
 
 " CartoCSS
 autocmd BufNewFile,BufRead *.mss set filetype=less
+
+" vim: set filetype=vim:
