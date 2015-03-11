@@ -14,5 +14,5 @@ cp "$file" /tmp/punch-original
 # modify file by adding a line at the end
 echo "% file has been punched" >> "$file"
 
-# reset file to original after 1sec
+# reset file to original after a short time
 (sleep 2 && mv /tmp/punch-original "$file") &
