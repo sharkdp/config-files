@@ -17,13 +17,15 @@ var addSignature = function() {
     }
 };
 
-$(document).ready(function() {
-    $("button").click(function() {
-        setTimeout(function() {
-            // There might be several email windows. Each of
-            // them has a textfield with id em-0, em-1, ..
-            $("div[id^='em-']").one('click', addSignature)
-                               .one('focusin', addSignature);
-        }, 100);
+function onJqueryLoad() {
+    $(document).ready(function() {
+        $("button").click(function() {
+            setTimeout(function() {
+                // There might be several email windows. Each of
+                // them has a textfield with id em-0, em-1, ..
+                $("div[id^='aD-']").one('click', addSignature)
+                                   .one('focusin', addSignature);
+            }, 100);
+        });
     });
-});
+}
