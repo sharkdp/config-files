@@ -1,5 +1,3 @@
-" vim: set filetype=vim:
-
 " Set leader key to ,
 let mapleader = "\<Space>"
 
@@ -341,3 +339,6 @@ let g:jedi#rename_command = "<leader>f"  " reFactor
 
 " CartoCSS
 autocmd BufNewFile,BufRead *.mss set filetype=less
+
+" jshint
+autocmd BufNewFile,BufRead .jshintrc set filetype=json
