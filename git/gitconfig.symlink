@@ -10,6 +10,8 @@
 	br = branch
 	ci = commit
 	st = status
+	di = diff
+	dis = diff --staged
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [push]
 	default = simple
