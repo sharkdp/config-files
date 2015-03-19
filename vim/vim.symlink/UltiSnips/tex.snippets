@@ -19,7 +19,7 @@ snippet bc "Size-adjusting [] brackets"
 endsnippet
 
 snippet frac "Fraction"
-\frac{${1:1}}{${2:\sqrt\{2\}}}
+\frac{${0:${VISUAL:1}}}{${2:\sqrt\{2\}}}
 endsnippet
 
 snippet nc "New command" b
@@ -32,6 +32,10 @@ endsnippet
 
 snippet vec "Vector" w
 \vec{$1}${2:_{$3}}
+endsnippet
+
+snippet intb "integral with boundaries"
+\integralb{${1:-\infty}}{${2:\infty}}{${3:x}} $4
 endsnippet
 
 # PhD thesis
