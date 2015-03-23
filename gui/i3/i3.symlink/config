@@ -225,7 +225,7 @@ bindsym $mod+u move workspace to output right
 
 # Autostart
 exec --no-startup-id /usr/bin/nm-applet # network applet
-exec_always --no-startup-id dropboxd
+exec_always --no-startup-id dropbox
 exec --no-startup-id pa-applet # Pulse audio applet
 # exec --no-startup-id batti # Battery indicator
 exec sleep 10 && spotify
