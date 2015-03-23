@@ -44,7 +44,7 @@ ZSH_CUSTOM=~/.oh-my-zsh-custom
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found web-search archlinux autojump cabal python sudo zsh-syntax-highlighting)
+plugins=(command-not-found web-search archlinux autojump cabal python sudo zsh-syntax-highlighting grunt bower npm)
 
 source $ZSH/oh-my-zsh.sh
 
