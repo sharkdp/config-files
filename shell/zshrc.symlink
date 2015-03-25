@@ -106,3 +106,13 @@ setopt no_share_history
 
 # read more custom settings
 source ~/.shellrc
+
+# use ctrl+z ctrl+z to background+disown a subprocess
+fancy-ctrl-z () {
+    bg
+    disown
+    zle redisplay
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+

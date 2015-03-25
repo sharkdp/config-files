@@ -1,5 +1,5 @@
 #!/bin/bash
-# continously show the current status of the repository
+# continuously show the current status of the repository
 
 clear
 date
