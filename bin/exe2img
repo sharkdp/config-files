@@ -1,0 +1,5 @@
+#!/bin/bash
+
+path=/home/shark/GPS/Karten/openmtbmap/
+
+$path/openmtbmap_openvelomap_linux/create_omtb_garmin_img.sh -g $path/lgmt08186/gmt "$1" wide
