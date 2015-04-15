@@ -78,7 +78,15 @@ snippet go "omega" w
 \omega
 endsnippet
 
-# PhD thesis
 snippet fig "Figure command" b
-\fig{${1:.8}}{${2:file}}{${3:label}}{${4:caption}}
+\fig{${1:.8}}{${2:file}}{${3:caption}}
+endsnippet
+
+# PhD thesis
+snippet figopt "Figure (with options) command" b
+\figopt{${1:.8}}{${2:file}}{${3:label}}{${4:caption}}
+endsnippet
+
+snippet doublefig "Double-figure command" b
+\doublefig{${1:.45}}{${2:file1}}{${3:caption1}}{${4:.45}}{${5:file2}}{${6:caption2}}{${7:main caption}}
 endsnippet
