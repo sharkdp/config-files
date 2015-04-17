@@ -2,15 +2,13 @@
 
 set -e
 
-src="/mnt/media/Daten/"
+src="/mnt/daten/Daten/"
 target="/run/media/shark/extern/daten-backup/Daten/"
 
 if [[ ! -e $src ]]; then
     echo "Source directory for backup does not exist: '$src'"
     exit 1
 fi
-
-mount "$src"
 
 if [[ ! -e $target ]]; then
     echo "Target directory for backup does not exist: '$target'"
