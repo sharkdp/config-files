@@ -1,0 +1,38 @@
+#!/bin/bash
+# Dead simply pomodoro timer
+
+function work() {
+    echo -e "$red>>>$reset $1"
+}
+
+function rest() {
+    echo -e "$green>>>$reset $1"
+}
+
+function confirm() {
+    gxmessage -button "Stop:1,Ok:0" -default Ok "$1"
+}
+
+work "Starting timer at $(date +'%H:%M:%S')"
+sleep 10m
+
+work "15min to go"
+sleep 10m
+
+work " 5min to go"
+sleep 4m
+
+work " 1min to go"
+sleep 1m
+
+echo "$(date +'%Y-%m-%d %H:%M:%S') Finished pomodoro" >> ~/.pomodoro.log
+
+confirm "Start your break" || exit
+
+rest "Starting break at $(date +'%H:%M:%S')"
+sleep 4m
+
+rest " 1min to go"
+sleep 1m
+
+confirm "Start next pomodoro" && pomodoro
