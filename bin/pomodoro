@@ -1,38 +1,44 @@
 #!/bin/bash
 # Dead simply pomodoro timer
 
-function work() {
-    echo -e "$red>>>$reset $1"
-}
-
-function rest() {
-    echo -e "$green>>>$reset $1"
+function log() {
+    echo -e "⌚ $(date +'%H:%M:%S') $1★$reset  $2"
 }
 
 function confirm() {
-    gxmessage -button "Stop:1,Ok:0" -default Ok "$1"
+    zenity --question --text="$1" 2> /dev/null
 }
 
-work "Starting timer at $(date +'%H:%M:%S')"
-sleep 10m
+function countdown() {
+    mins=$2
+    while [[ $mins -gt 0 ]]; do
+        echo -en "           $1⏱$reset  $mins minute(s) to go  \r"
+        sleep 1m
+        : $((mins--))
+    done
+    echo -en "                                             \r"
+}
 
-work "15min to go"
-sleep 10m
+# Create log folder, if it does not exist
+test -e ~/.pomodoro || mkdir ~/.pomodoro
 
-work " 5min to go"
-sleep 4m
+# (Create) todays log-file
+logfile=$(date +'%Y-%m-%d')
+test -e "$logfile" || touch "$logfile"
 
-work " 1min to go"
-sleep 1m
+# Count the number of completed pomodoros today:
+pomodoros=$(wc -m < "$logfile")
 
-echo "$(date +'%Y-%m-%d %H:%M:%S') Finished pomodoro" >> ~/.pomodoro.log
+log $blue "Pomodoros today: $pomodoros"
+log $red "Starting pomodoro"
+countdown $red 25
+log $red "Finished pomodoro"
 
-confirm "Start your break" || exit
+# Log finished pomodoro
+echo -n 'X' >> "$logfile"
 
-rest "Starting break at $(date +'%H:%M:%S')"
-sleep 4m
-
-rest " 1min to go"
-sleep 1m
-
-confirm "Start next pomodoro" && pomodoro
+confirm "Start your break?" || exit
+log $green "Starting break"
+countdown $green 5
+log $green "Finished break"
+confirm "Start next pomodoro?" && pomodoro
