@@ -25,7 +25,6 @@ test -e ~/.pomodoro || mkdir ~/.pomodoro
 # (Create) todays log-file
 logfile=~/.pomodoro/$(date +'%Y-%m-%d')
 test -e "$logfile" || touch "$logfile"
-echo $logfile
 
 # Count the number of completed pomodoros today:
 pomodoros=$(wc -m < "$logfile")
