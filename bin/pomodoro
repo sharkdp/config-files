@@ -1,5 +1,5 @@
 #!/bin/bash
-# Dead simply pomodoro timer
+# Dead simple pomodoro timer
 
 function log() {
     echo -e "⌚ $(date +'%H:%M:%S') $1★$reset  $2"
