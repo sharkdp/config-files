@@ -161,7 +161,7 @@ set wildignore+=*/dist/*,*.pdf
 
 " Use par to format text
 " http://vimcasts.org/episodes/formatting-text-with-par/
-set formatprg=par
+set formatprg=par\ -w99
 
 " Hightlight the 100th column
 if exists("+colorcolumn")
