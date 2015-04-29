@@ -338,3 +338,6 @@ autocmd BufNewFile,BufRead *.mss set filetype=less
 
 " jshint
 autocmd BufNewFile,BufRead .jshintrc set filetype=json
+
+" LaTeX class files
+autocmd BufNewFile,BufRead *.cls set filetype=tex
