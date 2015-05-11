@@ -32,7 +32,7 @@ pomodoros=$(wc -m < "$logfile")
 log $blue "Pomodoros today: $pomodoros"
 log $red "Starting pomodoro"
 countdown $red 25
-log $red "Finished pomodoro"
+log $red "Finished pomodoro number $((pomodoros+1))"
 
 # Log finished pomodoro
 echo -n 'X' >> "$logfile"
