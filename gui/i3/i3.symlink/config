@@ -228,7 +228,7 @@ exec --no-startup-id /usr/bin/nm-applet # network applet
 exec_always --no-startup-id dropbox
 exec --no-startup-id pa-applet # Pulse audio applet
 # exec --no-startup-id batti # Battery indicator
-exec sleep 10 && spotify
+exec sleep 5 && spotify
 exec google-chrome-stable
 exec_always --no-startup-id nitrogen --restore # draw background
 exec_always --no-startup-id sleep 3 && xmodmap ~/.xmodmap
