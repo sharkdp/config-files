@@ -5,9 +5,14 @@ set -e
 date=$(date +"%y%m%d")
 
 src="/home/shark/Dropbox/"
-base="/run/media/shark/extern/dropbox-backup/"
-current="$base/current"
+base="/media/extern/dropbox-backup/"
+current="$base/Dropbox"
 incremental="$base/differential-$date"
+
+if [[ ! -e $src ]]; then
+    echo "Source directory for backup does not exist: '$src'"
+    exit 1
+fi
 
 if [[ ! -e $base ]]; then
     echo "Target directory for backup does not exist: '$base'"

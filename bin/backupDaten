@@ -2,23 +2,31 @@
 
 set -e
 
+date=$(date +"%y%m%d")
+
 src="/mnt/daten/Daten/"
-target="/run/media/shark/extern/daten-backup/Daten/"
+base="/media/extern/daten-backup/"
+current="$base/Daten"
+incremental="$base/differential-$date"
 
 if [[ ! -e $src ]]; then
     echo "Source directory for backup does not exist: '$src'"
     exit 1
 fi
 
-if [[ ! -e $target ]]; then
-    echo "Target directory for backup does not exist: '$target'"
+if [[ ! -e $base ]]; then
+    echo "Target directory for backup does not exist: '$base'"
     exit 1
 fi
+
+mkdir -p "$current"
 
 rsync \
     --verbose \
     --archive \
     --delete \
+    --backup \
     --progress \
+    --backup-dir="$incremental" \
     --one-file-system \
-    "$src" "$target"
+    "$src" "$current"
