@@ -95,7 +95,6 @@ compdef '_files -g "*.sh"' bash
 alias -s tex='svim'
 alias -s pdf='background okular'
 alias -s hs='vim'
-alias -s js='vim'
 alias -s html='vim'
 alias -s py='vim'
 alias -s css='vim'
