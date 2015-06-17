@@ -35,6 +35,7 @@ alias copy='rsync --archive --stats --progress'
 alias s='git status'
 alias p='git push'
 alias c='git commit -m'
+alias top='htop'
 
 # SSH
 alias mountsultan='sshfs peter@sultan.theo3.physik.uni-stuttgart.de:/ /home/shark/mp'
