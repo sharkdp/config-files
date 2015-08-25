@@ -341,3 +341,7 @@ autocmd BufNewFile,BufRead .jshintrc set filetype=json
 
 " LaTeX class files
 autocmd BufNewFile,BufRead *.cls set filetype=tex
+
+" Short indentation
+autocmd Filetype purescript setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
