@@ -1,4 +1,4 @@
-# this file is shared between my .zshrc and .bashrc
+# this file is shared between .zshrc and .bashrc
 
 # Run program silently in the background
 background() {
