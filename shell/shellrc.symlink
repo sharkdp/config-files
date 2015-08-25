@@ -25,6 +25,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 
 PATH="/home/shark/.cf/bin"
 PATH+=":/home/shark/.cabal/bin"
+PATH+=":/home/shark/.local/bin"
 PATH+=":/usr/local/bin"
 PATH+=":/usr/sbin"
 PATH+=":/usr/bin"
