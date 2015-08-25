@@ -8,6 +8,7 @@ alias sl='ls'
 alias ll='ls -lh'
 alias l='ls -alh'
 alias lsrecent='ls -lh --sort=time -r'
+alias lsd='ls -Alh --color=always --sort=time --reverse ~/Downloads/ | tail'
 
 # Edit config files
 alias vimrc='vim ~/.cf/vim/vimrc.symlink'
