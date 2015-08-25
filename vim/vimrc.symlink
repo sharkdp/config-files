@@ -124,6 +124,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
 Plugin 'raichoo/purescript-vim'
+Plugin 'jvirtanen/vim-octave'
 
 " UltiSnips
 Plugin 'SirVer/ultisnips'
@@ -345,3 +346,6 @@ autocmd BufNewFile,BufRead *.cls set filetype=tex
 " Short indentation
 autocmd Filetype purescript setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
+
+" Octave
+autocmd FileType octave set commentstring=%\ %s
