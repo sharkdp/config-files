@@ -74,6 +74,8 @@ for_window [class="Gvim"] floating enable
 for_window [title="^XML-Editor"] floating enable
 for_window [class="Octave-gui"] floating enable
 for_window [class="Octave"] floating enable
+for_window [class="MPlayer"] floating enable
+for_window [class="feh"] floating enable
 
 # Change Font
 font pango:Ubuntu Sans  10
