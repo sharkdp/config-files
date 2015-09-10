@@ -126,6 +126,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
 Plugin 'raichoo/purescript-vim'
 Plugin 'jvirtanen/vim-octave'
+Plugin 'amirh/HTML-AutoCloseTag'
 
 " UltiSnips
 Plugin 'SirVer/ultisnips'
