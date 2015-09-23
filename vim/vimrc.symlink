@@ -81,6 +81,11 @@ noremap <silent> <C-S>          :write<CR>
 vnoremap <silent> <C-S>         <Esc>:write<CR>
 inoremap <silent> <C-S>         <Esc>:write<CR>
 
+" Use Ctrl-b to close a buffer
+noremap <C-B>   :bd<CR>
+vnoremap <C-B>  <Esc>:bd<CR>
+inoremap <C-B>  <Esc>:bd<CR>
+
 " remap :W, :Q etc if you press the shift key for too long
 cabbrev Q quit
 cabbrev W write
