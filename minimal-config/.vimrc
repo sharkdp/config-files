@@ -68,7 +68,9 @@ nnoremap <bs> X
 set nowrap
 
 " Use softwrapping in text documents
-autocmd FileType text,markdown,html,tex setlocal wrap linebreak
+autocmd FileType text,markdown,tex,html setlocal wrap linebreak
+set breakindent
+set showbreak=┊ 
 
 " Use Ctrl-q for quitting, Ctrl-s for saving
 noremap <C-Q> :q<CR>
@@ -78,6 +80,11 @@ inoremap <C-Q> <Esc>:q<CR>
 noremap <silent> <C-S>          :write<CR>
 vnoremap <silent> <C-S>         <Esc>:write<CR>
 inoremap <silent> <C-S>         <Esc>:write<CR>
+
+" Use Ctrl-b to close a buffer
+noremap <C-B>   :bd<CR>
+vnoremap <C-B>  <Esc>:bd<CR>
+inoremap <C-B>  <Esc>:bd<CR>
 
 " remap :W, :Q etc if you press the shift key for too long
 cabbrev Q quit
@@ -93,7 +100,6 @@ set encoding=utf-8
 set t_Co=256
 syntax enable
 colorscheme molokai
-" hi SignColumn      ctermfg=118 ctermbg=235
 hi ColorColumn      ctermbg=232
 hi Visual           ctermbg=237
 
@@ -112,10 +118,11 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 " Autocompletion in command mode
 set wildmenu
 set wildmode=list:longest,full
+set wildignore+=*/dist/*,*.pdf,*/output/*,*/bower_components/*
 
 " Use par to format text
 " http://vimcasts.org/episodes/formatting-text-with-par/
-set formatprg=par
+set formatprg=par\ -w99
 
 " Hightlight the 100th column
 if exists("+colorcolumn")
@@ -158,7 +165,7 @@ vmap <C-j> ]e`[V`]
 " Switch off octal/hex number detection for <C-a>, <C-x>
 set nrformats=
 
-" Use '\' as ',' for going backwards trough character finds (opposite of ';')
+" Use '\' as ',' for going backwards through character finds (opposite of ';')
 noremap \ ,
 
 " LaTeX helpers
