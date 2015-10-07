@@ -211,7 +211,7 @@ vmap <C-j> ]e`[V`]
 " Switch off octal/hex number detection for <C-a>, <C-x>
 set nrformats=
 
-" Use '\' as ',' for going backwards trough character finds (opposite of ';')
+" Use '\' as ',' for going backwards through character finds (opposite of ';')
 noremap \ ,
 
 " LaTeX helpers
