@@ -69,8 +69,6 @@ set nowrap
 
 " Use softwrapping in text documents
 autocmd FileType text,markdown,tex,html setlocal wrap linebreak
-set breakindent
-set showbreak=┊ 
 
 " Use Ctrl-q for quitting, Ctrl-s for saving
 noremap <C-Q> :q<CR>
