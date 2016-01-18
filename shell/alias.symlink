@@ -55,6 +55,7 @@ alias vis='ssh itp3@vis'
 
 # Scripts
 alias tinytag='python3 /home/shark/Informatik/python/tinytag/tinytag.py'
+alias chronicle='/home/shark/Dropbox/chronicle/write'
 
 # Lastpass
 alias githubpw='lpass show --clip --password github.com'
