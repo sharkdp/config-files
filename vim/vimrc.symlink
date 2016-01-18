@@ -353,3 +353,8 @@ autocmd BufNewFile,BufRead *.cls set filetype=tex
 
 " Octave
 autocmd FileType octave set commentstring=%\ %s
+
+" Special indentation for some files
+au FileType purescript setl sw=2 st=2
+au FileType html setl sw=2 st=2
+au FileType markdown setl sw=2 st=2
