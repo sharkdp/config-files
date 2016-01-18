@@ -170,11 +170,11 @@ set wildignore+=*/dist/*,*.pdf,*/output/*,*/bower_components/*
 
 " Use par to format text
 " http://vimcasts.org/episodes/formatting-text-with-par/
-set formatprg=par\ -w99
+set formatprg=par\ -w79
 
-" Hightlight the 100th column
+" Hightlight the 80 column
 if exists("+colorcolumn")
-    set colorcolumn=100
+    set colorcolumn=80
 endif
 
 " Decrease dead time after ESC key
