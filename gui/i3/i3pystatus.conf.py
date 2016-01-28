@@ -65,7 +65,7 @@ status.register("network",
 # like quality and network names.
 #
 # Note: requires both netifaces-py3 and basiciw
-status.register("wireless",
+status.register("network",
     interface="wlp9s0",
     format_up="{essid} {quality:03.0f}%",)
 
@@ -77,4 +77,3 @@ status.register("disk",
     format="{avail}G",)
 
 status.run()
-
