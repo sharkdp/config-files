@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+src="/home/shark/Dropbox/"
+base="shark@kalyke.de:/home/shark/backup/backup-dropbox"
+current="$base/Dropbox"
+
+if [[ ! -e $src ]]; then
+    echo "Source directory for backup does not exist: '$src'"
+    exit 1
+fi
+
+rsync \
+    --rsh="ssh" \
+    --archive \
+    --delete \
+    --delete-excluded \
+    --backup \
+    --compress \
+    --progress \
+    "$src" "$current"
