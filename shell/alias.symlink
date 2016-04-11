@@ -24,7 +24,7 @@ alias ipy2='ipython2'
 alias txz='tar xvzf'
 alias txj='tar xvjf'
 alias grep='grep --color'
-alias hgrep='fc -El 0 | grep'
+alias hgrep='history | grep'
 alias am='alsamixer'
 alias df='df -h'
 alias svim='vim --servername vim'
@@ -38,24 +38,6 @@ alias p='git push'
 alias c='git commit -m'
 alias top='htop'
 
-# SSH
-alias mountsultan='sshfs peter@sultan.theo3.physik.uni-stuttgart.de:/ /home/shark/mp'
-alias mountlukas='sshfs peter@lukas.theo3.physik.uni-stuttgart.de:/disk2/httpd/htdocs/ /home/shark/mp'
-alias rootsultan='ssh root@sultan.theo3.physik.uni-stuttgart.de'
-alias rootlukas='ssh root@lukas'
-alias rootholle='ssh root@holle'
-alias rootnepomuk='ssh root@nepomuk'
-alias rootmeer='ssh root@meer'
-alias roothexe='ssh root@hexe'
-alias sultan='ssh peter@sultan.theo3.physik.uni-stuttgart.de'
-alias holle='ssh holle'
-alias hexe='ssh hexe'
-alias meer='ssh meer'
-alias vis='ssh itp3@vis'
-
 # Scripts
 alias tinytag='python3 /home/shark/Informatik/python/tinytag/tinytag.py'
 alias chronicle='/home/shark/Dropbox/chronicle/write'
-
-# Lastpass
-alias githubpw='lpass show --clip --password github.com'
