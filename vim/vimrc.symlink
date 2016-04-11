@@ -111,7 +111,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'travitch/hasksyn'
@@ -266,7 +267,7 @@ let g:syntastic_javascript_jslint_args = " "  " show all warnings
 " airline
 set laststatus=2
 let g:airline_powerline_fonts=1
-" let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='molokai'
 set noshowmode  " airline already shows it
 
 " Synctex forward searching (use with <Leader> s)
