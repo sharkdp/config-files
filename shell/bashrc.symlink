@@ -1,5 +1,5 @@
 export HISTCONTROL="ignoredups"
-export HISTFILESIZE="1000"
+export HISTFILESIZE="10000"
 
 shopt -s checkwinsize
 
@@ -25,6 +25,14 @@ fi
 # Fancy bash prompt
 . ~/.bash_prompt
 
+# enter directories without using 'cd':
+shopt -s autocd
+
+# Enable ** globs:
+shopt -s globstar
+
+# Save multiline commands in history
+shopt -s cmdhist
 
 # custom settings
 source ~/.shellrc
