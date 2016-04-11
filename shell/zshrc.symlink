@@ -92,13 +92,7 @@ compdef '_files -g "*.gp"' gnuplot
 compdef '_files -g "*.sh"' bash
 
 # Zsh filetype aliases
-alias -s tex='svim'
 alias -s pdf='background okular'
-alias -s hs='vim'
-alias -s html='vim'
-alias -s py='vim'
-alias -s css='vim'
-alias -s less='vim'
 
 # do not share history between zsh sessions
 setopt no_share_history
