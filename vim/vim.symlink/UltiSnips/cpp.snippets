@@ -1,0 +1,25 @@
+snippet cout "std::cout" b
+std::cout << ${VISUAL}${0:"Test"} << std::endl;
+endsnippet
+
+snippet cerr "std::cerr" b
+std::cerr << ${VISUAL}${0} << std::endl;
+endsnippet
+
+snippet if "if" b
+if ( ${1} )
+{
+	${VISUAL}${2}
+}
+endsnippet
+
+snippet inc "Include" b
+#include <${0:iostream}>
+endsnippet
+
+snippet foru "for loop" b
+for ( uint32_t i = 0; ${1:i < }; ++i )
+{
+	$2;
+}
+endsnippet
