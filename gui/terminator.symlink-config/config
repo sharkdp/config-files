@@ -25,6 +25,7 @@
     foreground_color = "#f2f2f2"
     icon_bell = False
     palette = "#292429:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
+    scroll_on_output = False
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
