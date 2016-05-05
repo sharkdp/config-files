@@ -105,10 +105,8 @@ call vundle#begin()
 
 " Bundles
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-airline/vim-airline'
