@@ -54,7 +54,7 @@ for_window [title="Welcome to Wolfram Mathematica 9"] kill
 assign [class="Mendeley"] 7
 assign [class="Skype"] 8
 assign [class="Pidgin"] 8
-assign [class="Spotify"] 9
+for_window [class="Spotify"] move to workspace 9
 
 # Enable floating mode (popup style) for some applications
 for_window [window_role="pop-up"] floating enable
