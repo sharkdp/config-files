@@ -69,6 +69,10 @@ set nowrap
 
 " Use softwrapping in text documents
 autocmd FileType text,markdown,tex,html setlocal wrap linebreak
+if exists('+breakindent')
+    set breakindent
+    set showbreak=┊ 
+endif
 
 " Use Ctrl-q for quitting, Ctrl-s for saving
 noremap <C-Q> :q<CR>
@@ -89,6 +93,9 @@ cabbrev Q quit
 cabbrev W write
 cabbrev WQ wq
 cabbrev Wq wq
+
+" call :Vimrc to edit ~/.vimrc
+command Vimrc edit ~/.vimrc
 
 " default encoding in UTF-8
 filetype plugin indent on
@@ -120,11 +127,11 @@ set wildignore+=*/dist/*,*.pdf,*/output/*,*/bower_components/*
 
 " Use par to format text
 " http://vimcasts.org/episodes/formatting-text-with-par/
-set formatprg=par\ -w99
+set formatprg=par\ -w79
 
-" Hightlight the 100th column
+" Hightlight the 80 column
 if exists("+colorcolumn")
-    set colorcolumn=100
+    set colorcolumn=80
 endif
 
 " Decrease dead time after ESC key
@@ -184,10 +191,6 @@ autocmd BufEnter *.hs set formatprg=xargs\ -0\ pointfree
 " Duplicate a line / selection and comment out the first
 nmap <Leader>c Ypkgccj
 vmap <Leader>c gcgvyPgvgc
-
-" Expand/Shrink visual selection
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
 
 " Typing gcc is too much
 nmap <C-e> gcc

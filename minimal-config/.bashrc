@@ -1,5 +1,5 @@
 export HISTCONTROL="ignoredups"
-export HISTFILESIZE="1000"
+export HISTFILESIZE="10000"
 
 shopt -s checkwinsize
 
@@ -27,6 +27,15 @@ if [[ $(whoami) == "root" ]]; then
 else
     PS1="\[\033[1;34m\]\u\[\033[0m\]@\h (\w) $ "
 fi
+
+# enter directories without using 'cd':
+shopt -s autocd
+
+# Enable ** globs:
+shopt -s globstar
+
+# Save multiline commands in history
+shopt -s cmdhist
 
 export EDITOR="/usr/bin/vim"
 
