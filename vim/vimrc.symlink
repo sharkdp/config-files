@@ -269,7 +269,7 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
 set noshowmode  " airline already shows it
 
-" Synctex forward searching (use with <Leader> s)
+" Synctex forward searching
 " See http://tex.stackexchange.com/a/10374/42128
 " Configure okular to call "vim --servername VIM --remote +'%l' '%f'"
 " for backward searching (vim needs to run in server mode).
@@ -288,7 +288,6 @@ function! SynctexShow()
     exec execline
     :redraw!
 endfunction
-nmap <Leader>s :call SynctexShow()<CR>
 
 " Vim Markdown
 let g:vim_markdown_folding_disabled=1
