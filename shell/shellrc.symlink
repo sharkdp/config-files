@@ -39,3 +39,5 @@ export EDITOR='vim'
 source ~/.alias
 
 eval `dircolors -b ~/.dir_colors`
+
+# vim: filetype=sh
