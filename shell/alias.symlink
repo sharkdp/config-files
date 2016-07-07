@@ -12,8 +12,9 @@ alias lsrecent='ls -lh --sort=time -r'
 # Edit config files
 alias vimrc='vim ~/.cf/vim/vimrc.symlink'
 alias bashrc='vim ~/.cf/shell/bashrc.symlink && rehash'
-alias i3conf='vim ~/.cf/gui/i3/i3.symlink/config && i3 restart'
 alias zshrc='vim ~/.cf/shell/zshrc.symlink && rehash'
+alias shellrc='vim ~/.cf/shell/shellrc.symlink && rehash'
+alias i3conf='vim ~/.cf/gui/i3/i3.symlink/config && i3 restart'
 
 # program default options / shortcuts
 alias py='python3'
