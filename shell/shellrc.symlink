@@ -23,9 +23,10 @@ export red='\x1b[31;01m'
 
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
-PATH="/home/shark/.cf/bin"
-PATH+=":/home/shark/.cabal/bin"
-PATH+=":/home/shark/.local/bin"
+PATH+=":$HOME/.cf/bin"
+PATH+=":$HOME/.cabal/bin"
+PATH+=":$HOME/.local/bin"
+PATH+=":$HOME/.trigger"
 PATH+=":/usr/local/bin"
 PATH+=":/usr/sbin"
 PATH+=":/usr/bin"

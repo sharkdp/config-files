@@ -36,8 +36,3 @@ alias st='git status'
 alias p='git push'
 alias c='git commit -m'
 alias top='htop'
-
-
-# Scripts
-alias tinytag='python3 /home/shark/Informatik/python/tinytag/tinytag.py'
-alias chronicle='/home/shark/Dropbox/chronicle/write'
