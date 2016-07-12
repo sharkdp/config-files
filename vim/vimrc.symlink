@@ -363,3 +363,10 @@ au FileType purescript setl sw=2 st=2
 au FileType html setl sw=2 st=2
 au FileType markdown setl sw=2 st=2
 au FileType haskell setl sw=2 st=2
+
+" Switch between corresponding files
+map <F2> :FSHere<CR>
+map <F3> :FSSplitAbove<CR>
+
+autocmd! BufEnter *.purs let b:fswitchdst = 'js'
+autocmd! BufEnter *.js   let b:fswitchdst = 'purs'
