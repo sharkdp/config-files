@@ -134,6 +134,7 @@ Plugin 'othree/html5.vim'
 Plugin 'raichoo/purescript-vim'
 Plugin 'frigoeu/psc-ide-vim'
 Plugin 'jvirtanen/vim-octave'
+Plugin 'derekwyatt/vim-fswitch'
 
 " UltiSnips
 Plugin 'SirVer/ultisnips'
