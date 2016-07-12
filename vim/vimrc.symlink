@@ -364,6 +364,9 @@ au FileType html setl sw=2 st=2
 au FileType markdown setl sw=2 st=2
 au FileType haskell setl sw=2 st=2
 
+" Insert current date
+map <Leader>i "=strftime("%b %d, %Y")<CR>p
+
 " Switch between corresponding files
 map <F2> :FSHere<CR>
 map <F3> :FSSplitAbove<CR>
