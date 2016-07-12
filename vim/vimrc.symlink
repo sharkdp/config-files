@@ -358,6 +358,11 @@ autocmd FileType octave set commentstring=%\ %s
 " SSH config
 autocmd BufNewFile,BufRead .ssh/config set filetype=sshconfig
 
+" C++
+let g:syntastic_cpp_checkers = ['cppcheck']
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+nmap <C-g> :CtrlPTag<CR>
+
 " Special indentation for some files
 au FileType purescript setl sw=2 st=2
 au FileType html setl sw=2 st=2
