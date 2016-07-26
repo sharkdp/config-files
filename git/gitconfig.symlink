@@ -4,7 +4,7 @@
 [credential]
 	helper = cache --timeout=8640000
 [merge]
-	tool = diffuse
+	tool = meld
 [alias]
 	co = checkout
 	br = branch
