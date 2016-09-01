@@ -39,7 +39,7 @@ shopt -s cmdhist
 
 export EDITOR="/usr/bin/vim"
 
-source ~/.alias
+[ -r ~/.alias ] && . ~/.alias
 
 # update minimal set of config files
 update () {
