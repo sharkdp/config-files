@@ -1,0 +1,68 @@
+#!/bin/bash
+#
+# Hot-patch a live system with sane defaults (without modifying it permanently)
+
+echo
+echo '                .__       .__               .__   '
+echo '          _____ |__| ____ |__| _____ _____  |  |  '
+echo '         /     \|  |/    \|  |/     \\__  \ |  |  '
+echo '        |  Y Y  \  |   |  \  |  Y Y  \/ __ \|  |__'
+echo '        |__|_|  /__|___|  /__|__|_|  (____  /____/'
+echo '              \/        \/         \/     \/      '
+echo '                               _____.__           '
+echo '            ____  ____   _____/ ____\__| ____     '
+echo '          _/ ___\/  _ \ /    \   __\|  |/ ___\    '
+echo '          \  \__(  <_> )   |  \  |  |  / /_/  >   '
+echo '           \___  >____/|___|  /__|  |__\___  /    '
+echo '               \/           \/        /_____/     '
+echo
+
+if [[ -z $BASH ]]; then
+    echo "Not in a bash shell, exiting."
+    exit 1
+fi
+
+githubLoad() {
+    path="$1"
+    dest="$2"
+    wget -q --no-check-certificate -O "$dest" "https://raw.githubusercontent.com/$path"
+}
+
+rootpath="sharkdp/config-files/master/minimal-config"
+files=".bashrc .alias .vimrc"
+
+echo -n "Creating temporary directory ... "
+
+tmpDir="$(mktemp --tmpdir -d minimal-config.XXXXXX)"
+
+echo "okay"
+
+
+for file in $files; do
+    path="$tmpDir/$file"
+    echo -n "Downloading $file ... "
+    githubLoad "${rootpath}/$file" "$path"
+    echo "okay"
+done
+
+echo -n "Installing molokai theme for vim ... "
+mkdir -p "$tmpDir/vim/colors"
+githubLoad "tomasr/molokai/master/colors/molokai.vim" "$tmpDir/vim/colors/molokai.vim"
+echo "okay"
+
+# Vim
+
+echo -n "Hot-patching vim ... "
+
+alias vim="vim --cmd 'set runtimepath=$tmpDir/vim,\$VIMRUNTIME' --noplugin -u $tmpDir/.vimrc"
+
+echo "okay"
+
+# Bash
+
+echo -n "Hot-patching the shell ... "
+
+source "$tmpDir/.bashrc"
+source "$tmpDir/.alias"
+
+echo "okay"
