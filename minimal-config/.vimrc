@@ -129,7 +129,7 @@ set wildignore+=*/dist/*,*.pdf,*/output/*,*/bower_components/*
 " http://vimcasts.org/episodes/formatting-text-with-par/
 set formatprg=par\ -w79
 
-" Hightlight the 80 column
+" Highlight the 80th column
 if exists("+colorcolumn")
     set colorcolumn=80
 endif
