@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+src="/mnt/daten/Daten/Bilder/"
+base="shark@kalyke.de:/home/shark/backup/backup-bilder"
+current="$base/Bilder"
+
+if [[ ! -e $src ]]; then
+    echo "Source directory for backup does not exist: '$src'"
+    exit 1
+fi
+
+rsync \
+    --rsh="ssh" \
+    --archive \
+    --delete \
+    --delete-excluded \
+    --backup \
+    --compress \
+    --progress \
+    "$src" "$current"
