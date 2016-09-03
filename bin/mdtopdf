@@ -19,6 +19,7 @@ fi
 pandoc \
     -f markdown \
     -t latex \
+    --latex-engine=xelatex \
     -V fontsize=12pt \
     -V papersize=a4paper \
     -V documentclass=scrartcl \
