@@ -19,7 +19,7 @@ echo
 
 if [[ -z $BASH ]]; then
     echo "Not in a bash shell, exiting."
-    exit 1
+    return 1
 fi
 
 githubLoad() {
