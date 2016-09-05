@@ -25,7 +25,7 @@ fi
 githubLoad() {
     path="$1"
     dest="$2"
-    wget -q --no-check-certificate -O "$dest" "https://raw.githubusercontent.com/$path"
+    wget -q --no-check-certificate -O "$dest" "https://raw.githubusercontent.com/$path" || (echo failed; return 1)
 }
 
 rootpath="sharkdp/config-files/master/minimal-config"
@@ -41,13 +41,13 @@ echo "okay"
 for file in $files; do
     path="$tmpDir/$file"
     echo -n "Downloading $file ... "
-    githubLoad "${rootpath}/$file" "$path"
+    githubLoad "${rootpath}/$file" "$path" || return 1
     echo "okay"
 done
 
 echo -n "Installing molokai theme for vim ... "
 mkdir -p "$tmpDir/vim/colors"
-githubLoad "tomasr/molokai/master/colors/molokai.vim" "$tmpDir/vim/colors/molokai.vim"
+githubLoad "tomasr/molokai/master/colors/molokai.vim" "$tmpDir/vim/colors/molokai.vim" || return 1
 echo "okay"
 
 # Vim
@@ -62,7 +62,7 @@ echo "okay"
 
 echo -n "Hot-patching the shell ... "
 
-source "$tmpDir/.bashrc"
-source "$tmpDir/.alias"
+source "$tmpDir/.bashrc" || (echo failed; return 1)
+source "$tmpDir/.alias" || (echo failed; return 1)
 
 echo "okay"
