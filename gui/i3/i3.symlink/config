@@ -12,7 +12,7 @@ bindsym $mod+z exec "autorandr --change --default single --force"
 # Shortcuts to open specific applications
 bindsym $mod+c exec google-chrome-stable
 bindsym $mod+m exec Mathematica -nosplash
-bindsym $mod+n exec nautilus
+bindsym $mod+n exec nautilus --no-desktop
 bindsym $mod+b exec pavucontrol
 bindsym $mod+Return split h; exec xcwd | xargs -d '\n' -I {} terminator --working-directory "{}"
 bindsym $mod+s split v; exec xcwd | xargs -d '\n' -I {} terminator --working-directory "{}"

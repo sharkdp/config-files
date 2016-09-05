@@ -638,6 +638,9 @@ echo "okay"
 
 echo -n "Hot-patching the shell ... "
 
+# Remove existing aliases
+unalias -a
+
 source "$tmpDir/.bashrc" || (echo failed; return 1)
 source "$tmpDir/.alias" || (echo failed; return 1)
 
