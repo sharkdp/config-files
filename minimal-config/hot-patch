@@ -658,6 +658,10 @@ EOF
 
 echo "okay"
 
+# Remove existing aliases
+
+unalias -a
+
 # Vim
 
 echo -n "Hot-patching vim ... "
@@ -677,9 +681,6 @@ echo "okay"
 # Bash
 
 echo -n "Hot-patching the shell ... "
-
-# Remove existing aliases
-unalias -a
 
 source "$tmpDir/.alias" || (echo failed; return 1)
 source "$tmpDir/.bashrc" || (echo failed; return 1)
