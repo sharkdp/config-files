@@ -139,6 +139,7 @@ alias st='git status'
 alias p='git push'
 alias c='git commit -m'
 alias top='htop'
+alias caps2esc='setxkbmap -option "caps:escape"; test -e ~/.xmodmap && xmodmap ~/.xmodmap'
 EOF
 
 echo "okay"
