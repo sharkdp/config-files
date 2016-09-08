@@ -1,6 +1,17 @@
 #!/bin/bash
 #
+# AUTHOR: David Peter <mail@david-peter.de>
+#
+# DESCRIPTION:
 # Hot-patch a live system with sane defaults (without modifying it permanently)
+#
+# USAGE:
+#   If you have internet access:
+#   $ source <(wget -qO - hp.shark.fish)
+#
+#   If you don't have internet access (but this file):
+#   $ source hot-patch
+#
 
 echo
 echo '                .__       .__               .__   '
