@@ -41,6 +41,14 @@ export EDITOR="/usr/bin/vim"
 
 [ -r ~/.alias ] && . ~/.alias
 
+# A 'polyfill' for ag, if it does not exist
+if ! hash ag 2> /dev/null; then
+    unalias ag
+    function ag () {
+        grep --color -E -r "$1" .
+    }
+fi
+
 # update minimal set of config files
 update () {
     wget -q --no-check-certificate -O - https://raw.githubusercontent.com/sharkdp/config-files/master/minimal-config/bootstrap | bash

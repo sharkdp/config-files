@@ -74,6 +74,14 @@ export EDITOR="/usr/bin/vim"
 
 [ -r ~/.alias ] && . ~/.alias
 
+# A 'polyfill' for ag, if it does not exist
+if ! hash ag 2> /dev/null; then
+    unalias ag
+    function ag () {
+        grep --color -E -r "$1" .
+    }
+fi
+
 # update minimal set of config files
 update () {
     wget -q --no-check-certificate -O - https://raw.githubusercontent.com/sharkdp/config-files/master/minimal-config/bootstrap | bash
@@ -673,7 +681,7 @@ echo -n "Hot-patching the shell ... "
 # Remove existing aliases
 unalias -a
 
-source "$tmpDir/.bashrc" || (echo failed; return 1)
 source "$tmpDir/.alias" || (echo failed; return 1)
+source "$tmpDir/.bashrc" || (echo failed; return 1)
 
 echo "okay"
