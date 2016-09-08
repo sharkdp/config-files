@@ -626,11 +626,43 @@ EOF
 
 echo "okay"
 
+# Git
+
+echo -n "Creating temporary '.gitconfig' ... "
+
+cat <<'EOF' > "$tmpDir/.gitconfig"
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	di = diff
+	dis = diff --staged
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	lsignored = ls-files . --ignored --exclude-standard --others
+[push]
+	default = simple
+[color]
+	ui = true
+[core]
+	pager = less -F -X
+EOF
+
+echo "okay"
+
 # Vim
 
 echo -n "Hot-patching vim ... "
 
 alias vim="vim --cmd 'set runtimepath=$tmpDir/vim,\$VIMRUNTIME' --noplugin -u $tmpDir/.vimrc"
+
+echo "okay"
+
+# Git
+
+echo -n "Hot-patching git ... "
+
+alias git="git -c include.path='$tmpDir/.gitconfig'"
 
 echo "okay"
 
