@@ -39,3 +39,6 @@ source ~/.shellrc
 
 # command-line fuzzy finder (https://github.com/junegunn/fzf)
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# enable autojump
+alias j="autojump"
