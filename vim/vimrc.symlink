@@ -361,6 +361,7 @@ autocmd BufNewFile,BufRead .ssh/config set filetype=sshconfig
 
 " C++
 let g:syntastic_cpp_checkers = ['cppcheck']
+let g:syntastic_cpp_cpplint_exec = 'cpplintXml.py'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 nmap <C-g> :CtrlPTag<CR>
 
@@ -378,3 +379,20 @@ map <Leader>z :FSHere<CR>
 
 autocmd! BufEnter *.purs let b:fswitchdst = 'js'
 autocmd! BufEnter *.js   let b:fswitchdst = 'purs'
+
+" Switch between more files
+autocmd! BufEnter *.cpp let b:fswitchdst = 'h'   | let b:fswitchlocs = '../h'
+autocmd! BufEnter *.h   let b:fswitchdst = 'cpp' | let b:fswitchlocs = '../src'
+
+autocmd! BufEnter *.buildconf   let b:fswitchdst = 'rebuildconf' | let b:fswitchlocs = './'
+autocmd! BufEnter *.rebuildconf let b:fswitchdst = 'buildconf'   | let b:fswitchlocs = './'
+
+" Scons
+map <Leader>s :!scons -D -j1<CR>
+
+" Other ~/ip files
+autocmd BufNewFile,BufRead SConscript,SConstruct set filetype=python
+autocmd BufNewFile,BufRead *.buildconf,*.rebuildconf set filetype=python
+autocmd BufNewFile,BufRead .reporter set filetype=python
+autocmd BufNewFile,BufRead packageInfos.db set filetype=python | silent :SyntasticToggleMode
+autocmd BufNewFile,BufRead libChecksDb.py silent :SyntasticToggleMode
