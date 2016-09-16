@@ -41,4 +41,11 @@ source ~/.alias
 
 eval `dircolors -b ~/.dir_colors`
 
+# Read all files in the custom directory
+if [[ -e ~/.cf/shell/custom ]]; then
+    for file in ~/.cf/shell/custom/*.sh; do
+        source "$file"
+    done
+fi
+
 # vim: filetype=sh
