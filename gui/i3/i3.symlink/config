@@ -17,6 +17,7 @@ bindsym $mod+b exec pavucontrol
 bindsym $mod+Return split h; exec xcwd | xargs -d '\n' -I {} terminator --working-directory "{}"
 bindsym $mod+s split v; exec xcwd | xargs -d '\n' -I {} terminator --working-directory "{}"
 bindsym $mod+o exec killall spotify && spotify
+bindsym $mod+i exec terminator -T insect -e insect
 
 bindsym $mod+Shift+s exec "sudo pm-suspend"
 
@@ -76,6 +77,8 @@ for_window [class="Octave-gui"] floating enable
 for_window [class="Octave"] floating enable
 for_window [class="MPlayer"] floating enable
 for_window [class="feh"] floating enable
+for_window [title="^insect$"] floating enable
+for_window [title="^insect$"] border toggle
 
 # Change Font
 font pango:Ubuntu Sans  10
