@@ -7,7 +7,7 @@ downloadDir="$HOME/Downloads"
 if [[ $1 == "-h" || $1 == "--help" ]]; then
     echo "Usage: dcp [DEST]"
     echo "Copies the latest download to the directory DEST"
-    echo "and unpacks it if it is an archive."
+    echo "and unpacks it if is an archive."
     echo
     echo "If DEST is not given, the file is copied to the"
     echo "current working directory."
