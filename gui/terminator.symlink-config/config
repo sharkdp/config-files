@@ -19,28 +19,36 @@
   [[default]]
     background_color = "#1a1a1a"
     background_darkness = 0.89
-    background_image = None
     cursor_color = "#8e8e8e"
     font = Source Code Pro 11
     foreground_color = "#f2f2f2"
     icon_bell = False
     palette = "#292429:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
-    scroll_on_output = False
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
   [[Monokai-like]]
     background_darkness = 0.44
-    background_image = None
     font = Source Code Pro 11
     foreground_color = "#f2f2f2"
     palette = "#333333:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2:#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2"
     show_titlebar = False
     use_system_font = False
+  [[insect]]
+    background_color = "#1a1a1a"
+    background_darkness = 0.89
+    cursor_color = "#8e8e8e"
+    font = Source Code Pro 14
+    foreground_color = "#f2f2f2"
+    icon_bell = False
+    palette = "#292429:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
   [[solarized-dark]]
     background_color = "#002b36"
-    background_image = None
     cursor_color = "#eee8d5"
     font = Source Code Pro 11
     foreground_color = "#eee8d5"
@@ -49,7 +57,6 @@
     use_system_font = False
   [[solarized-light]]
     background_color = "#eee8d5"
-    background_image = None
     cursor_color = "#002b36"
     font = Source Code Pro 11
     foreground_color = "#002b36"
