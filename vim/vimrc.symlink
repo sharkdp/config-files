@@ -256,7 +256,8 @@ autocmd FileType gnuplot set commentstring=#\ %s
 
 " Ale
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_python_flake8_args = '--max-line-length=99 --ignore="E265,E203,E131"'
+let g:ale_python_flake8_args = '--max-line-length=99'
+nmap <Leader>n :ALENext<CR>
 
 " airline
 set laststatus=2
