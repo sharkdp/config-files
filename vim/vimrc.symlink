@@ -388,5 +388,6 @@ map <Leader>s :!scons -D -j1<CR>
 autocmd BufNewFile,BufRead SConscript,SConstruct set filetype=python
 autocmd BufNewFile,BufRead *.buildconf,*.rebuildconf set filetype=python
 autocmd BufNewFile,BufRead .reporter set filetype=python
-autocmd BufNewFile,BufRead packageInfos.db set filetype=python | silent :SyntasticToggleMode
-autocmd BufNewFile,BufRead libChecksDb.py silent :SyntasticToggleMode
+
+" ctags
+set tags=TAGS;/
