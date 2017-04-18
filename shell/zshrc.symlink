@@ -75,7 +75,8 @@ stty start '^-' stop '^-'
 
 # Ignore some file patterns for vim
 zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*?.aux' '*?.bbl' \
-    '*?.blg' '*?.out' '*?.toc' '*?.hi' '*?.o' '*?.pdf' '*?.bak' '*\~'
+    '*?.blg' '*?.out' '*?.toc' '*?.hi' '*?.o' '*?.pdf' '*?.bak' '*\~' '*.os' \
+    '*.o'
 
 # custom auto completion
 compdef '_files -g "*.tex"' te
