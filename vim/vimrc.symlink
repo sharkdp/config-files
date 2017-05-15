@@ -172,11 +172,11 @@ set wildignore+=*/dist/*,*.pdf,*/output/*,*/bower_components/*
 
 " Use par to format text
 " http://vimcasts.org/episodes/formatting-text-with-par/
-set formatprg=par\ -w79
+set formatprg=par\ -w99
 
-" Highlight the 80th column
+" Highlight the 100th column
 if exists("+colorcolumn")
-    set colorcolumn=80
+    set colorcolumn=100
 endif
 
 " Decrease dead time after ESC key
@@ -256,7 +256,7 @@ autocmd FileType gnuplot set commentstring=#\ %s
 
 " Ale
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_python_flake8_args = '--max-line-length=99'
+let g:ale_python_flake8_args = '--max-line-length=100'
 nmap <Leader>n :ALENext<CR>
 
 " airline
