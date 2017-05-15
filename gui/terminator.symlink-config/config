@@ -1,10 +1,64 @@
 [global_config]
-  focus = system
   handle_size = 1
+  focus = system
 [keybindings]
+  split_vert = <Shift><Control>j
   hide_window = None
   split_horiz = <Shift><Control>h
-  split_vert = <Shift><Control>j
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#292429:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
+    background_image = None
+    background_darkness = 0.89
+    use_system_font = False
+    cursor_color = "#8e8e8e"
+    foreground_color = "#f2f2f2"
+    scroll_on_output = False
+    icon_bell = False
+    show_titlebar = False
+    font = Source Code Pro 11
+    background_color = "#1a1a1a"
+    scrollback_infinite = True
+  [[solarized-dark]]
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_image = None
+    use_system_font = False
+    cursor_color = "#eee8d5"
+    foreground_color = "#eee8d5"
+    show_titlebar = False
+    font = Source Code Pro 11
+    background_color = "#002b36"
+  [[insect]]
+    scrollbar_position = hidden
+    palette = "#292429:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
+    background_image = None
+    background_darkness = 0.89
+    use_system_font = False
+    cursor_color = "#8e8e8e"
+    foreground_color = "#f2f2f2"
+    icon_bell = False
+    show_titlebar = False
+    font = Source Code Pro 14
+    background_color = "#1a1a1a"
+    scrollback_infinite = True
+  [[Monokai-like]]
+    palette = "#333333:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2:#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2"
+    background_image = None
+    background_darkness = 0.44
+    use_system_font = False
+    foreground_color = "#f2f2f2"
+    show_titlebar = False
+    font = Source Code Pro 11
+  [[solarized-light]]
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_image = None
+    use_system_font = False
+    cursor_color = "#002b36"
+    foreground_color = "#002b36"
+    show_titlebar = False
+    font = Source Code Pro 11
+    background_color = "#eee8d5"
 [layouts]
   [[default]]
     [[[child1]]]
@@ -15,51 +69,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_color = "#1a1a1a"
-    background_darkness = 0.89
-    cursor_color = "#8e8e8e"
-    font = Source Code Pro 11
-    foreground_color = "#f2f2f2"
-    icon_bell = False
-    palette = "#292429:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-  [[Monokai-like]]
-    background_darkness = 0.44
-    font = Source Code Pro 11
-    foreground_color = "#f2f2f2"
-    palette = "#333333:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2:#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2"
-    show_titlebar = False
-    use_system_font = False
-  [[insect]]
-    background_color = "#1a1a1a"
-    background_darkness = 0.89
-    cursor_color = "#8e8e8e"
-    font = Source Code Pro 14
-    foreground_color = "#f2f2f2"
-    icon_bell = False
-    palette = "#292429:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-  [[solarized-dark]]
-    background_color = "#002b36"
-    cursor_color = "#eee8d5"
-    font = Source Code Pro 11
-    foreground_color = "#eee8d5"
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    show_titlebar = False
-    use_system_font = False
-  [[solarized-light]]
-    background_color = "#eee8d5"
-    cursor_color = "#002b36"
-    font = Source Code Pro 11
-    foreground_color = "#002b36"
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    show_titlebar = False
-    use_system_font = False
