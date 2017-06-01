@@ -25,6 +25,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 
 PATH+=":$HOME/.cf/bin"
 PATH+=":$HOME/.cabal/bin"
+PATH+=":$HOME/.cargo/bin"
 PATH+=":$HOME/.local/bin"
 PATH+=":$HOME/.trigger"
 PATH+=":/usr/local/bin"
