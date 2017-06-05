@@ -67,6 +67,9 @@ nnoremap <bs> X
 " do not wrap lines automatically
 set nowrap
 
+" disable folding everywhere
+set nofoldenable
+
 " Use softwrapping in text documents
 autocmd FileType text,markdown,tex,html setlocal wrap linebreak
 if exists('+breakindent')
