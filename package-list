@@ -12,6 +12,7 @@ google-chrome-stable
 htop
 i3
 inkscape
+j4-dmenu-desktop
 meld
 mendeleydesktop
 nitrogen
@@ -23,4 +24,5 @@ terminator
 unp
 vim
 vlc
+xcwd
 zsh
