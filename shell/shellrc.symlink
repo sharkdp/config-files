@@ -49,4 +49,7 @@ if [[ -e ~/.cf/shell/custom ]]; then
     done
 fi
 
+# Icons for digikam (and other KDE apps?)
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
 # vim: filetype=sh
