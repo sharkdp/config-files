@@ -130,7 +130,8 @@ Plugin 'nishigori/increment-activator'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/gnuplot.vim'
 Plugin 'PotatoesMaster/i3-vim-syntax'
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
 Plugin 'raichoo/purescript-vim'
@@ -360,7 +361,6 @@ autocmd BufNewFile,BufRead .ssh/config set filetype=sshconfig
 let g:syntastic_cpp_checkers = ['cppcheck']
 let g:syntastic_cpp_cpplint_exec = 'cpplintXml.py'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
-nmap <C-g> :CtrlPTag<CR>
 
 " Special indentation for some files
 au FileType purescript setl sw=2 st=2
@@ -395,3 +395,6 @@ autocmd BufNewFile,BufRead .reporter set filetype=python
 
 " ctags
 set tags=TAGS;/
+
+" fzf
+nnoremap <C-p> :FZF<cr>
