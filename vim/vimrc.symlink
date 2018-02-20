@@ -261,6 +261,15 @@ autocmd FileType gnuplot set commentstring=#\ %s
 " Ale
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_python_flake8_args = '--max-line-length=100'
+let g:ale_linters = {
+\ 'markdown': [],
+\ 'cpp': ['clang', 'clangcheck', 'clangtidy'],
+\}
+let g:ale_cpp_clang_options = '--std=c++11 -Wall -I/usr/include/eigen3/'
+let g:ale_cpp_clangtidy_options = '-Wall -std=c++11 -x c++ -I/usr/include/eigen3'
+let g:ale_cpp_clangcheck_options = '-- -Wall -std=c++11 -x c++ -I/usr/include/eigen3'
+
+
 nmap <Leader>n :ALENext<CR>
 
 " airline
@@ -356,11 +365,6 @@ autocmd FileType octave set commentstring=%\ %s
 
 " SSH config
 autocmd BufNewFile,BufRead .ssh/config set filetype=sshconfig
-
-" C++
-let g:syntastic_cpp_checkers = ['cppcheck']
-let g:syntastic_cpp_cpplint_exec = 'cpplintXml.py'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 " Special indentation for some files
 au FileType purescript setl sw=2 st=2
