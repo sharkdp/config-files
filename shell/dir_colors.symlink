@@ -90,29 +90,32 @@ ORPHAN  05;37;41
 MISSING 05;37;41
 
 # files with execute permission
-EXEC 01;31
-.cmd 01;31
-.exe 01;31
-.com 01;31
-.bat 01;31
-.reg 01;31
-.app 01;31
+EXEC 1;38;5;202
+.cmd 1;38;5;202
+.exe 1;38;5;202
+.com 1;38;5;202
+.bat 1;38;5;202
+.reg 1;38;5;202
+.app 1;38;5;202
 
 #############################################################################
 
 # Special text documents
-*AUTHORS      38;5;248
-*CHANGES      38;5;248
-*CONTRIBUTORS 38;5;248
-*COPYING      38;5;248
-*COPYRIGHT    38;5;248
-*HISTORY      38;5;248
-*INSTALL      38;5;248
-*LICENSE      38;5;248
-*NOTICE       38;5;248
-*PATENTS      38;5;248
-*README       38;5;248
-*VERSION      38;5;248
+*AUTHORS         38;5;210
+*CHANGES         38;5;210
+*CONTRIBUTORS    38;5;210
+*COPYING         38;5;210
+*COPYRIGHT       38;5;210
+*HISTORY         38;5;210
+*INSTALL         38;5;210
+*LICENSE         38;5;210
+*LICENSE-MIT     38;5;210
+*LICENSE-APACHE  38;5;210
+*NOTICE          38;5;210
+*PATENTS         38;5;210
+*README          38;5;210
+*FAQ             38;5;210
+*VERSION         38;5;210
 
 # Markup formats
 .css          38;5;220
@@ -125,23 +128,21 @@ EXEC 01;31
 .org          38;5;220
 .shtml        38;5;220
 .tex          38;5;220
-.txt          38;5;221
+.txt          38;5;220
 .xml          38;5;220
 .toml         38;5;220
 .yml          38;5;220
 .rst          38;5;220
 
+# Build files
+*Makefile           38;5;48
+*CMakeLists.txt     38;5;48
+*.gitignore         38;5;48
+*.gitmodules        38;5;48
+*SConscript         38;5;48
+*SConstruct         38;5;48
+
 # Source text
-.0      32
-.1      32
-.2      32
-.3      32
-.4      32
-.5      32
-.6      32
-.7      32
-.8      32
-.9      32
 .C      32
 .awk    32
 .c      32
@@ -150,7 +151,7 @@ EXEC 01;31
 .csh    32
 .cxx    32
 .el     32
-.h      32
+.h      38;5;50
 .hs     32
 .java   32
 .js     32
@@ -296,26 +297,33 @@ EXEC 01;31
 .zip  1;35
 
 # Unimportant files
-*#           38;5;244
-*,v          38;5;244
-*~           38;5;244
-.BAK         38;5;244
-.DIST        38;5;244
-.OFF         38;5;244
-.OLD         38;5;244
-.ORIG        38;5;244
-.bak         38;5;244
-.dist        38;5;244
-.log         38;5;244
-.o           38;5;244
-.off         38;5;244
-.old         38;5;244
-.org_archive 38;5;244
-.orig        38;5;244
-.pyc         38;5;244
-.swo         38;5;244
-.swp         38;5;244
-.lock        38;5;244
+*#                 38;5;244
+*,v                38;5;244
+*~                 38;5;244
+.BAK               38;5;244
+.DIST              38;5;244
+.OFF               38;5;244
+.OLD               38;5;244
+.ORIG              38;5;244
+.bak               38;5;244
+.dist              38;5;244
+.log               38;5;244
+.o                 38;5;244
+.off               38;5;244
+.old               38;5;244
+.org_archive       38;5;244
+.orig              38;5;244
+.pyc               38;5;244
+.swo               38;5;244
+.swp               38;5;244
+.lock              38;5;244
+.scons_opt         38;5;244
+.sconsign.dblite   38;5;244
+.reporter          38;5;244
+.project           38;5;244
+.cdtproject        38;5;244
+*Doxyfile          38;5;244
+*.deployed         38;5;244
 
 # Special files
 *TODO        1
