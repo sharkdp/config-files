@@ -101,21 +101,21 @@ EXEC 1;38;5;202
 #############################################################################
 
 # Special text documents
-*AUTHORS         38;5;210
-*CHANGES         38;5;210
-*CONTRIBUTORS    38;5;210
-*COPYING         38;5;210
-*COPYRIGHT       38;5;210
-*HISTORY         38;5;210
-*INSTALL         38;5;210
-*LICENSE         38;5;210
-*LICENSE-MIT     38;5;210
-*LICENSE-APACHE  38;5;210
-*NOTICE          38;5;210
-*PATENTS         38;5;210
-*README          38;5;210
-*FAQ             38;5;210
-*VERSION         38;5;210
+*AUTHORS         38;5;248
+*CHANGES         38;5;248
+*CONTRIBUTORS    38;5;248
+*COPYING         38;5;248
+*COPYRIGHT       38;5;248
+*HISTORY         38;5;248
+*INSTALL         38;5;248
+*LICENSE         38;5;248
+*LICENSE-MIT     38;5;248
+*LICENSE-APACHE  38;5;248
+*NOTICE          38;5;248
+*PATENTS         38;5;248
+*README          38;5;248
+*FAQ             38;5;248
+*VERSION         38;5;248
 
 # Markup formats
 .css          38;5;220
