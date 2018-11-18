@@ -267,8 +267,8 @@ let g:ale_linters = {
 \ 'cpp': ['clang', 'clangcheck', 'clangtidy'],
 \}
 let g:ale_cpp_clang_options = '--std=c++11 -Wall -I/usr/include/eigen3/'
-let g:ale_cpp_clangtidy_options = '-Wall -std=c++11 -x c++ -I/usr/include/eigen3'
-let g:ale_cpp_clangcheck_options = '-- -Wall -std=c++11 -x c++ -I/usr/include/eigen3'
+let g:ale_cpp_clangtidy_options = '-Wall -std=c++11 -x c++ -I/usr/include/eigen3 -extra-arg -Xanalyzer -extra-arg -analyzer-output=text'
+let g:ale_cpp_clangcheck_options = '-extra-arg -Xanalyzer -extra-arg -analyzer-output=text -- -Wall -std=c++11 -x c++ -I/usr/include/eigen3'
 
 
 nmap <Leader>n :ALENext<CR>
