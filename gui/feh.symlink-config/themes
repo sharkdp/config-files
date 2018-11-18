@@ -1,1 +1,1 @@
-feh --geometry 800x600 --auto-zoom --draw-filename
+feh --geometry 1280x1024 --scale-down
