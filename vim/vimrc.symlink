@@ -139,6 +139,7 @@ Plugin 'raichoo/purescript-vim'
 Plugin 'jvirtanen/vim-octave'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
 
 " UltiSnips
 Plugin 'SirVer/ultisnips'
