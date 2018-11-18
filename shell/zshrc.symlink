@@ -71,7 +71,11 @@ setopt interactivecomments
 
 # prevent Ctrl-S from freezing the terminal to use the shortcut in vim
 # bind -r '\C-s'
-stty start '^-' stop '^-'
+# stty start '^-' stop '^-'
+stty stop ''
+stty start ''
+stty -ixon
+stty -ixoff
 
 # Ignore some file patterns for vim
 zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*?.aux' '*?.bbl' \
