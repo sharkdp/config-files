@@ -373,6 +373,7 @@ au FileType html setl sw=2 st=2
 au FileType markdown setl sw=2 st=2
 au FileType haskell setl sw=2 st=2
 au FileType javascript setl sw=2 st=2
+au FileType yaml setl sw=2 st=2
 
 " Insert current date
 map <Leader>i "=strftime("%b %d, %Y")<CR>p
