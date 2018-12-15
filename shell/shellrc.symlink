@@ -40,7 +40,9 @@ export EDITOR='vim'
 # read aliases and dir colors
 source ~/.alias
 
-eval `dircolors -b ~/.dir_colors`
+# Vivid (https://github.com/sharkdp/vivid)
+export VIVID_THEME="molokai"
+export LS_COLORS="$(vivid generate)"
 
 # Read all files in the custom directory
 if [[ -e ~/.cf/shell/custom ]]; then
