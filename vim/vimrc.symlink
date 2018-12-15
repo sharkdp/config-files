@@ -404,3 +404,6 @@ set tags=TAGS;/
 
 " fzf
 nnoremap <C-p> :FZF<cr>
+
+" gitgutter update time [ms]
+set updatetime=300
