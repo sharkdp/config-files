@@ -241,7 +241,7 @@ exec_always --no-startup-id dropbox
 exec --no-startup-id pa-applet # Pulse audio applet
 # exec --no-startup-id batti # Battery indicator
 exec sleep 5 && spotify
-exec google-chrome-stable
+exec firefox
 exec_always --no-startup-id nitrogen --restore # draw background
 exec_always --no-startup-id sleep 3 && xmodmap ~/.xmodmap
 
