@@ -10,7 +10,7 @@ bindsym $mod+t border toggle
 bindsym $mod+z exec "autorandr --change --default single --force"
 
 # Shortcuts to open specific applications
-bindsym $mod+c exec google-chrome-stable
+bindsym $mod+c exec firefox
 bindsym $mod+m exec Mathematica -nosplash
 bindsym $mod+n exec nautilus --no-desktop
 bindsym $mod+b exec pavucontrol
@@ -24,6 +24,12 @@ bindsym $mod+Shift+s exec "sudo pm-suspend"
 # Screen brightness
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
+
+# Hue
+bindsym $mod+Mod1+h exec /home/shark/Informatik/python/hue/dim_galerie.sh colortemp down
+bindsym $mod+Mod1+l exec /home/shark/Informatik/python/hue/dim_galerie.sh colortemp up
+bindsym $mod+Mod1+k exec /home/shark/Informatik/python/hue/dim_galerie.sh brightness up
+bindsym $mod+Mod1+j exec /home/shark/Informatik/python/hue/dim_galerie.sh brightness down
 
 # Switch workspaces with F1-F9
 bindsym F1 workspace number 1
