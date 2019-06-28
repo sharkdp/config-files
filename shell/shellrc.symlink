@@ -60,4 +60,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type directory '' $HOME"
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
+function cdm() {
+    mkdir "$1" && cd "$1"
+}
+
 # vim: filetype=sh
