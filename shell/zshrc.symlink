@@ -125,3 +125,5 @@ export TERM='xterm-256color'
 
 # command-line fuzzy finder (https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval $(thefuck --alias)
