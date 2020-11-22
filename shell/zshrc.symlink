@@ -46,7 +46,7 @@ ZSH_CUSTOM=~/.oh-my-zsh-custom
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found autojump python sudo zsh-syntax-highlighting bower colored-man-pages cargo)
+plugins=(command-not-found autojump sudo cargo hyperfine zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,13 +60,6 @@ setopt NO_CHECK_JOBS
 rehash() {
     . ~/.zshrc
 }
-
-# Alt-S inserts "sudo " at the start of line:
-insert_sudo () {
-    zle beginning-of-line; zle -U "sudo "
-}
-zle -N insert-sudo insert_sudo
-bindkey "^[s" insert-sudo
 
 # allow comments at the prompt
 setopt interactivecomments
@@ -84,23 +77,6 @@ zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*?.aux' '*?.bbl' \
     '*?.blg' '*?.out' '*?.toc' '*?.hi' '*?.o' '*?.pdf' '*?.bak' '*\~' '*.os' \
     '*.o'
 
-# custom auto completion
-compdef '_files -g "*.tex"' te
-compdef '_files -g "*.tex"' clatexmk
-
-compdef '_files -g "*.py"' py
-compdef '_files -g "*.py"' py2
-
-compdef '_files -g "*.hs"' ghci
-
-compdef '_files -g "*.gp"' gp
-compdef '_files -g "*.gp"' gnuplot
-
-compdef '_files -g "*.sh"' bash
-
-# Zsh filetype aliases
-alias -s pdf='background okular'
-
 # do not share history between zsh sessions
 setopt no_share_history
 
@@ -116,14 +92,14 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-# bind C-g to append &! to the written command (which nohups it), \n to run the
-# command, ^z to suspend and exit\n to close the current terminal
-bindkey -s '^g' '&!\n^z exit\n'
-
 # Properly set TERM variable (for fzf)
 export TERM='xterm-256color'
 
 # command-line fuzzy finder (https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval $(thefuck --alias)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4c4c4c"
+
+batdiff() {
+    git diff --name-only --diff-filter=d 2>/dev/null | xargs bat --diff
+}
