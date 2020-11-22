@@ -64,4 +64,6 @@ function cdm() {
     mkdir "$1" && cd "$1"
 }
 
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # vim: filetype=sh
