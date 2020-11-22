@@ -128,6 +128,7 @@ Plugin 'AndrewRadev/sideways.vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'nishigori/increment-activator'
 Plugin 'tomasr/molokai'
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'vim-scripts/gnuplot.vim'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'junegunn/fzf'
@@ -140,6 +141,8 @@ Plugin 'jvirtanen/vim-octave'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'psf/black'
 
 " UltiSnips
 Plugin 'SirVer/ultisnips'
@@ -173,7 +176,7 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 " Autocompletion in command mode
 set wildmenu
 set wildmode=list:longest,full
-set wildignore+=*/dist/*,*.pdf,*/output/*,*/bower_components/*,*/target/*
+set wildignore+=*/dist/*,*.pdf,*/output/*,*/bower_components/*,*/target/*,Cargo.lock
 
 " Use par to format text
 " http://vimcasts.org/episodes/formatting-text-with-par/
@@ -229,7 +232,7 @@ nmap <Leader>& ml^f=i&<ESC>A \\<ESC>`l
 " Only append \\
 nmap <Leader>e mlA\\<ESC>`l
 " Change a ( .. ) part to \br{ .. }
-nmap <Leader>b cs({i\bb<ESC>
+" nmap <Leader>b cs({i\bb<ESC>
 
 " In addition to C-w: delete word around/after the cursor
 imap <C-d> <C-o>daw
@@ -261,14 +264,14 @@ autocmd FileType gnuplot set commentstring=#\ %s
 
 " Ale
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_python_flake8_args = '--max-line-length=100'
+let g:ale_python_flake8_options = '--max-line-length=100'
 let g:ale_linters = {
 \ 'markdown': [],
 \ 'cpp': ['clang', 'clangcheck', 'clangtidy'],
 \}
-let g:ale_cpp_clang_options = '--std=c++11 -Wall -I/usr/include/eigen3/'
-let g:ale_cpp_clangtidy_options = '-Wall -std=c++11 -x c++ -I/usr/include/eigen3 -extra-arg -Xanalyzer -extra-arg -analyzer-output=text'
-let g:ale_cpp_clangcheck_options = '-extra-arg -Xanalyzer -extra-arg -analyzer-output=text -- -Wall -std=c++11 -x c++ -I/usr/include/eigen3'
+let g:ale_cpp_clang_options = '--std=c++11 -Wall -Iinclude -I/usr/include/eigen3/ -I/home/shark/Informatik/c++/dbg-macro -DDBG_MACRO_NO_WARNING=1'
+let g:ale_cpp_clangtidy_options = '-Wall -std=c++11 -x c++ -Iinclude -I/usr/include/eigen3 -I/home/shark/Informatik/c++/dbg-macro -DDBG_MACRO_NO_WARNING=1 -extra-arg -Xanalyzer -extra-arg -analyzer-output=text'
+let g:ale_cpp_clangcheck_options = '-extra-arg -Xanalyzer -extra-arg -analyzer-output=text -- -Wall -std=c++11 -x c++ -Iinclude -I/usr/include/eigen3 -I/home/shark/Informatik/c++/dbg-macro -DDBG_MACRO_NO_WARNING=1'
 
 
 nmap <Leader>n :ALENext<CR>
@@ -408,3 +411,7 @@ nnoremap <C-p> :FZF<cr>
 
 " gitgutter update time [ms]
 set updatetime=300
+
+" Switch between corresponding files
+" nnoremap <Leader>b :Black<CR>
+autocmd BufWritePre *.py execute ':Black'
