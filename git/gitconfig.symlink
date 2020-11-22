@@ -19,7 +19,7 @@
 [color]
 	ui = true
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta --dark --theme="1337" --plus-color="#012800" --minus-color="#340001"
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -32,3 +32,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[pull]
+	ff = only
