@@ -3,7 +3,7 @@
 set -e
 
 src="/mnt/daten/Daten/Bilder/"
-base="shark@kalyke.de:/home/shark/backup/backup-bilder"
+base="shark@shark.fish:/home/shark/backup/backup-bilder"
 current="$base/Bilder"
 
 if [[ ! -e $src ]]; then
@@ -17,6 +17,6 @@ rsync \
     --delete \
     --delete-excluded \
     --backup \
-    --compress \
+    -zz \
     --progress \
     "$src" "$current"

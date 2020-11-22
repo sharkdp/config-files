@@ -3,7 +3,7 @@
 set -e
 
 src="/home/shark/Dropbox/"
-base="shark@kalyke.de:/home/shark/backup/backup-dropbox"
+base="shark@shark.fish:/home/shark/backup/backup-dropbox"
 current="$base/Dropbox"
 
 if [[ ! -e $src ]]; then
@@ -17,6 +17,6 @@ rsync \
     --delete \
     --delete-excluded \
     --backup \
-    --compress \
+    -zz \
     --progress \
     "$src" "$current"
