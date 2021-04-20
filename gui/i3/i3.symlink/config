@@ -19,17 +19,17 @@ bindsym $mod+s split v; exec xcwd | xargs -d '\n' -I {} terminator
 bindsym $mod+o exec killall spotify && spotify
 bindsym $mod+i exec terminator -T "insect - interactive scientific calculator" -e "PATH=~/.local/bin:$PATH insect" -p insect --geometry 700x600
 
-bindsym $mod+Shift+s exec "sudo pm-suspend"
+bindsym $mod+Shift+s exec "systemctl suspend"
 
 # Screen brightness
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
-# Hue
-bindsym $mod+Mod1+h exec /home/shark/Informatik/python/hue/dim_galerie.sh colortemp down
-bindsym $mod+Mod1+l exec /home/shark/Informatik/python/hue/dim_galerie.sh colortemp up
-bindsym $mod+Mod1+k exec /home/shark/Informatik/python/hue/dim_galerie.sh brightness up
-bindsym $mod+Mod1+j exec /home/shark/Informatik/python/hue/dim_galerie.sh brightness down
+# Home Assistant
+bindsym $mod+Mod1+h exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh colortemp down
+bindsym $mod+Mod1+l exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh colortemp up
+bindsym $mod+Mod1+k exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh brightness up
+bindsym $mod+Mod1+j exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh brightness down
 
 # Switch workspaces with F1-F9
 bindsym F1 workspace number 1
@@ -103,7 +103,8 @@ bindsym Mod1+F4 kill
 
 # Use dmenu desktop version (.desktop-file aware)
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop --dmenu='dmenu -i'"
+# bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop --dmenu='dmenu -i'"
+bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun,run -modi combi,window,drun,run -show combi -show-icons -sidebar-mode -terminal terminator"
 
 # change focus with Vim-style commands
 bindsym $mod+h focus left
