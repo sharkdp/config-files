@@ -66,4 +66,6 @@ function cdm() {
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+alias vim=nvim
+
 # vim: filetype=sh
