@@ -1,6 +1,6 @@
 [user]
-	name = sharkdp
-	email = davidpeter@web.de
+	name = David Peter
+	email = mail@david-peter.de
 [credential]
 	helper = cache --timeout=8640000
 [merge]
@@ -34,3 +34,5 @@
 	whitespace = red reverse
 [pull]
 	ff = only
+[init]
+	defaultBranch = master
