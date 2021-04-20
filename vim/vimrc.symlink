@@ -37,6 +37,7 @@ set smartcase
 " show current command, matching bracket and mode, line numbers
 set showcmd
 set noshowmatch
+let g:loaded_matchparen=1
 set number
 
 " Long undo and command history
