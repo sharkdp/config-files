@@ -405,6 +405,5 @@ nnoremap <C-p> :FZF<cr>
 " gitgutter update time [ms]
 set updatetime=300
 
-" Switch between corresponding files
-" nnoremap <Leader>b :Black<CR>
-autocmd BufWritePre *.py execute ':Black'
+" Autoformat
+nnoremap <Leader>b :Black<CR>
