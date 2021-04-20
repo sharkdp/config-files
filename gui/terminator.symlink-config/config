@@ -23,7 +23,7 @@
     font = Fira Code Medium 11
     foreground_color = "#f2f2f2"
     icon_bell = False
-    palette = "#292429:#e52222:#a6e32d:#fd971f:#729fcf:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
+    palette = "#555753:#e52222:#a6e32d:#fd971f:#729fcf:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
@@ -33,6 +33,22 @@
     font = Source Code Pro 11
     foreground_color = "#f2f2f2"
     palette = "#333333:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2:#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2"
+    show_titlebar = False
+    use_system_font = False
+  [[OneHalfLight]]
+    background_color = "#fafafa"
+    cursor_color = "#bfceff"
+    font = Fira Code 14
+    foreground_color = "#1a1a1a"
+    palette = "#383a42:#e45649:#50a14f:#c18401:#0184bc:#a626a4:#0997b3:#fafafa:#4f525e:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#ffffff"
+    show_titlebar = False
+    use_system_font = False
+  [[ayu]]
+    background_color = "#eeeeec"
+    cursor_color = "#f29718"
+    font = Fira Code Medium 10
+    foreground_color = "#000000"
+    palette = "#000000:#ff3333:#b8cc52:#e7c547:#36a3d9:#f07178:#95e6cb:#ffffff:#323232:#ff6565:#eafe84:#fff779:#68d5ff:#ffa3aa:#c7fffd:#ffffff"
     show_titlebar = False
     use_system_font = False
   [[insect]]
