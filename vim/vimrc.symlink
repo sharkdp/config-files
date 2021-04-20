@@ -331,11 +331,11 @@ autocmd FileType haskell let b:sideways_definitions = [
       \ ]
 
 " GitGutter keymappings
-nmap <Leader>j <Plug>GitGutterNextHunk
-nmap <Leader>k <Plug>GitGutterPrevHunk
-nmap <Leader>r <Plug>GitGutterUndoHunk
-nmap <Leader>a <Plug>GitGutterStageHunk
-nmap <Leader>v <Plug>GitGutterPreviewHunk
+nmap <Leader>j <Plug>(GitGutterNextHunk)
+nmap <Leader>k <Plug>(GitGutterPrevHunk)
+nmap <Leader>r <Plug>(GitGutterUndoHunk)
+nmap <Leader>a <Plug>(GitGutterStageHunk)
+nmap <Leader>v <Plug>(GitGutterPreviewHunk)
 
 let g:tex_flavor='latex'
 
