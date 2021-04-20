@@ -1,0 +1,8 @@
+#!/bin/bash
+
+rclone sync \
+    --transfers 10 \
+    --progress \
+    --links \
+    /mnt/daten/Daten \
+    dropbox:Daten
