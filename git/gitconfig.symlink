@@ -8,31 +8,52 @@
 [alias]
 	co = checkout
 	br = branch
-	ci = commit
 	st = status
-	di = diff
 	dis = diff --staged
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lsignored = ls-files . --ignored --exclude-standard --others
+[credential]
+	helper = store
+[merge]
+	tool = meld
+	# See https://jvns.ca/blog/2024/02/16/popular-git-config-options/#merge-conflictstyle-zdiff3
+	conflictstyle = diff3
+[rebase]
+	# Always pass --autostash to git rebase
+	autostash = true
 [push]
 	default = simple
+	autoSetupRemote = true
+[commit]
+	# adds the whole commit diff in the text editor
+	verbose = true
+[pull]
+	# Never create merge commits when pulling
+	ff = only
+[rerere]
+    # This enables rerere (”reuse recovered resolution”), which remembers how
+    # you resolved merge conflicts during a git rebase and automatically resolves
+    # conflicts for you when it can.
+	enabled = true
+[diff]
+    colorMoved = default
 [color]
 	ui = true
 [core]
 	pager = delta --dark --theme="1337" --plus-color="#012800" --minus-color="#340001"
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-[pull]
-	ff = only
 [init]
 	defaultBranch = master
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false
