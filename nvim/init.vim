@@ -358,3 +358,5 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+
+au BufNewFile,BufRead *.nbt set filetype=numbat
