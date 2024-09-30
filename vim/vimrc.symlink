@@ -266,6 +266,7 @@ let g:ale_cpp_clang_options = '--std=c++11 -Wall -Iinclude -I/usr/include/eigen3
 let g:ale_cpp_clangtidy_options = '-Wall -std=c++11 -x c++ -Iinclude -I/usr/include/eigen3 -I/home/shark/Informatik/c++/dbg-macro -DDBG_MACRO_NO_WARNING=1 -extra-arg -Xanalyzer -extra-arg -analyzer-output=text'
 let g:ale_cpp_clangcheck_options = '-extra-arg -Xanalyzer -extra-arg -analyzer-output=text -- -Wall -std=c++11 -x c++ -Iinclude -I/usr/include/eigen3 -I/home/shark/Informatik/c++/dbg-macro -DDBG_MACRO_NO_WARNING=1'
 
+let g:ale_python_mypy_options = '--strict'
 
 nmap <Leader>n :ALENext<CR>
 
@@ -407,3 +408,5 @@ set updatetime=300
 
 " Autoformat
 nnoremap <Leader>b :Black<CR>
+
+au BufNewFile,BufRead *.nbt set filetype=numbat

@@ -1,11 +1,11 @@
 -- Rewrite in pointfree style
-:def pf \s -> return $ ":! pointfree \"" ++ s ++ "\""
+--:def pf \s -> return $ ":! pointfree \"" ++ s ++ "\""
 
 -- You must set your prompt to a lambda, it's a law.
-:set prompt "\n\x1b[01mλ:  \x1b[0m"
+--:set prompt "\n\x1b[01mλ:  \x1b[0m"
 
 -- Load some modules which are needed all the time
-:m +Test.QuickCheck
+--:m +Test.QuickCheck
 :m +Control.Monad
 :m +Control.Applicative
 :m +Data.List

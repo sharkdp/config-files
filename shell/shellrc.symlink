@@ -25,7 +25,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 
 PATH+=":$HOME/.cf/bin"
 PATH+=":$HOME/.cabal/bin"
-PATH+=":$HOME/.cargo/bin"
+PATH="$HOME/.cargo/bin:$PATH"
 PATH+=":$HOME/.local/bin"
 PATH+=":$HOME/.trigger"
 PATH+=":/usr/local/bin"
@@ -35,14 +35,16 @@ PATH+=":/sbin"
 PATH+=":/bin"
 export PATH
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # read aliases and dir colors
 source ~/.alias
 
 # Vivid (https://github.com/sharkdp/vivid)
-export VIVID_THEME="molokai"
-export LS_COLORS="$(vivid generate)"
+if command -v vivid &> /dev/null; then
+    export VIVID_THEME="molokai"
+    export LS_COLORS="$(vivid generate)"
+fi
 
 # Read all files in the custom directory
 if [[ -e ~/.cf/shell/custom ]]; then
@@ -58,7 +60,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude '.git' --color=always"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type directory '' $HOME"
-export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:40%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 function cdm() {
     mkdir "$1" && cd "$1"
