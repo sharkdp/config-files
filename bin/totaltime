@@ -1,0 +1,127 @@
+#!/usr/bin/env python3
+
+import sys
+from datetime import datetime, timedelta
+
+
+class InvalidRangeException(Exception):
+    pass
+
+
+def usage():
+    print("Usage: totaltime RANGES")
+    print("  where RANGES is a comma-separated list of HHMM-HHMM pairs")
+    sys.exit(1)
+
+
+def parse_time(time_str):
+    if time_str.strip() == "now":
+        dt = datetime.now()
+        dt = dt.replace(year=1900, month=1, day=1, microsecond=0)
+        return dt
+
+    if len(time_str) not in [3, 4]:
+        raise InvalidRangeException(f"Invalid time '{time_str}' (format HHMM)")
+
+    try:
+        return datetime.strptime(time_str, "%H%M")
+    except ValueError:
+        raise InvalidRangeException(f"Invalid time '{time_str}' (format HHMM)")
+
+
+def parse_range(range_str):
+    try:
+        from_time_str, to_time_str = range_str.strip().split("-")
+    except ValueError:
+        raise InvalidRangeException(
+            f"Invalid time range '{range_str}' (format hhmm-HHMM)"
+        )
+
+    from_time = parse_time(from_time_str)
+    to_time = parse_time(to_time_str)
+
+    if from_time > to_time:
+        raise InvalidRangeException(f"Negative range {range_str}")
+
+    return (from_time, to_time)
+
+
+def parse_ranges(ranges_str):
+    return (parse_range(range_str) for range_str in ranges_str.strip().split(","))
+
+
+def total_from_ranges(time_ranges):
+    total = timedelta(hours=0, minutes=0)
+    for (start, end) in time_ranges:
+        total += end - start
+
+    return total
+
+
+def format_time(total):
+    hours = total.seconds // 3600
+    minutes = (total.seconds // 60) % 60
+    total_str = f"{hours}:{minutes:02}"
+    return f"{total_str:>5s}"
+
+
+# Tests
+def assert_raises(fn):
+    try:
+        fn()
+    except InvalidRangeException:
+        return
+    except:
+        pass
+
+    assert False, "did not raise exception, as expected"
+
+
+assert parse_time("530").hour == 5
+assert parse_time("530").minute == 30
+assert parse_time("1517").hour == 15
+assert parse_time("1517").minute == 17
+assert parse_time("2302").hour == 23
+assert parse_time("2302").minute == 2
+assert parse_time("now") is not None
+
+assert_raises(lambda: parse_time("asd"))
+assert_raises(lambda: parse_time("50"))
+assert_raises(lambda: parse_time("5"))
+assert_raises(lambda: parse_time(""))
+assert_raises(lambda: parse_time("12345"))
+assert_raises(lambda: parse_time("2500"))
+assert_raises(lambda: parse_time("590"))
+
+assert_raises(lambda: parse_range(""))
+assert_raises(lambda: parse_range("4-5"))
+assert_raises(lambda: parse_range("1500-1600-1700"))
+assert_raises(lambda: parse_range("1501-1500"))
+
+assert total_from_ranges(parse_ranges("1400-1500")).seconds == 3600
+assert total_from_ranges(parse_ranges("705-720")).seconds == 15 * 60
+assert (
+    total_from_ranges(parse_ranges("705-720,1410-1620")).seconds
+    == 15 * 60 + 2 * 3600 + 10 * 60
+)
+assert total_from_ranges(parse_ranges("700-700")).seconds == 0
+
+
+if len(sys.argv) != 2:
+    usage()
+
+try:
+    time_ranges = parse_ranges(sys.argv[1])
+    total = total_from_ranges(time_ranges)
+
+    print(f"  Total time = {format_time(total)}")
+
+    break_45min = timedelta(minutes=45)
+    if total > timedelta(hours=6):
+        total_without_break = total - break_45min
+
+        print(f"    - 45 min = {format_time(total_without_break)}")
+
+except InvalidRangeException as e:
+    print(f"Parsing error: {e}")
+    sys.exit(1)
