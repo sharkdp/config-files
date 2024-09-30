@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+file_and_line="$1"
+file="$(echo "$file_and_line" | cut -d: -f1)"
+line="$(echo "$file_and_line" | cut -d: -f2)"
+
+nvim "$file" +"$line"
