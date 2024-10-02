@@ -40,7 +40,7 @@
 [color]
 	ui = true
 [core]
-	pager = delta --dark --theme="1337" --plus-color="#012800" --minus-color="#340001"
+	pager = delta --dark
 [init]
 	defaultBranch = master
 [filter "lfs"]
