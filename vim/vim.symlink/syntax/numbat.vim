@@ -1,0 +1,1 @@
+/home/shark/Informatik/rust/numbat/assets/numbat.vim

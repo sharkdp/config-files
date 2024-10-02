@@ -91,6 +91,7 @@ Plug 'wellle/targets.vim'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'derekwyatt/vim-fswitch'
+Plug 'neovim/nvim-lspconfig'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'groenewege/vim-less'
@@ -196,6 +197,12 @@ let g:ale_python_flake8_options = '--max-line-length=100'
 let g:ale_linters = {
 \ 'markdown': [],
 \ 'cpp': ['clang', 'clangcheck', 'clangtidy'],
+\ 'rust': ['analyzer'],
+\ 'python': ['mypy'],
+\}
+" \ 'rust': [],
+let g:ale_fixers = {
+\ 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines']
 \}
 let g:ale_cpp_clang_options = '--std=c++11 -Wall -Iinclude -I/usr/include/eigen3/ -I/home/shark/Informatik/c++/dbg-macro -DDBG_MACRO_NO_WARNING=1'
 let g:ale_cpp_clangtidy_options = '-Wall -std=c++11 -x c++ -Iinclude -I/usr/include/eigen3 -I/home/shark/Informatik/c++/dbg-macro -DDBG_MACRO_NO_WARNING=1 -extra-arg -Xanalyzer -extra-arg -analyzer-output=text'
@@ -299,13 +306,13 @@ autocmd FileType octave set commentstring=%\ %s
 autocmd BufNewFile,BufRead .ssh/config set filetype=sshconfig
 
 " Special indentation for some files
-au FileType purescript setl sw=2 st=2
-au FileType html setl sw=2 st=2
-au FileType markdown setl sw=2 st=2
-au FileType haskell setl sw=2 st=2
-au FileType javascript setl sw=2 st=2
-au FileType yaml setl sw=2 st=2
-au FileType cpp setl sw=2 st=2
+au FileType purescript setl sw=2
+au FileType html setl sw=2
+au FileType markdown setl sw=2
+au FileType haskell setl sw=2
+au FileType javascript setl sw=2
+au FileType yaml setl sw=2
+au FileType cpp setl sw=2
 
 " Insert current date
 map <Leader>i "=strftime("%b %d, %Y")<CR>p
