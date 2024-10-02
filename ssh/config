@@ -1,3 +1,6 @@
 Host aur.archlinux.org
     IdentityFile ~/.ssh/aur
     User aur
+
+Host shark.fish
+    Port 2222
