@@ -36,6 +36,7 @@ PATH+=":/bin"
 export PATH
 
 export EDITOR='nvim'
+export VISUAL='nvim'
 
 # read aliases and dir colors
 source ~/.alias

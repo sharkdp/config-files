@@ -126,3 +126,6 @@ cap() {
     echo -n "$abspath" | xclip -selection clipboard
     echo "Copied '$abspath' to clipboard"
 }
+
+alias soko="cargo run --release --features bevy/dynamic --"
+alias testsoko="cargo test --release --features bevy/dynamic --"
