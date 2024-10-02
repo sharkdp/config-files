@@ -17,7 +17,7 @@ bindsym $mod+b exec pavucontrol
 bindsym $mod+Return split h; exec xcwd | xargs -d '\n' -I {} terminator
 bindsym $mod+s split v; exec xcwd | xargs -d '\n' -I {} terminator
 bindsym $mod+o exec killall spotify && spotify
-bindsym $mod+i exec terminator -T "insect - interactive scientific calculator" -e "PATH=~/.local/bin:$PATH insect" -p insect --geometry 700x600
+bindsym $mod+i exec terminator -T "Numbat - interactive scientific calculator" -e "PATH=~/.cargo/bin:$PATH numbat" -p insect --geometry 700x600
 
 bindsym $mod+Shift+s exec "systemctl suspend"
 
@@ -65,6 +65,7 @@ for_window [class="Spotify"] move to workspace 9
 
 # Enable floating mode (popup style) for some applications
 for_window [window_role="pop-up"] floating enable
+for_window [window_role="alert"] floating enable
 for_window [title="Find and Replace"] floating enable
 for_window [title="^Google Keep$"] floating enable
 for_window [class="Pidgin"] floating enable
@@ -83,8 +84,9 @@ for_window [class="Octave-gui"] floating enable
 for_window [class="Octave"] floating enable
 for_window [class="MPlayer"] floating enable
 for_window [class="feh"] floating enable
-for_window [title="^insect - interactive scientific calculator$"] floating enable
-for_window [title="^insect - interactive scientific calculator$"] border toggle
+for_window [title="^Numbat - interactive scientific calculator$"] floating enable
+for_window [title="^Numbat - interactive scientific calculator$"] border toggle
+for_window [title="^binocle - "] floating enable
 
 # Change Font
 font pango:Ubuntu Sans  10

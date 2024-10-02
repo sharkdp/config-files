@@ -5,7 +5,7 @@ set -e
 date=$(date +"%y%m%d")
 
 src="/mnt/daten/Daten/"
-base="/media/extern/daten-backup/"
+base="/run/media/shark/extern/daten-backup/"
 current="$base/Daten"
 incremental="$base/differential-$date"
 
