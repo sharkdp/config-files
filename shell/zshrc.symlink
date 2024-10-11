@@ -48,7 +48,7 @@ ZSH_CUSTOM=~/.oh-my-zsh-custom
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found autojump sudo rust zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(command-not-found autojump sudo rust fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,12 +93,6 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
-
-# Properly set TERM variable (for fzf)
-export TERM='xterm-256color'
-
-# command-line fuzzy finder (https://github.com/junegunn/fzf)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4c4c4c"
 
