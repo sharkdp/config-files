@@ -10,8 +10,3 @@ keycode 53 = x X braceright braceright braceright braceright
 keycode 54 = c C braceleft braceleft braceleft braceleft
 keycode 55 = v V braceright braceright braceright braceright
 keycode 42 = g G dollar dollar dollar dollar
-! clear Lock
-! keysym Caps_Lock = Escape
-! add Lock = Caps_Lock
-! remove Lock = Caps_Lock
-! keysym Caps_Lock = Escape
