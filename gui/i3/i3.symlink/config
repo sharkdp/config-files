@@ -11,12 +11,10 @@ bindsym $mod+z exec "autorandr --change --default single --force"
 
 # Shortcuts to open specific applications
 bindsym $mod+c exec firefox
-bindsym $mod+m exec Mathematica -nosplash
 bindsym $mod+n exec nautilus --no-desktop
-bindsym $mod+b exec pavucontrol
+bindsym $mod+b exec pwvucontrol
 bindsym $mod+Return split h; exec xcwd | xargs -d '\n' -I {} terminator
 bindsym $mod+s split v; exec xcwd | xargs -d '\n' -I {} terminator
-bindsym $mod+o exec killall spotify && spotify
 bindsym $mod+i exec terminator -T "Numbat - interactive scientific calculator" -e "PATH=~/.cargo/bin:$PATH numbat" -p insect --geometry 700x600
 
 bindsym $mod+Shift+s exec "systemctl suspend"
@@ -24,6 +22,22 @@ bindsym $mod+Shift+s exec "systemctl suspend"
 # Screen brightness
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Enable media keys for Spotify
+# bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+# bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+# bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Home Assistant
 bindsym $mod+Mod1+h exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh colortemp down
@@ -90,11 +104,6 @@ for_window [title="^binocle - "] floating enable
 
 # Change Font
 font pango:Ubuntu Sans  10
-
-# Enable media keys for Spotify
-bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -218,14 +227,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar
-bar {
-     status_command python /home/shark/.cf/gui/i3/i3pystatus.conf.py
-     colors {
-         statusline #999999
-     }
-}
-
 # Passthrough mode which - when enabled - simply disables all other
 # keybindings so they are passed through to the underlying application
 # (exit with $mod p)
@@ -239,13 +240,17 @@ bindsym $mod+u move workspace to output right
 
 
 # Autostart
-exec --no-startup-id /usr/bin/nm-applet # network applet
+exec --no-startup-id nm-applet # network manager
+exec --no-startup-id blueman-applet
+exec --no-startup-id flameshot
 exec_always --no-startup-id dropbox
-exec --no-startup-id pa-applet # Pulse audio applet
+# exec --no-startup-id pa-applet # Pulse audio applet
 # exec --no-startup-id batti # Battery indicator
-exec sleep 5 && spotify
-exec firefox
+# exec sleep 5 && spotify
+exec sleep 2 && firefox # wait for wifi connection
 exec_always --no-startup-id nitrogen --restore # draw background
-exec_always --no-startup-id sleep 3 && xmodmap ~/.xmodmap
+exec_always --no-startup-id sleep 1 && xmodmap ~/.xmodmap
+exec_always --no-startup-id setxkbmap -option "caps:escape"
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # vim:filetype=i3
