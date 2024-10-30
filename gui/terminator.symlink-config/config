@@ -2,9 +2,67 @@
   focus = system
   handle_size = 1
 [keybindings]
-  hide_window = None
   split_horiz = <Shift><Control>h
   split_vert = <Shift><Control>j
+  hide_window = None
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_color = "#282828"
+    background_darkness = 0.89
+    font = Fira Code Medium 11
+    foreground_color = "#f2f2f2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#747474:#e52222:#a6e32d:#fd971f:#729fcf:#fa2573:#66d9ef:#f2f2f2:#555753:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
+    use_system_font = False
+  [[Monokai-like]]
+    background_darkness = 0.44
+    font = Source Code Pro 11
+    foreground_color = "#f2f2f2"
+    show_titlebar = False
+    palette = "#333333:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2:#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2"
+    use_system_font = False
+  [[OneHalfLight]]
+    background_color = "#fafafa"
+    font = Fira Code 14
+    foreground_color = "#1a1a1a"
+    show_titlebar = False
+    palette = "#383a42:#e45649:#50a14f:#c18401:#0184bc:#a626a4:#0997b3:#fafafa:#4f525e:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#ffffff"
+    use_system_font = False
+  [[ayu]]
+    background_color = "#eeeeec"
+    font = Fira Code Medium 10
+    foreground_color = "#000000"
+    show_titlebar = False
+    palette = "#000000:#ff3333:#b8cc52:#e7c547:#36a3d9:#f07178:#95e6cb:#ffffff:#323232:#ff6565:#eafe84:#fff779:#68d5ff:#ffa3aa:#c7fffd:#ffffff"
+    use_system_font = False
+  [[insect]]
+    icon_bell = False
+    background_color = "#1a1a1a"
+    background_darkness = 0.89
+    font = Source Code Pro 14
+    foreground_color = "#f2f2f2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#292429:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
+    use_system_font = False
+  [[solarized-dark]]
+    background_color = "#002b36"
+    font = Source Code Pro 11
+    foreground_color = "#eee8d5"
+    show_titlebar = False
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_system_font = False
+  [[solarized-light]]
+    background_color = "#eee8d5"
+    font = Source Code Pro 11
+    foreground_color = "#002b36"
+    show_titlebar = False
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_system_font = False
 [layouts]
   [[default]]
     [[[child1]]]
@@ -15,67 +73,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_color = "#1a1a1a"
-    background_darkness = 0.89
-    cursor_color = "#8e8e8e"
-    font = Fira Code Medium 11
-    foreground_color = "#f2f2f2"
-    icon_bell = False
-    palette = "#555753:#e52222:#a6e32d:#fd971f:#729fcf:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-  [[Monokai-like]]
-    background_darkness = 0.44
-    font = Source Code Pro 11
-    foreground_color = "#f2f2f2"
-    palette = "#333333:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2:#000000:#e52222:#a6e32d:#fc951e:#c48dff:#fa2573:#67d9f0:#f2f2f2"
-    show_titlebar = False
-    use_system_font = False
-  [[OneHalfLight]]
-    background_color = "#fafafa"
-    cursor_color = "#bfceff"
-    font = Fira Code 14
-    foreground_color = "#1a1a1a"
-    palette = "#383a42:#e45649:#50a14f:#c18401:#0184bc:#a626a4:#0997b3:#fafafa:#4f525e:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#ffffff"
-    show_titlebar = False
-    use_system_font = False
-  [[ayu]]
-    background_color = "#eeeeec"
-    cursor_color = "#f29718"
-    font = Fira Code Medium 10
-    foreground_color = "#000000"
-    palette = "#000000:#ff3333:#b8cc52:#e7c547:#36a3d9:#f07178:#95e6cb:#ffffff:#323232:#ff6565:#eafe84:#fff779:#68d5ff:#ffa3aa:#c7fffd:#ffffff"
-    show_titlebar = False
-    use_system_font = False
-  [[insect]]
-    background_color = "#1a1a1a"
-    background_darkness = 0.89
-    cursor_color = "#8e8e8e"
-    font = Source Code Pro 14
-    foreground_color = "#f2f2f2"
-    icon_bell = False
-    palette = "#292429:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2:#000000:#e52222:#a6e32d:#fd971f:#3e7ed9:#fa2573:#66d9ef:#f2f2f2"
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-  [[solarized-dark]]
-    background_color = "#002b36"
-    cursor_color = "#eee8d5"
-    font = Source Code Pro 11
-    foreground_color = "#eee8d5"
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    show_titlebar = False
-    use_system_font = False
-  [[solarized-light]]
-    background_color = "#eee8d5"
-    cursor_color = "#002b36"
-    font = Source Code Pro 11
-    foreground_color = "#002b36"
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    show_titlebar = False
-    use_system_font = False
