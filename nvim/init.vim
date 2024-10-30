@@ -198,7 +198,7 @@ let g:ale_linters = {
 \ 'markdown': [],
 \ 'cpp': ['clang', 'clangcheck', 'clangtidy'],
 \ 'rust': ['analyzer'],
-\ 'python': ['mypy'],
+\ 'python': ['pyright', 'mypy'],
 \}
 " \ 'rust': [],
 let g:ale_fixers = {
