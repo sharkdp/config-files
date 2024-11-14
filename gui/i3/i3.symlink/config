@@ -16,6 +16,7 @@ bindsym $mod+b exec pwvucontrol
 bindsym $mod+Return split h; exec xcwd | xargs -d '\n' -I {} terminator
 bindsym $mod+s split v; exec xcwd | xargs -d '\n' -I {} terminator
 bindsym $mod+i exec terminator -T "Numbat - interactive scientific calculator" -e "PATH=~/.cargo/bin:$PATH numbat" -p insect --geometry 700x600
+bindsym $mod+o exec terminator -T "Python REPL" -e "PATH=~/.cargo/bin:$PATH uv run python" --geometry 700x600
 
 bindsym $mod+Shift+s exec "systemctl suspend"
 
@@ -100,6 +101,7 @@ for_window [class="MPlayer"] floating enable
 for_window [class="feh"] floating enable
 for_window [title="^Numbat - interactive scientific calculator$"] floating enable
 for_window [title="^Numbat - interactive scientific calculator$"] border toggle
+for_window [title="^Python REPL$"] floating enable
 for_window [title="^binocle - "] floating enable
 
 # Change Font
