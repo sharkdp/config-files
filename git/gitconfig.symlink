@@ -1,57 +1,57 @@
 [user]
-	name = David Peter
-	email = mail@david-peter.de
+    name = David Peter
+    email = mail@david-peter.de
 [credential]
-	helper = cache --timeout=8640000
+    helper = cache --timeout=8640000
 [merge]
-	tool = meld
+    tool = meld
 [alias]
-	co = checkout
-	br = branch
-	st = status
-	dis = diff --staged
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	lsignored = ls-files . --ignored --exclude-standard --others
+    co = checkout
+    br = branch
+    st = status
+    dis = diff --staged
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lsignored = ls-files . --ignored --exclude-standard --others
 [credential]
-	helper = store
+    helper = store
 [merge]
-	tool = meld
-	# See https://jvns.ca/blog/2024/02/16/popular-git-config-options/#merge-conflictstyle-zdiff3
-	conflictstyle = diff3
+    tool = meld
+    # See https://jvns.ca/blog/2024/02/16/popular-git-config-options/#merge-conflictstyle-zdiff3
+    conflictstyle = diff3
 [rebase]
-	# Always pass --autostash to git rebase
-	autostash = true
+    # Always pass --autostash to git rebase
+    autostash = true
 [push]
-	default = simple
-	autoSetupRemote = true
+    default = simple
+    autoSetupRemote = true
 [commit]
-	# adds the whole commit diff in the text editor
-	verbose = true
+    # adds the whole commit diff in the text editor
+    verbose = true
 [pull]
-	# Never create merge commits when pulling
-	ff = only
+    # Never create merge commits when pulling
+    ff = only
 [rerere]
     # This enables rerere (”reuse recovered resolution”), which remembers how
     # you resolved merge conflicts during a git rebase and automatically resolves
     # conflicts for you when it can.
-	enabled = true
+    enabled = true
 [diff]
     colorMoved = default
 [color]
-	ui = true
+    ui = true
 [core]
-	pager = delta --dark
+    pager = delta --dark
 [init]
-	defaultBranch = master
+    defaultBranch = master
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [column]
-	ui = auto
+    ui = auto
 [branch]
-	sort = -committerdate
+    sort = -committerdate
 [interactive]
     diffFilter = delta --color-only
 [delta]
