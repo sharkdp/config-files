@@ -1,4 +1,4 @@
-let Florida = tz("US/Eastern")
-let NY = tz("US/Eastern")
+let Eastern = tz("US/Eastern")
 let Pacific = tz("US/Pacific")
 let India = tz("Asia/Kolkata")
+let UK = tz("Europe/London")
