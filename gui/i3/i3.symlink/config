@@ -16,7 +16,7 @@ bindsym $mod+b exec pwvucontrol
 bindsym $mod+Return split h; exec xcwd | xargs -d '\n' -I {} terminator
 bindsym $mod+s split v; exec xcwd | xargs -d '\n' -I {} terminator
 bindsym $mod+i exec terminator -T "Numbat - interactive scientific calculator" -e "PATH=~/.cargo/bin:$PATH numbat" -p insect --geometry 700x600
-bindsym $mod+o exec terminator -T "Python REPL" -e "PATH=~/.cargo/bin:$PATH uv run --with typing-extensions python" --geometry 700x600
+bindsym $mod+o exec terminator -T "Python REPL" -e "PATH=~/.cargo/bin:$PATH uv run --with typing-extensions --with ipython ipython" --geometry 700x600
 
 bindsym $mod+Shift+s exec "systemctl suspend"
 
