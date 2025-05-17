@@ -10,7 +10,7 @@
     icon_bell = False
     background_color = "#282828"
     background_darkness = 0.89
-    font = Fira Code Medium 11
+    font = FiraCode Nerd Font Medium 11
     foreground_color = "#f2f2f2"
     show_titlebar = False
     scrollbar_position = hidden
