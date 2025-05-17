@@ -145,9 +145,6 @@ nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
 inoremap <C-a> <C-o>0
 inoremap <C-e> <C-o>$
 
-" Go in and out of paste mode with F10
-set pastetoggle=<F10>
-
 " Remember last position when reopening files
 set viminfo='10,\"100,:20,%,n~/.viminfo
 if has("autocmd")
