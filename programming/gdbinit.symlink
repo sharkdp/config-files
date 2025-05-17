@@ -1,8 +1,10 @@
 set history save
 set history filename ~/.gdb_history
 
+set debuginfod enabled on
+
 define hook-quit
     set confirm off
 end
 
-source ~/software/stack-inspector/stack-inspector.py
+source /home/shark/Dropbox/Informatik/python/stack-inspector/stack-inspector.py
