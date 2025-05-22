@@ -27,6 +27,12 @@ vim.opt.tabstop = 4
 -- Do not show startup message
 vim.opt.shortmess:append({ a = true, t = true, I = true, O = true })
 
+-- Decrease update time
+vim.o.updatetime = 250
+
+-- Decrease mapped sequence wait time
+vim.o.timeoutlen = 300
+
 -- Search settings
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -37,10 +43,7 @@ vim.g.loaded_matchparen = 1
 vim.opt.number = true
 
 -- Undo history
-if vim.fn.has('persistent_undo') == 1 then
-    vim.opt.undodir = vim.fn.expand('~/.vimundo')
-    vim.opt.undofile = true
-end
+vim.opt.undofile = true
 
 -- Scroll offsets
 vim.opt.scrolloff = 7
@@ -110,7 +113,7 @@ require('lspconfig').ruff.setup({
 local configs = require('lspconfig.configs')
 configs.ty = {
   default_config = {
-    cmd = { 'ty', 'server' },
+    cmd = { '/home/shark/.cargo-target/debug/ty', 'server' },
     filetypes = { 'python' },
     root_dir = function(fname)
       return require('lspconfig.util').root_pattern('pyproject.toml', 'knot.toml')(fname)
@@ -141,6 +144,10 @@ require("lazy").setup({
   spec = {
     {
       {
+        "NMAC427/guess-indent.nvim" -- Detect tabstop and shiftwidth automatically
+      },
+
+      {
         "sainnhe/sonokai",
         lazy = false, -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
@@ -153,6 +160,19 @@ require("lazy").setup({
       {
           'nvim-lualine/lualine.nvim',
           dependencies = { 'nvim-tree/nvim-web-devicons' }
+      },
+
+      {
+        'nvim-telescope/telescope.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        keys = {
+          { '<C-p>', '<cmd>Telescope find_files<cr>', desc = 'Find files' }
+        },
+        config = function()
+          require('telescope').setup({
+            -- Your Telescope configuration here
+          })
+        end
       },
 
       {
@@ -169,13 +189,39 @@ require("lazy").setup({
           -- ...
         end,
       },
+
+      { -- Adds git related signs to the gutter, as well as utilities for managing changes
+        'lewis6991/gitsigns.nvim',
+        opts = {
+          signs = {
+            add = { text = '+' },
+            change = { text = '~' },
+            delete = { text = '_' },
+            topdelete = { text = '‾' },
+            changedelete = { text = '~' },
+          },
+        },
+        config = function()
+          require('gitsigns').setup({
+            -- Your existing gitsigns configuration
+          })
+
+          -- Map the exact same keys as before
+          vim.keymap.set('n', '<Leader>j', function() require('gitsigns').next_hunk() end, { desc = 'Next Git hunk' })
+          vim.keymap.set('n', '<Leader>k', function() require('gitsigns').prev_hunk() end, { desc = 'Previous Git hunk' })
+          vim.keymap.set('n', '<Leader>r', function() require('gitsigns').undo_stage_hunk() end, { desc = 'Undo stage hunk' })
+          vim.keymap.set('n', '<Leader>a', function() require('gitsigns').stage_hunk() end, { desc = 'Stage Git hunk' })
+          vim.keymap.set('n', '<Leader>v', function() require('gitsigns').preview_hunk() end, { desc = 'Preview Git hunk' })
+        end
+      },
     },
   },
-    -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = {
+    enabled = false,
+  },
 })
 
 require('lualine').setup()
