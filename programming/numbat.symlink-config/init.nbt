@@ -2,3 +2,7 @@ let Eastern = tz("US/Eastern")
 let Pacific = tz("US/Pacific")
 let India = tz("Asia/Kolkata")
 let UK = tz("Europe/London")
+
+# Backgammon
+fn percentage_to_equity(p_win: Scalar) = 2 p_win - 1
+fn equity_to_percentage(equity: Scalar) = (equity + 1) / 2 -> %
