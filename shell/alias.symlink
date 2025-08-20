@@ -40,6 +40,6 @@ alias nc='ncftpbookmarks'
 alias cat='bat'
 
 # ty
-alias rpg="cargo run --bin ty -- check --project ~/playground --python-version 3.13 --ignore=undefined-reveal"
+alias rpg="cargo run --bin ty -- check --project ~/playground --python-version 3.13 --ignore=undefined-reveal --warn=possibly-unresolved-reference"
 alias nex="cargo nextest run -p ty_python_semantic --no-fail-fast"
 alias clp="cargo clippy --all-targets --all-features"
