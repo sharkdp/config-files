@@ -113,6 +113,7 @@ require('lspconfig').ruff.setup({
 local configs = require('lspconfig.configs')
 configs.ty = {
   default_config = {
+    name = "ty",
     cmd = { '/home/shark/.cargo-target/debug/ty', 'server' },
     filetypes = { 'python' },
     root_dir = function(fname)
@@ -121,6 +122,14 @@ configs.ty = {
     end,
     single_file_support = true,
     settings = {},
+    -- on_attach = function(client, bufnr)
+    --   vim.lsp.completion.enable(true, client.id, bufnr, {
+    --     autotrigger = true,
+    --     convert = function(item)
+    --       return { abbr = item.label:gsub('%b()', '') }
+    --     end,
+    --   })
+    -- end,
   },
 }
 
@@ -131,12 +140,89 @@ vim.keymap.set('n', '<Leader>n', vim.diagnostic.goto_next, { desc = 'Next diagno
 vim.keymap.set('n', '<Leader>g', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', '<Leader>t', vim.lsp.buf.type_definition, { desc = 'Go to type definition' })
 
--- Format on save
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = { '*.rs', '*.py', '*.cpp', '*.h' },
-  callback = function()
-    vim.lsp.buf.format({ async = false })
-  end
+-- Format on save, auto-completion
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('my.lsp', {}),
+  callback = function(args)
+    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+    if client:supports_method('textDocument/implementation') then
+      -- Create a keymap for vim.lsp.buf.implementation ...
+    end
+    -- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
+    if client:supports_method('textDocument/completion') then
+      -- Autoselect the first item but don't insert it.
+      -- Allows quick use, just write something and enter to select the first one.
+      vim.opt.completeopt = { "menu", "menuone", "noinsert" }
+
+      -- Optional: trigger autocompletion on EVERY keypress. May be slow!
+      local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+      client.server_capabilities.completionProvider.triggerCharacters = chars
+      vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
+    end
+    -- Auto-format ("lint") on save.
+    -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
+    if not client:supports_method('textDocument/willSaveWaitUntil')
+        and client:supports_method('textDocument/formatting') then
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        group = vim.api.nvim_create_augroup('my.lsp', {clear=false}),
+        buffer = args.buf,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
+        end,
+      })
+    end
+  end,
+})
+
+-- Numbat
+
+if not configs.numbat_lsp then
+  configs.numbat_lsp = {
+    default_config = {
+      cmd = { 'numbat-lsp' }, -- Assumes numbat-lsp is in PATH
+      filetypes = { 'numbat' },
+      root_dir = lspconfig.util.root_pattern('.git', '.'),
+      settings = {},
+      init_options = {},
+    },
+    docs = {
+      description = 'Numbat Language Server Protocol implementation',
+      default_config = {
+        root_dir = [[root_pattern('.git', '.')]],
+      },
+    },
+  }
+end
+
+lspconfig.numbat_lsp.setup({
+  on_attach = function(client, bufnr)
+    -- Your usual LSP keybindings and setup
+    local opts = { noremap = true, silent = true, buffer = bufnr }
+
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<leader>f', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
+
+    -- Enable diagnostics
+    vim.diagnostic.config({
+      virtual_text = true,
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+    })
+  end,
+  -- capabilities = require('cmp_nvim_lsp').default_capabilities(), -- If using nvim-cmp
+})
+
+vim.filetype.add({
+  extension = {
+    nbt = 'numbat',
+  },
 })
 
 -- Plugins
@@ -173,21 +259,6 @@ require("lazy").setup({
             -- Your Telescope configuration here
           })
         end
-      },
-
-      {
-        "hrsh7th/nvim-cmp",
-        -- load cmp on InsertEnter
-        event = "InsertEnter",
-        -- these dependencies will only be loaded when cmp loads
-        -- dependencies are always lazy-loaded unless specified otherwise
-        dependencies = {
-          "hrsh7th/cmp-nvim-lsp",
-          "hrsh7th/cmp-buffer",
-        },
-        config = function()
-          -- ...
-        end,
       },
 
       { -- Adds git related signs to the gutter, as well as utilities for managing changes
