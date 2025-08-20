@@ -123,3 +123,4 @@ cap() {
 
 alias soko="cargo run --release --features bevy/dynamic --"
 alias testsoko="cargo test --release --features bevy/dynamic --"
+alias claude="/home/shark/.claude/local/claude"
