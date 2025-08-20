@@ -246,6 +246,7 @@ exec --no-startup-id nm-applet # network manager
 exec --no-startup-id blueman-applet
 exec --no-startup-id flameshot
 exec --no-startup-id dropbox
+exec --no-startup-id snixembed --fork
 # exec --no-startup-id pa-applet # Pulse audio applet
 # exec --no-startup-id batti # Battery indicator
 # exec sleep 5 && spotify
