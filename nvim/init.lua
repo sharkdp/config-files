@@ -285,6 +285,10 @@ require("lazy").setup({
           vim.keymap.set('n', '<Leader>v', function() require('gitsigns').preview_hunk() end, { desc = 'Preview Git hunk' })
         end
       },
+
+      {
+        "github/copilot.vim"
+      },
     },
   },
   -- colorscheme that will be used when installing plugins.
