@@ -121,7 +121,13 @@ configs.ty = {
         or vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
     end,
     single_file_support = true,
-    settings = {},
+    settings = {
+        ty = {
+           experimental = {
+               autoImport = true
+           }
+        }
+    },
     -- on_attach = function(client, bufnr)
     --   vim.lsp.completion.enable(true, client.id, bufnr, {
     --     autotrigger = true,
