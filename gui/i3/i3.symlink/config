@@ -103,6 +103,8 @@ for_window [title="^Numbat - interactive scientific calculator$"] floating enabl
 for_window [title="^Numbat - interactive scientific calculator$"] border toggle
 for_window [title="^Python REPL$"] floating enable
 for_window [title="^binocle - "] floating enable
+for_window [title="^Yinsh$"] floating enable
+for_window [class="Numbat-app"] floating enable
 
 # Change Font
 font pango:Ubuntu Sans  10
