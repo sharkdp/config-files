@@ -36,7 +36,8 @@
     # conflicts for you when it can.
     enabled = true
 [diff]
-    colorMoved = default
+    colorMoved = zebra
+    colorMovedWS = ignore-all-space
 [color]
     ui = true
 [core]
