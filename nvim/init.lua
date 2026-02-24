@@ -102,7 +102,7 @@ vim.lsp.config('rust_analyzer', {})
 vim.lsp.config('ruff', {
   init_options = {
     settings = {
-      logLevel = 'debug',
+      -- logLevel = 'debug',
     }
   }
 })
@@ -230,6 +230,20 @@ require("lazy").setup({
           vim.keymap.set('n', '<Leader>a', function() require('gitsigns').stage_hunk() end, { desc = 'Stage Git hunk' })
           vim.keymap.set('n', '<Leader>v', function() require('gitsigns').preview_hunk() end, { desc = 'Preview Git hunk' })
         end
+      },
+
+      {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        opts = {
+          ensure_installed = { "lua", "rust", "python", "toml", "markdown" },
+          highlight = { enable = true },
+        },
+      },
+
+      {
+        "nvim-treesitter/nvim-treesitter-context",
+        opts = { max_lines = 3 },
       },
 
       {
