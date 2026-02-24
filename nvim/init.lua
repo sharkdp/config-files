@@ -110,12 +110,12 @@ vim.lsp.config('ruff', {
 vim.lsp.config('ty', {
   cmd = { '/home/shark/.cargo-target/debug/ty', 'server' },
   filetypes = { 'python' },
-  root_markers = { 'pyproject.toml', 'knot.toml', '.git' },
+  root_markers = { 'ty.toml', 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git' },
   settings = {
     ty = {
-      experimental = {
-        autoImport = true
-      }
+      -- experimental = {
+      --   autoImport = true
+      -- }
     }
   },
 })
