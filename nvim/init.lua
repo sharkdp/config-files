@@ -87,22 +87,19 @@ vim.keymap.set('n', '<Leader>P', '"+P', { noremap = true })
 vim.keymap.set('v', '<Leader>p', '"+p', { noremap = true })
 vim.keymap.set('v', '<Leader>P', '"+P', { noremap = true })
 
--- Set up LSP
-local lspconfig = require('lspconfig')
-
+-- Set up LSP (vim.lsp.config API, Neovim 0.11+)
 vim.diagnostic.config({ virtual_text = true })
 
-vim.keymap.set("n", '<leader>i', 
-  function() 
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}),{0}) 
+vim.keymap.set("n", '<leader>i',
+  function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}),{0})
   end
 )
 
----- Common capabilities
--- lspconfig.pyright.setup({ capabilities = capabilities })
-lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+-- Server configurations
+vim.lsp.config('rust_analyzer', {})
 
-require('lspconfig').ruff.setup({
+vim.lsp.config('ruff', {
   init_options = {
     settings = {
       logLevel = 'debug',
@@ -110,36 +107,26 @@ require('lspconfig').ruff.setup({
   }
 })
 
-local configs = require('lspconfig.configs')
-configs.ty = {
-  default_config = {
-    name = "ty",
-    cmd = { '/home/shark/.cargo-target/debug/ty', 'server' },
-    filetypes = { 'python' },
-    root_dir = function(fname)
-      return require('lspconfig.util').root_pattern('pyproject.toml', 'knot.toml')(fname)
-        or vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
-    end,
-    single_file_support = true,
-    settings = {
-        ty = {
-           experimental = {
-               autoImport = true
-           }
-        }
-    },
-    -- on_attach = function(client, bufnr)
-    --   vim.lsp.completion.enable(true, client.id, bufnr, {
-    --     autotrigger = true,
-    --     convert = function(item)
-    --       return { abbr = item.label:gsub('%b()', '') }
-    --     end,
-    --   })
-    -- end,
+vim.lsp.config('ty', {
+  cmd = { '/home/shark/.cargo-target/debug/ty', 'server' },
+  filetypes = { 'python' },
+  root_markers = { 'pyproject.toml', 'knot.toml', '.git' },
+  settings = {
+    ty = {
+      experimental = {
+        autoImport = true
+      }
+    }
   },
-}
+})
 
-lspconfig.ty.setup {}
+vim.lsp.config('numbat_lsp', {
+  cmd = { 'numbat-lsp' },
+  filetypes = { 'numbat' },
+  root_markers = { '.git' },
+})
+
+vim.lsp.enable({ 'rust_analyzer', 'ruff', 'ty', 'numbat_lsp' })
 
 -- Key mappings
 vim.keymap.set('n', '<Leader>n', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
@@ -157,16 +144,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
     if client:supports_method('textDocument/completion') then
       -- Autoselect the first item but don't insert it.
-      -- Allows quick use, just write something and enter to select the first one.
       vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 
-      -- Optional: trigger autocompletion on EVERY keypress. May be slow!
+      -- Trigger autocompletion on EVERY keypress. May be slow!
       local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
       client.server_capabilities.completionProvider.triggerCharacters = chars
       vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
     end
-    -- Auto-format ("lint") on save.
-    -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
+    -- Auto-format on save.
     if not client:supports_method('textDocument/willSaveWaitUntil')
         and client:supports_method('textDocument/formatting') then
       vim.api.nvim_create_autocmd('BufWritePre', {
@@ -178,51 +163,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
       })
     end
   end,
-})
-
--- Numbat
-
-if not configs.numbat_lsp then
-  configs.numbat_lsp = {
-    default_config = {
-      cmd = { 'numbat-lsp' }, -- Assumes numbat-lsp is in PATH
-      filetypes = { 'numbat' },
-      root_dir = lspconfig.util.root_pattern('.git', '.'),
-      settings = {},
-      init_options = {},
-    },
-    docs = {
-      description = 'Numbat Language Server Protocol implementation',
-      default_config = {
-        root_dir = [[root_pattern('.git', '.')]],
-      },
-    },
-  }
-end
-
-lspconfig.numbat_lsp.setup({
-  on_attach = function(client, bufnr)
-    -- Your usual LSP keybindings and setup
-    local opts = { noremap = true, silent = true, buffer = bufnr }
-
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<leader>f', function()
-      vim.lsp.buf.format { async = true }
-    end, opts)
-
-    -- Enable diagnostics
-    vim.diagnostic.config({
-      virtual_text = true,
-      signs = true,
-      underline = true,
-      update_in_insert = false,
-    })
-  end,
-  -- capabilities = require('cmp_nvim_lsp').default_capabilities(), -- If using nvim-cmp
 })
 
 vim.filetype.add({
