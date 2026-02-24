@@ -17,13 +17,8 @@ alias shellrc='vim ~/.cf/shell/shellrc.symlink && rehash'
 alias i3conf='vim ~/.cf/gui/i3/i3.symlink/config && i3 restart'
 
 # program default options / shortcuts
-alias py='python3'
-alias py2='python2'
-alias ipy='ipython3'
-alias ipy2='ipython2'
 alias txz='tar xvzf'
 alias grep='grep --color'
-alias hgrep='history | grep'
 alias df='df -h'
 alias rg='rg --smart-case'
 alias copy='rsync --archive --stats --progress --human-readable'
@@ -34,9 +29,6 @@ alias c='git commit -m'
 alias top='htop'
 alias caps2esc='setxkbmap -option "caps:escape"; test -e ~/.xmodmap && xmodmap ~/.xmodmap'
 alias lsd='ls -Alh --color=always --sort=time --reverse ~/Downloads/ | tail'
-alias am='alsamixer'
-alias pf='pointfree'
-alias nc='ncftpbookmarks'
 alias cat='bat'
 
 # ty
