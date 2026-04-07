@@ -108,7 +108,7 @@ vim.lsp.config('ruff', {
 })
 
 vim.lsp.config('ty', {
-  cmd = { '/home/shark/.cargo-target/debug/ty', 'server' },
+  cmd = { '/home/shark/ruff/target/debug/ty', 'server' },
   filetypes = { 'python' },
   root_markers = { 'ty.toml', 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git' },
   settings = {
