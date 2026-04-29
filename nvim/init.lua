@@ -198,7 +198,8 @@ require("lazy").setup({
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
         keys = {
-          { '<C-p>', '<cmd>Telescope find_files<cr>', desc = 'Find files' }
+          { '<C-p>', '<cmd>Telescope find_files<cr>', desc = 'Find files' },
+          { '<Leader>d', '<cmd>Telescope diagnostics<cr>', desc = 'Browse diagnostics' },
         },
         config = function()
           require('telescope').setup({
