@@ -1,5 +1,5 @@
 # Modifier key
-set $mod Mod4
+set $mod Mod1
 
 new_window pixel 1
 
@@ -41,10 +41,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Home Assistant
-bindsym $mod+Mod1+h exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh colortemp down
-bindsym $mod+Mod1+l exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh colortemp up
-bindsym $mod+Mod1+k exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh brightness up
-bindsym $mod+Mod1+j exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh brightness down
+bindsym $mod+Control+h exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh colortemp down
+bindsym $mod+Control+l exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh colortemp up
+bindsym $mod+Control+k exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh brightness up
+bindsym $mod+Control+j exec /home/shark/Informatik/python/home-assistant/dim_galerie.sh brightness down
 
 # Switch workspaces with F1-F9
 bindsym F1 workspace number 1
@@ -114,7 +114,6 @@ floating_modifier $mod
 
 # kill focused window
 bindsym $mod+q kill
-bindsym Mod1+F4 kill
 
 # Use dmenu desktop version (.desktop-file aware)
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
@@ -254,8 +253,7 @@ exec --no-startup-id snixembed --fork
 # exec sleep 5 && spotify
 exec sleep 2 && firefox # wait for wifi connection
 exec_always --no-startup-id nitrogen --restore # draw background
-exec_always --no-startup-id sleep 1 && xmodmap ~/.xmodmap
-exec_always --no-startup-id setxkbmap -option "caps:escape"
+exec_always --no-startup-id setxkbmap -layout us -variant de_se_fi -option '' -option caps:escape -option compose:rwin
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # vim:filetype=i3

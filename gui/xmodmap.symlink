@@ -1,12 +1,25 @@
+clear mod5
+keycode 133 = Super_L
+keycode 108 = Mode_switch
+keycode 134 = Mode_switch
+add mod4 = Super_L
+add mod5 = Mode_switch
+
 keycode 38 = a A bracketleft bracketleft bracketleft braceleft
 keycode 39 = s S parenleft parenleft parenleft parenleft
 keycode 40 = d D parenright parenright parenright parenright
 keycode 41 = f F bracketright bracketright bracketright braceright
 keycode 25 = w W slash slash slash slash
+# Language symbols are provided by the XKB us(de_se_fi) variant.
+# keycode 26 = e E EuroSign EuroSign
 keycode 27 = r R backslash backslash backslash backslash
+# keycode 34 = bracketleft braceleft udiaeresis Udiaeresis
 keycode 46 = l L percent percent percent percent
-keycode 52 = y Y braceleft braceleft braceleft braceleft
+# keycode 47 = semicolon colon odiaeresis Odiaeresis
+# keycode 48 = apostrophe quotedbl adiaeresis Adiaeresis
+keycode 52 = z Z braceleft braceleft braceleft braceleft
 keycode 53 = x X braceright braceright braceright braceright
 keycode 54 = c C braceleft braceleft braceleft braceleft
 keycode 55 = v V braceright braceright braceright braceright
 keycode 42 = g G dollar dollar dollar dollar
+# keycode 20 = minus underscore ssharp U1E9E
